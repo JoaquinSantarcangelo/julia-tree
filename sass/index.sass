@@ -1,0 +1,35 @@
+//Colors
+$color1: #222222
+$white: #ffffff
+
+.app
+    padding: 0 3em
+    background-color: $color1
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    //Navbar
+    .navbar
+        margin-top: 1.5em
+        display: flex
+        justify-content: flex-end
+        z-index: 10000
+        .menu-button
+            z-index: 1000
+            .MuiSvgIcon-root
+                color: $white
+                font-size: 3em
+                transition: all 0.4s ease
+            &:hover
+                cursor: pointer
+                transform: scale(1.05)
+
+    //M
+
+// General Styles
+
+*, *::before, *::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: "Manrope"
