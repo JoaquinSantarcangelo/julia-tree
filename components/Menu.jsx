@@ -1,22 +1,23 @@
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const menuItems = [
   {
     text: "Home",
-    href: "",
+    href: "/",
   },
   {
     text: "Video",
-    href: "",
+    href: "/video",
   },
   {
     text: "Fundacion",
-    href: "",
+    href: "/",
   },
   {
     text: "Donar",
-    href: "",
+    href: "/",
   },
 ];
 
@@ -48,15 +49,17 @@ const Menu = () => {
     >
       <div className="wrapper">
         {menuItems.map((item, i) => (
-          <motion.div
-            className="menu-item"
-            custom={i}
-            initial="hidden"
-            animate="visible"
-            variants={variantsMenuItems}
-          >
-            {item.text}
-          </motion.div>
+          <Link href={item.href}>
+            <motion.div
+              className="menu-item"
+              custom={i}
+              initial="hidden"
+              animate="visible"
+              variants={variantsMenuItems}
+            >
+              {item.text}
+            </motion.div>
+          </Link>
         ))}
       </div>
     </motion.div>
