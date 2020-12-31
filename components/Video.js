@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Vimeo from "@u-wave/react-vimeo";
 import { motion } from "framer-motion";
 
 const index = () => {
   const [videoPaused, setVideoPaused] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     if (!videoPaused) {
@@ -35,10 +36,8 @@ const index = () => {
           video="340200656"
           onPause={() => setVideoPaused(true)}
           onPlay={() => setVideoPaused(false)}
-          showByline={false}
-          showTitle={true}
+          onEnd={() => history.push("/")}
           responsive
-          
           autoplay
         />
       </div>

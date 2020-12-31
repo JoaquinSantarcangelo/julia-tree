@@ -43,7 +43,9 @@
                 .MuiSvgIcon-root
                     font-size: 1.6em
                     margin-right: 0.2em
-
+    .turn-on
+        filter: brightness(1.4)
+        
     .background
         z-index: 100
         position: absolute
@@ -54,6 +56,7 @@
         background-image: url("https://i.postimg.cc/wvf1YrqD/bg.jpg")
         background-size: cover
         background-position: center
+        transition: all 0.8s ease
         &::before
             content: ""
             position: absolute

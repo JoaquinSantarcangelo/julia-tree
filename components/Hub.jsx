@@ -1,10 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { animate, motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
+import VanillaTilt from "vanilla-tilt";
 
 const Hub = ({ loading }) => {
+  // Effects lights on
+  const [hearts, setHearts] = useState(false);
+
   useEffect(() => {
+    console.log(hearts);
+  }, [hearts]);
+
+  //On component render configs
+  useEffect(() => {
+    const background = document.querySelector("#background");
+    VanillaTilt.init(background, { max: 2 });
     document.querySelector("#logo").classList.remove("hide");
   }, []);
 
@@ -66,7 +77,12 @@ const Hub = ({ loading }) => {
             to="/video"
             style={{ color: "inherit", textDecoration: "none" }}
           >
-            <div className="button">
+            <div
+              onMouseLeave={() => setHearts(false)}
+              onMouseOver={() => setHearts(true)}
+              id="watch-video"
+              className="button"
+            >
               <OndemandVideoIcon />
               Watch video
             </div>
@@ -76,7 +92,10 @@ const Hub = ({ loading }) => {
           </Link> */}
         </motion.div>
       </motion.div>
-      <div className="background"></div>
+      <div
+        id="background"
+        className={hearts ? "background turn-on" : "background"}
+      ></div>
     </motion.div>
   );
 };
