@@ -9,15 +9,15 @@
     display: flex
     justify-content: space-between
     align-items: center
-    z-index: 10000
+    z-index: 100000
     transition: all 0.4s ease
     .logo
         transition: all 0.4s ease
+        z-index: 10000
         h1
             margin: 0
             color: white
             font-size: 3em
-            z-index: 10000
     .menu-button
         z-index: 10000
         .MuiSvgIcon-root
@@ -33,7 +33,7 @@
         height: 100%
         top: 0
         right: 0
-        background: linear-gradient(180deg, rgba(0,0,0,0.33) 0%, rgba(255,255,255,0) 100%)
-        z-index: 100
+        background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%)
+        z-index: 1000
     @media screen and ( max-width: 768px )
         padding: 1.5em

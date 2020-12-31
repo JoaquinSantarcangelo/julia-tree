@@ -3,12 +3,53 @@
 .hub
     width: 100%
     height: 100%
+    display: grid
+    place-items: center
+    .wrapper
+        color: #fff
+        z-index: 1000
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        margin-top: -4em
+        max-width: 700px
+        .title
+            font-size: 7em
+            text-align: center
+        .subtitle
+            text-align: center
+            font-size: 1.4em
+        .buttons
+            display: flex
+            margin-top: 2em
+            .button
+                border: 2px solid $white
+                padding: 0.8em 2em
+                border-radius: 0.2em
+                font-size: 1.4em
+                transition: all 0.4s ease
+                &:first-child
+                    margin-right: 1em
+                &:hover
+                    background-color: #fff
+                    color: #000000
+                    transform: scale(1.1)
+                    cursor: pointer
+
     .background
+        z-index: 100
         position: absolute
         left: 0
         top: 0
         width: 100%
         height: 100%
-        background-image: url("/assets/bg.jpg")
+        background-image: url("https://i.postimg.cc/wvf1YrqD/bg.jpg")
         background-size: cover
         background-position: center
+        &::before
+            content: ""
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: rgba(0,0,0,0.5)

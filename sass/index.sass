@@ -1,3 +1,6 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap')
+
 //Colors
 $color1: #000
 $white: #ffffff
@@ -10,13 +13,27 @@ $white: #ffffff
     overflow: hidden
     position: relative
 
+.social-icons
+    position: absolute
+    z-index: 150000
+    color: white
+    display: flex
+    bottom: 1.5em
+    .icon
+        margin-right: 0.4em
+        transition: all 0.4s ease
+        .MuiSvgIcon-root
+            font-size: 1.8em
+        &:hover
+            transform: scale(1.1)
+            cursor: pointer
 
 // General Styles
 *, *::before, *::after
     margin: 0
     padding: 0
     box-sizing: border-box
-    font-family: "Manrope"
+    font-family: 'Bree Serif', serif
 
 .remove
     display: none
