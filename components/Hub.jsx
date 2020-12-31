@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Hub = () => {
+  useEffect(() => {
+    document.querySelector("#logo").classList.remove("hide");
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

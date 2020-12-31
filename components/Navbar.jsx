@@ -8,6 +8,9 @@ import CloseIcon from "@material-ui/icons/Close";
 const Navbar = ({ menuOpen, handleMenu }) => {
   return (
     <div className="navbar">
+      <div id="logo" className="logo">
+        <h1>Julia Tree</h1>
+      </div>
       <div onClick={() => handleMenu()} className="menu-button">
         {menuOpen && (
           <motion.div
@@ -30,9 +33,7 @@ const Navbar = ({ menuOpen, handleMenu }) => {
           </motion.div>
         )}
       </div>
-      <div className="overlay">
-        
-      </div>
+      <div className="overlay"></div>
     </div>
   );
 };

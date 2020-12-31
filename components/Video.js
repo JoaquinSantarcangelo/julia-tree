@@ -5,8 +5,14 @@ import { motion } from "framer-motion";
 
 const index = () => {
   const [videoPaused, setVideoPaused] = useState(false);
-  
 
+  useEffect(() => {
+    if (!videoPaused) {
+      document.querySelector("#logo").classList.add("hide");
+    } else {
+      document.querySelector("#logo").classList.remove("hide");
+    }
+  }, [videoPaused]);
 
   return (
     <motion.div
