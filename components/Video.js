@@ -16,7 +16,7 @@ const index = () => {
       {videoPaused && (
         <div className="pause-modal">
           <div className="container">
-            <Link to="/">
+            <Link style={{ color: "inherit", textDecoration: "none" }} to="/">
               <h1>Volver al inicio </h1>
             </Link>
           </div>
@@ -24,7 +24,7 @@ const index = () => {
       )}
       <div className="video-container">
         <Vimeo
-          video="182276651"
+          video="362325129"
           onPause={() => setVideoPaused(true)}
           onPlay={() => setVideoPaused(false)}
           responsive
