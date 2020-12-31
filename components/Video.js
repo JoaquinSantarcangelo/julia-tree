@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Vimeo from "@u-wave/react-vimeo";
+import { motion } from "framer-motion";
 
 const index = () => {
   const [videoPaused, setVideoPaused] = useState(false);
 
   return (
-    <div className="video">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="video"
+    >
       {videoPaused && (
         <div className="pause-modal">
           <div className="container">
-            <Link href="/">
+            <Link to="/">
               <h1>Volver al inicio </h1>
             </Link>
           </div>
@@ -26,7 +32,7 @@ const index = () => {
           autoplay
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

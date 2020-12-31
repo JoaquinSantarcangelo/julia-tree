@@ -1,6 +1,7 @@
 import React from "react";
-import Link from "next/link";
+import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Redirect } from "react-router-dom";
 
 const menuItems = [
   {
@@ -21,6 +22,8 @@ const menuItems = [
   },
 ];
 
+// Framer Motion Variants
+
 const variantsMenuItems = {
   visible: (i) => ({
     opacity: 1,
@@ -37,7 +40,15 @@ const menuVariants = {
   transition: { ease: "easeInOut", when: "beforeChildren", duration: 0.6 },
 };
 
-const Menu = () => {
+const Menu = ({ handleMenu }) => {
+  const history = useHistory();
+
+  const handleClick = (href) => {
+    handleMenu(false);
+    scrollTo(0, 0);
+    history.push(href);
+  };
+
   return (
     <motion.div
       variants={menuVariants}
@@ -49,17 +60,16 @@ const Menu = () => {
     >
       <div className="wrapper">
         {menuItems.map((item, i) => (
-          <Link href={item.href}>
-            <motion.div
-              className="menu-item"
-              custom={i}
-              initial="hidden"
-              animate="visible"
-              variants={variantsMenuItems}
-            >
-              {item.text}
-            </motion.div>
-          </Link>
+          <motion.div
+            className="menu-item"
+            custom={i}
+            initial="hidden"
+            animate="visible"
+            variants={variantsMenuItems}
+            onClick={() => handleClick(item.href)}
+          >
+            {item.text}
+          </motion.div>
         ))}
       </div>
     </motion.div>

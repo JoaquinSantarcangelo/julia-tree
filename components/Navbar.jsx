@@ -30,6 +30,9 @@ const Navbar = ({ menuOpen, handleMenu }) => {
           </motion.div>
         )}
       </div>
+      <div className="overlay">
+        
+      </div>
     </div>
   );
 };
