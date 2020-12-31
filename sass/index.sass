@@ -19,6 +19,7 @@ $white: #ffffff
     display: flex
     justify-content: flex-end
     z-index: 10000
+    transition: all 0.4s ease
     .menu-button
         z-index: 1000
         .MuiSvgIcon-root
@@ -35,6 +36,9 @@ $white: #ffffff
         top: 0
         right: 0
         background: linear-gradient(180deg, rgba(0,0,0,0.33) 0%, rgba(255,255,255,0) 100%)
+
+    @media screen and ( max-width: 768px )
+        padding: 1.5em
 
 // General Styles
 
