@@ -5,17 +5,8 @@ import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import VanillaTilt from "vanilla-tilt";
 
 const Hub = ({ loading }) => {
-  // Effects lights on
-  const [hearts, setHearts] = useState(false);
-
-  useEffect(() => {
-    console.log(hearts);
-  }, [hearts]);
-
   //On component render configs
   useEffect(() => {
-    const background = document.querySelector("#background");
-    VanillaTilt.init(background, { max: 2 });
     document.querySelector("#logo").classList.remove("hide");
   }, []);
 
@@ -65,7 +56,7 @@ const Hub = ({ loading }) => {
         className="wrapper"
       >
         <motion.div variants={variants2} className="title">
-          Julia Tree
+          The Julia Tree
         </motion.div>
         <motion.div variants={variants2} className="subtitle">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quos
@@ -77,12 +68,7 @@ const Hub = ({ loading }) => {
             to="/video"
             style={{ color: "inherit", textDecoration: "none" }}
           >
-            <div
-              onMouseLeave={() => setHearts(false)}
-              onMouseOver={() => setHearts(true)}
-              id="watch-video"
-              className="button"
-            >
+            <div id="watch-video" className="button">
               <OndemandVideoIcon />
               Watch video
             </div>
@@ -92,10 +78,54 @@ const Hub = ({ loading }) => {
           </Link> */}
         </motion.div>
       </motion.div>
-      <div
-        id="background"
-        className={hearts ? "background turn-on" : "background"}
-      ></div>
+      <div className="background">
+        <div id="layer0" className="layer">
+          <div className="img"></div>
+        </div>
+        <div id="layer1" className="layer">
+          <motion.img
+            animate={{
+              filter: [
+                "brightness(100%)",
+                "brightness(120%)",
+                "brightness(100%)",
+              ],
+            }}
+            transition={{ repeat: Infinity, duration: 3 }}
+            src="assets/hero/Layer1.png"
+            alt=""
+          />
+        </div>
+        <div id="layer2" className="layer">
+          <motion.img
+            animate={{
+              filter: [
+                "brightness(100%)",
+                "brightness(130%)",
+                "brightness(100%)",
+              ],
+            }}
+            transition={{ repeat: Infinity, duration: 3 }}
+            src="assets/hero/Layer2.png"
+            alt=""
+          />
+        </div>
+        <div id="layer3" className="layer">
+          <motion.img
+            animate={{
+              y: [0, 40, 0],
+              filter: [
+                "brightness(100%)",
+                "brightness(170%)",
+                "brightness(100%)",
+              ],
+            }}
+            transition={{ repeat: Infinity, duration: 3 }}
+            src="assets/hero/Layer3_1.png"
+            alt=""
+          />
+        </div>
+      </div>
     </motion.div>
   );
 };
