@@ -20,8 +20,6 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  //Parallax Hero
-  useEffect(() => {}, []);
 
   // Menu Hooks & Config
   useEffect(() => {

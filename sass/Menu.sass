@@ -4,10 +4,7 @@
     position: fixed
     top: 0
     left: 0
-    background: #00000091
-    box-shadow: 0 8px 32px 0 #27272794
-    backdrop-filter: blur( 6px )
-    -webkit-backdrop-filter: blur( 4px )
+    background: $color2
     color: $white
     width: 100%
     height: 100%
@@ -22,6 +19,11 @@
         font-size: 5em
         font-weight: 900
         transition: all 0.4s ease
+        color: transparent
+        -webkit-text-stroke: 0.1px white
         &:hover
+            color: $white
             transform: scale(1.1)
             cursor: pointer
+    
+    

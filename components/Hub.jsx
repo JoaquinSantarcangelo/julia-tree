@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { animate, motion, useAnimation } from "framer-motion";
+import { animate, AnimatePresence, motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import VanillaTilt from "vanilla-tilt";
@@ -78,54 +78,59 @@ const Hub = ({ loading }) => {
           </Link> */}
         </motion.div>
       </motion.div>
-      <div className="background">
-        <div id="layer0" className="layer">
-          <div className="img"></div>
+      <AnimatePresence>
+        <div className="background">
+          <div id="layer0" className="layer">
+            <div className="img"></div>
+          </div>
+          <div id="layer1" className="layer">
+            <motion.img
+              animate={{
+                filter: [
+                  "brightness(100%)",
+                  "brightness(120%)",
+                  "brightness(100%)",
+                ],
+              }}
+              transition={{ repeat: Infinity, duration: 3 }}
+              exit={{ filter: "brightness(100%)" }}
+              src="assets/hero/Layer1.png"
+              alt=""
+            />
+          </div>
+          <div id="layer2" className="layer">
+            <motion.img
+              animate={{
+                filter: [
+                  "brightness(100%)",
+                  "brightness(130%)",
+                  "brightness(100%)",
+                ],
+              }}
+              exit={{ filter: "brightness(100%)" }}
+              transition={{ repeat: Infinity, duration: 3 }}
+              src="assets/hero/Layer2.png"
+              alt=""
+            />
+          </div>
+          <div id="layer3" className="layer">
+            <motion.img
+              animate={{
+                y: [0, 40, 0],
+                filter: [
+                  "brightness(100%)",
+                  "brightness(170%)",
+                  "brightness(100%)",
+                ],
+              }}
+              exit={{ filter: "brightness(100%)" }}
+              transition={{ repeat: Infinity, duration: 3 }}
+              src="assets/hero/Layer3_1.png"
+              alt=""
+            />
+          </div>
         </div>
-        <div id="layer1" className="layer">
-          <motion.img
-            animate={{
-              filter: [
-                "brightness(100%)",
-                "brightness(120%)",
-                "brightness(100%)",
-              ],
-            }}
-            transition={{ repeat: Infinity, duration: 3 }}
-            src="assets/hero/Layer1.png"
-            alt=""
-          />
-        </div>
-        <div id="layer2" className="layer">
-          <motion.img
-            animate={{
-              filter: [
-                "brightness(100%)",
-                "brightness(130%)",
-                "brightness(100%)",
-              ],
-            }}
-            transition={{ repeat: Infinity, duration: 3 }}
-            src="assets/hero/Layer2.png"
-            alt=""
-          />
-        </div>
-        <div id="layer3" className="layer">
-          <motion.img
-            animate={{
-              y: [0, 40, 0],
-              filter: [
-                "brightness(100%)",
-                "brightness(170%)",
-                "brightness(100%)",
-              ],
-            }}
-            transition={{ repeat: Infinity, duration: 3 }}
-            src="assets/hero/Layer3_1.png"
-            alt=""
-          />
-        </div>
-      </div>
+      </AnimatePresence>
     </motion.div>
   );
 };
