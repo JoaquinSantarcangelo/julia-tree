@@ -1,7 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Redirect } from "react-router-dom";
 
 const menuItems = [
   {
@@ -13,11 +11,23 @@ const menuItems = [
     href: "/video",
   },
   {
-    text: "Fundacion",
+    text: "Donate",
     href: "/",
   },
   {
-    text: "Donar",
+    text: "Questions & Answers",
+    href: "/",
+  },
+  {
+    text: "Fundation",
+    href: "/",
+  },
+  {
+    text: "Press",
+    href: "/",
+  },
+  {
+    text: "Members",
     href: "/",
   },
 ];
@@ -40,13 +50,10 @@ const menuVariants = {
   transition: { ease: "easeInOut", when: "beforeChildren", duration: 0.6 },
 };
 
-const Menu = ({ handleMenu }) => {
-  const history = useHistory();
-
-  const handleClick = (href) => {
+const Menu = ({ menuOpen, handleMenu }) => {
+  const handleClick = () => {
     handleMenu(false);
     scrollTo(0, 0);
-    history.push(href);
   };
 
   return (
@@ -54,23 +61,81 @@ const Menu = ({ handleMenu }) => {
       variants={menuVariants}
       exit="hidden"
       initial="hidden"
-      animate="visible"
+      animate={menuOpen ? "visible" : "hidden"}
       transition={{ ease: "easeInOut", when: "beforeChildren", duration: 0.4 }}
       className="menu"
     >
       <div className="wrapper">
-        {menuItems.map((item, i) => (
-          <motion.div
-            className="menu-item"
-            custom={i}
-            initial="hidden"
-            animate="visible"
-            variants={variantsMenuItems}
-            onClick={() => handleClick(item.href)}
-          >
-            {item.text}
-          </motion.div>
-        ))}
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[0].text}
+        </motion.div>
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[1].text}
+        </motion.div>
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[2].text}
+        </motion.div>
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[3].text}
+        </motion.div>
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[4].text}
+        </motion.div>
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[5].text}
+        </motion.div>
+        <motion.div
+          className="menu-item"
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={variantsMenuItems}
+          onClick={() => handleClick()}
+        >
+          {menuItems[6].text}
+        </motion.div>
       </div>
     </motion.div>
   );

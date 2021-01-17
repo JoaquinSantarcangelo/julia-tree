@@ -5,22 +5,24 @@
 $color1: #000
 $color2: #2a2a50
 $white: #ffffff
+$grey1: #E8E8E8
+
 
 .app
-    padding: 0 3em
+    
     background-color: $color1
-    width: 100vw
-    height: 100vh
-    overflow: hidden
+    width: 100%
+    overflow-x: hidden
     position: relative
     background-color: #181a29
 
 .social-icons
-    position: absolute
+    position: fixed
     z-index: 150000
     color: white
     display: flex
     bottom: 1.5em
+    left: 3em
     .icon
         margin-right: 0.4em
         transition: all 0.4s ease
@@ -42,3 +44,12 @@ $white: #ffffff
 
 .hide
     opacity: 0
+
+::-webkit-scrollbar
+    width: 12px
+    background: $white
+
+::-webkit-scrollbar-track
+
+::-webkit-scrollbar-thumb
+    background: $color2

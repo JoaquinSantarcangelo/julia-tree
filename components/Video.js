@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
 import Vimeo from "@u-wave/react-vimeo";
 import { motion } from "framer-motion";
 
-const index = () => {
+const index = ({ setVideoOpen }) => {
   const [videoPaused, setVideoPaused] = useState(false);
-  const history = useHistory();
 
   useEffect(() => {
     if (!videoPaused) {
@@ -25,9 +23,9 @@ const index = () => {
       {videoPaused && (
         <div className="pause-modal">
           <div className="container">
-            <Link style={{ color: "inherit", textDecoration: "none" }} to="/">
+            <div onClick={() => setVideoOpen(false)}>
               <h1>Volver al inicio </h1>
-            </Link>
+            </div>
           </div>
         </div>
       )}
@@ -36,7 +34,7 @@ const index = () => {
           video="340200656"
           onPause={() => setVideoPaused(true)}
           onPlay={() => setVideoPaused(false)}
-          onEnd={() => history.push("/")}
+          onEnd={() => setVideoOpen(false)}
           responsive
           autoplay
         />

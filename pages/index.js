@@ -1,14 +1,12 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Components
 import Menu from "../components/Menu";
 import Navbar from "../components/Navbar";
 import Video from "../components/Video";
-import Home from "../components/Home";
-import Hub from "../components/Hub";
+import Home from "../components/layout/Home";
 import Loading from "../components/Loading";
 
 //Material Icons
@@ -18,8 +16,8 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-
 
   // Menu Hooks & Config
   useEffect(() => {
@@ -41,38 +39,23 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AnimatePresence>{loading && <Loading />}</AnimatePresence>
-      <Router>
-        <Navbar menuOpen={menuOpen} handleMenu={handleMenu} />
-        <AnimatePresence exitBeforeEnter>
-          {menuOpen && <Menu handleMenu={handleMenu} />}
-        </AnimatePresence>
-        <div className="social-icons">
-          <div className="icon">
-            <FacebookIcon />
-          </div>
-          <div className="icon">
-            <InstagramIcon />
-          </div>
-          <div className="icon">
-            <TwitterIcon />
-          </div>
+      <Navbar menuOpen={menuOpen} handleMenu={handleMenu} />
+      <Menu menuOpen={menuOpen} handleMenu={handleMenu} />
+      <div className="social-icons">
+        <div className="icon">
+          <FacebookIcon />
         </div>
-        <Route
-          render={({ location }) => (
-            <AnimatePresence exitBeforeEnter initial={false}>
-              <Switch location={location} key={location.pathname}>
-                <Route
-                  path="/"
-                  exact
-                  render={() => <Hub loading={loading} />}
-                ></Route>
-                <Route path="/video" component={Video}></Route>
-                <Route path="/home" component={Home}></Route>
-              </Switch>
-            </AnimatePresence>
-          )}
-        />
-      </Router>
+        <div className="icon">
+          <InstagramIcon />
+        </div>
+        <div className="icon">
+          <TwitterIcon />
+        </div>
+      </div>
+      <AnimatePresence exitBeforeEnter initial={false}>
+        {videoOpen && <Video setVideoOpen={setVideoOpen} />}
+      </AnimatePresence>
+      <Home setVideoOpen={setVideoOpen} loading={loading} />
     </div>
   );
 }
