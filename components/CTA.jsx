@@ -9,15 +9,12 @@ const CTA = () => {
   return (
     <div className="cta">
       <div className="wrapper1">
-        <div className="text">
-          <div className="title">Donate Now</div>
-          <div className="subtitle">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod
-          </div>
-        </div>
+        
       </div>
       <div className="wrapper2">
+        <div className="hand">
+          <img src="" alt=""/>
+        </div>
         <div className="share-now">
           <div className="title">Share now!</div>
           <div className="buttons">
