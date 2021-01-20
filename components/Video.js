@@ -21,15 +21,25 @@ const index = ({ setVideoOpen }) => {
       className="video"
     >
       {videoPaused && (
-        <div className="pause-modal">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="pause-modal"
+        >
           <div className="container">
             <div onClick={() => setVideoOpen(false)}>
               <h1>Volver al inicio </h1>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
-      <div className="video-container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="video-container"
+      >
         <Vimeo
           video="340200656"
           onPause={() => setVideoPaused(true)}
@@ -38,7 +48,7 @@ const index = ({ setVideoOpen }) => {
           responsive
           autoplay
         />
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

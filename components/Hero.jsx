@@ -109,10 +109,10 @@ const Hero = ({ loading, setVideoOpen }) => {
                 alt=""
               />
             </div>
-            <div id="layer3" className="layer">
+            <motion.div id="layer3" className="layer">
               <motion.img
                 animate={{
-                  y: [0, 40, 0],
+                  y: [0, 20, 0],
                   filter: [
                     "brightness(100%)",
                     "brightness(170%)",
@@ -120,11 +120,67 @@ const Hero = ({ loading, setVideoOpen }) => {
                   ],
                 }}
                 exit={{ filter: "brightness(100%)", y: 0 }}
-                transition={{ repeat: Infinity, duration: 2.8 }}
+                transition={{ repeat: Infinity, duration: 3 }}
                 src="assets/img/hero/Layer3_1.png"
                 alt=""
               />
-            </div>
+              <motion.img
+                animate={{
+                  y: [0, 20, 0],
+                  filter: [
+                    "brightness(100%)",
+                    "brightness(170%)",
+                    "brightness(100%)",
+                  ],
+                }}
+                exit={{ filter: "brightness(100%)", y: 0 }}
+                transition={{ repeat: Infinity, duration: 3.2 }}
+                src="assets/img/hero/Layer3_1.png"
+                alt=""
+              />
+              <motion.img
+                animate={{
+                  y: [0, 20, 0],
+                  filter: [
+                    "brightness(100%)",
+                    "brightness(170%)",
+                    "brightness(100%)",
+                  ],
+                }}
+                exit={{ filter: "brightness(100%)", y: 0 }}
+                transition={{ repeat: Infinity, duration: 2.5 }}
+                src="assets/img/hero/Layer3_1.png"
+                alt=""
+              />
+              <motion.img
+                animate={{
+                  y: [0, 20, 0],
+                  filter: [
+                    "brightness(100%)",
+                    "brightness(170%)",
+                    "brightness(100%)",
+                  ],
+                }}
+                exit={{ filter: "brightness(100%)", y: 0 }}
+                transition={{ repeat: Infinity, duration: 3 }}
+                src="assets/img/hero/Layer3_1.png"
+                alt=""
+              />
+              <motion.img
+                animate={{
+                  y: [0, 20, 0],
+                  filter: [
+                    "brightness(100%)",
+                    "brightness(170%)",
+                    "brightness(100%)",
+                  ],
+                }}
+                exit={{ filter: "brightness(100%)", y: 0 }}
+                transition={{ repeat: Infinity, duration: 3.2 }}
+                src="assets/img/hero/Layer3_1.png"
+                alt=""
+              />
+            </motion.div>
           </div>
         </div>
       </AnimatePresence>
