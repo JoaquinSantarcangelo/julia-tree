@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { animate, AnimatePresence, motion, useAnimation } from "framer-motion";
-import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 
 const Hero = ({ loading, setVideoOpen }) => {
   //On component render configs
@@ -68,7 +67,6 @@ const Hero = ({ loading, setVideoOpen }) => {
           className="buttons"
         >
           <div id="watch-video" className="button">
-            <OndemandVideoIcon />
             Watch video
           </div>
         </motion.div>

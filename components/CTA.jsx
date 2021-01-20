@@ -8,12 +8,19 @@ import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 const CTA = () => {
   return (
     <div className="cta">
-      <div className="wrapper1">
-        
-      </div>
+      <div className="wrapper1"></div>
       <div className="wrapper2">
+        <div className="heart">
+          <div className="wrapper">
+            <div className="text">
+              <div className="line1">Plan a</div>
+              <div className="line2">Julia Tree</div>
+            </div>
+            <img src="/assets/img/donate-heart.png" alt="" />
+          </div>
+        </div>
         <div className="hand">
-          <img src="" alt=""/>
+          <img src="/assets/img/donate-hand.png" alt="" />
         </div>
         <div className="share-now">
           <div className="title">Share now!</div>
