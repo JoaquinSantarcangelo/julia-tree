@@ -1,8 +1,75 @@
 @import "index"
 
 .faq
-    height: 100vh
-    background-image: url("/assets/img/q&a.jpg")
+    min-height: 100vh
+    padding-top: 15vh 
+    background-image: url("/assets/img/faqs3.png")
     background-size: cover
-    background-position: center
+    background-position: bottom
+
+    .title
+        color: $cream
+        font-size: 25px
+        text-align: center
+        margin-bottom: 50px
+        .question
+            padding-right: 5vw
+        .answer
+            font-weight: lighter
+            padding-left: 5vw
+    
     .wrapper
+        display: table
+        margin: auto
+    .faqs-wrapper
+        width: 100%
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        .item    
+            width: 50%
+            color: $cream
+            margin-bottom: 50px
+            @media screen and ( max-width: 768px )
+                width: 100%
+            .question, .answer
+                width: 25vw
+                margin: auto
+                margin-right: auto
+                word-wrap: break-word
+                @media screen and ( max-width: 768px )
+                    width: 90vw
+            .question
+                font-weight: bold
+                font-size: 20px
+            .answer
+                font-weight: lighter
+
+    .indicator
+        width: 100%
+        text-align: center
+        color: $cream
+        display: flex
+        justify-content: center
+        h2
+            padding-bottom: 5px
+        button
+            background-color: transparent
+            border: none
+        .arrow 
+            border: solid $cream
+            width: 15px
+            height: 15px
+            border-width: 0 3px 3px 0
+            display: inline-block
+            padding: 3px
+            &:hover
+                width: 25px
+                height: 25px
+                transition: all 0.2s ease-out
+        .right
+            transform: rotate(-45deg)
+            -webkit-transform: rotate(-45deg)
+        .left
+            transform: rotate(135deg)
+            -webkit-transform: rotate(135deg)
