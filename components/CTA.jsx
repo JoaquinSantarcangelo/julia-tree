@@ -4,12 +4,13 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import GetAppIcon from "@material-ui/icons/GetApp";
 
 const CTA = () => {
   return (
     <div className="cta">
-      <div className="wrapper1"></div>
-      <div className="wrapper2">
+      <div className="background"></div>
+      <div className="wrapper">
         <div className="heart">
           <div className="wrapper">
             <div className="text">
@@ -38,6 +39,9 @@ const CTA = () => {
               <WhatsAppIcon />
             </div>
           </div>
+        </div>
+        <div className="download-content">
+          <GetAppIcon /> Download Content
         </div>
       </div>
     </div>

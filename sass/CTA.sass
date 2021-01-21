@@ -4,7 +4,7 @@
     height: 100vh
     background-color: #fff
 
-    .wrapper1
+    .background
         height: 85%
         background-image: url("/assets/img/donate.jpg")
         background-size: cover
@@ -25,12 +25,13 @@
                 align-items: center
                 font-size: 1.4em
                 color: $cream
-    .wrapper2
+    .wrapper
         display: flex
         align-items: center
+        justify-content: space-between
         position: relative
         height: 15%
-        padding: 0 3em
+        padding: 0 4em
         width: 100%
         .heart
             z-index: 1000
@@ -87,6 +88,7 @@
             display: flex
             align-items: flex-end
             justify-content: center
+            pointer-events: none
             img
                 width: 30em
         .share-now
@@ -94,10 +96,11 @@
             display: flex
             flex-direction: column
             align-items: center
-            justify-content: center
+            justify-content: space-between
             .title
                 margin-bottom: 0.4em
-                font-size: 1.2em
+                font-size: 1.6em
+                font-weight: 500
             .buttons
                 background-color: #fff
                 display: flex
@@ -105,13 +108,32 @@
                     display: flex
                     align-items: center
                     justify-content: center
-                    padding: 0.6em
+                    padding: 1em
                     border-radius: 50%
                     background-color: $grey1
-                    margin-right: 0.6em
+                    margin-right: 1em
+                    transition: all 0.4s ease
+                    &:hover
+                        transform: scale(1.1)
+                        cursor: pointer
                     .MuiSvgIcon-root
+                        font-size: 2em
                         color: #9100FF
-
+        .download-content
+            display: flex
+            align-items: center
+            padding: 0.5em 1em
+            background-color: $grey1
+            color: #9100FF
+            border-radius: 20em
+            font-size: 1.6em
+            transition: all 0.4s ease
+            &:hover
+                transform: scale(1.05)
+                cursor: pointer
+            .MuiSvgIcon-root
+                font-size: 2em
+                color: #9100FF
 //Heart animation
 
 @keyframes heartBeat

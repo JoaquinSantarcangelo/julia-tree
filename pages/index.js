@@ -28,6 +28,15 @@ export default function Index() {
     setMenuOpen(!menuOpen);
   };
 
+  // Hooks for Scrolling Animations
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  //Fake Loading
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
@@ -39,7 +48,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AnimatePresence>{loading && <Loading />}</AnimatePresence>
-      <Navbar menuOpen={menuOpen} handleMenu={handleMenu} />
+      <Navbar offsetY={offsetY} menuOpen={menuOpen} handleMenu={handleMenu} />
       <Menu menuOpen={menuOpen} handleMenu={handleMenu} />
       <div className="social-icons">
         <div className="icon">
