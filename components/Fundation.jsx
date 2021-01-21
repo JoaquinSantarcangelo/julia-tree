@@ -17,9 +17,12 @@ const Fundation = () => {
                 </div>
                 <div className="item">
                     <img src="/assets/img/48.png" alt=""/>
-                    <h3 className="item-title">Hopes Initiatives International</h3>
+                    <h3 className="item-title">Orgiis Ghana</h3>
                     <p className="item-paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quod nihil officia asperiores sequi repellendus voluptatem quae vero natus porro, aliquid, hic commodi consequuntur unde assumenda officiis ex, velit perspiciatis animi voluptate modi distinctio praesentium recusandae est. Velit vel nesciunt eveniet, cum iste labore, autem perspiciatis quod voluptatem temporibus modi?</p>
                 </div>
+            </div>
+            <div className="footer">
+                <img src="/assets/img/cloudsgroup.png" alt=""/>
             </div>
         </div>
     );
