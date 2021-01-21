@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import Hero from "../Hero";
 import CTA from "../CTA";
 import FAQ from "../FAQ";
-import Foundation from '../Fundation';
+import Fundation from '../Fundation';
 
 const Home = ({ loading, setVideoOpen }) => {
   return (
@@ -12,7 +12,7 @@ const Home = ({ loading, setVideoOpen }) => {
       <Hero setVideoOpen={setVideoOpen} loading={loading} />
       <CTA />
       <FAQ />
-      <Foundation />
+      <Fundation />
     </div>
   );
 };
