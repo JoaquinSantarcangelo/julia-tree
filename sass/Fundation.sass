@@ -2,7 +2,7 @@
 
 .impact
     min-height: 100vh
-    padding-top: 15vh 
+    padding-top: 10vh 
     background-image: url("/assets/img/fundaciones.jpg")
     background-size: cover
     background-position: bottom
@@ -28,7 +28,7 @@
                 margin-bottom:20px
             .item-paragraph
                 text-align: center
-                margin-bottom: 30px
+                margin-bottom: 50px
             img
                 display: block
                 margin-left: auto
@@ -37,9 +37,17 @@
                 height: 124px
 
     .footer
+        width: 100vw
+        overflow-y: hidden
         img
             position: absolute
-            bottom: -60vh
-            left: -18vw
-            width: 140vw
-            height: 100vh
+            bottom: 55vh
+            left: -8vw
+            width: 120vw
+            height: 80vh
+            @media screen and ( max-width: 768px )
+                height: 40vh
+                bottom: 75vh
+            @media screen and ( max-width: 360px )
+                height: 25vh
+                bottom: 87vh
