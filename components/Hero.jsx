@@ -33,7 +33,7 @@ const Hero = ({ loading, setVideoOpen }) => {
     <motion.div
       variants={variants}
       initial="hidden"
-      animate={loading ? "hidden" : "visible"}
+      animate="visible"
       transition={{
         ease: "easeInOut",
         when: "beforeChildren",
