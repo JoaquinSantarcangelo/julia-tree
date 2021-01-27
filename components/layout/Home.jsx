@@ -5,6 +5,7 @@ import Hero from "../Hero";
 import CTA from "../CTA";
 import FAQ from "../FAQ";
 import Foundation from "../Foundation";
+import Press from "../Press";
 import Footer from "../Footer";
 
 const Home = ({ loading, setVideoOpen }) => {
@@ -14,6 +15,7 @@ const Home = ({ loading, setVideoOpen }) => {
       <CTA />
       <FAQ />
       <Foundation />
+      {/* <Press/> */}
       <Footer/>
     </div>
   );

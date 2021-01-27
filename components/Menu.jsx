@@ -22,14 +22,6 @@ const menuItems = [
     text: "Fundation",
     href: "/",
   },
-  {
-    text: "Press",
-    href: "/",
-  },
-  {
-    text: "Members",
-    href: "/",
-  },
 ];
 
 // Framer Motion Variants
@@ -115,26 +107,6 @@ const Menu = ({ menuOpen, handleMenu }) => {
           onClick={() => handleClick()}
         >
           {menuItems[4].text}
-        </motion.div>
-        <motion.div
-          className="menu-item"
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={variantsMenuItems}
-          onClick={() => handleClick()}
-        >
-          {menuItems[5].text}
-        </motion.div>
-        <motion.div
-          className="menu-item"
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={variantsMenuItems}
-          onClick={() => handleClick()}
-        >
-          {menuItems[6].text}
         </motion.div>
       </div>
     </motion.div>

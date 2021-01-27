@@ -3,15 +3,17 @@
 .cta
     height: 100vh
     background-color: #fff
-
+    
     .background
         height: 85%
         background-image: url("/assets/img/donate.jpg")
         background-size: cover
         background-position: center
+        background-attachment: fixed
         display: flex
         justify-content: center
         position: relative
+        overflow: hidden
         &::before
             content: ""
             position: absolute
@@ -33,6 +35,7 @@
                 font-size: 1.4em
                 color: $cream
     .wrapper
+        
         display: flex
         align-items: center
         justify-content: space-between
@@ -40,7 +43,7 @@
         height: 15%
         padding: 0 10em
         width: 100%
-        z-index: 9999
+        z-index: 9998
         .heart
             z-index: 1000
             position: absolute
@@ -85,8 +88,8 @@
                     cursor: pointer
                     animation: heartBeat 2s infinite
                     img
-                        -webkit-filter: drop-shadow(0px 0px 140px  #ec0d46)
-                        filter: drop-shadow(0px 0px 140px  #ec0d46)
+                        -webkit-filter: drop-shadow(0px 0px 140px #ec0d46)
+                        filter: drop-shadow(0px 0px 140px #ec0d46)
         .hand
             position: absolute
             left: 0
@@ -142,6 +145,17 @@
             .MuiSvgIcon-root
                 font-size: 2em
                 color: #9100FF
+
+    //Media queries
+    @media screen and ( max-width: 1300px )
+        .wrapper
+            padding: 2em 4em
+            font-size: 0.9em
+    @media screen and ( max-width: 1000px )
+        .wrapper
+            padding: 2em
+            font-size: 0.8em
+
 //Heart animation
 
 @keyframes heartBeat

@@ -7,7 +7,7 @@ const Hero = ({ loading, setVideoOpen }) => {
     document.querySelector("#logo").classList.remove("hide");
   }, []);
 
-  //Framer Motion Avariants
+  //Framer Motion Variants
   const controls = useAnimation();
 
   const variants = {

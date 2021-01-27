@@ -48,7 +48,13 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AnimatePresence>{loading && <Loading />}</AnimatePresence>
-      <Navbar offsetY={offsetY} menuOpen={menuOpen} handleMenu={handleMenu} />
+      <Navbar
+        offsetY={offsetY}
+        videoOpen={videoOpen}
+        menuOpen={menuOpen}
+        handleMenu={handleMenu}
+        setVideoOpen={setVideoOpen}
+      />
       <Menu menuOpen={menuOpen} handleMenu={handleMenu} />
       <div className="social-icons">
         <div className="icon">

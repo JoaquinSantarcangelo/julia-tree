@@ -2,10 +2,12 @@
 
 .faq
     min-height: 100vh
-    padding-top: 10vh 
+    padding-top: 10vh
     background-image: url("/assets/img/faqs3.png")
     background-size: cover
     background-position: bottom
+    position: relative
+    z-index: 10
 
     .title
         color: $cream
@@ -17,16 +19,19 @@
         .answer
             font-weight: lighter
             padding-left: 5vw
-    
+
     .wrapper
+        padding: 2em 12em
         display: table
         margin: auto
+
     .faqs-wrapper
         width: 100%
         display: flex
         justify-content: space-between
         flex-wrap: wrap
-        .item    
+
+        .item
             width: 50%
             color: $cream
             margin-bottom: 50px
@@ -50,27 +55,20 @@
         text-align: center
         color: $cream
         display: flex
+        align-items: center
         justify-content: center
         padding-bottom: 25px
-        
-        button
-            background-color: transparent
-            border: none
-            width: 25px
-            height: 25px
-            
-        .arrow 
-            border: solid $cream
-            width: 15px
-            height: 15px
-            border-width: 0 3px 3px 0
-            display: inline-block
-            padding: 3px
+
+        .arrow
+            transition: all 0.2s ease-out
+            margin: 0.5em
+            display: flex
+            align-items: center
+            justify-content: center
             &:hover
-                width: 25px
-                height: 25px
-                transition: all 0.2s ease-out
-            
+                transform: scale(1.2)
+                cursor: pointer
+
         .right
             transform: rotate(-45deg)
             -webkit-transform: rotate(-45deg)
