@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Vimeo from "@u-wave/react-vimeo";
 import { motion } from "framer-motion";
 
+import CloseIcon from "@material-ui/icons/Close";
+
 const index = ({ setVideoOpen }) => {
   const [videoPaused, setVideoPaused] = useState(false);
 
@@ -20,6 +22,14 @@ const index = ({ setVideoOpen }) => {
       exit={{ opacity: 0 }}
       className="video"
     >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="close-icon"
+      >
+        <CloseIcon />
+      </motion.div>
       {videoPaused && (
         <motion.div
           initial={{ opacity: 0 }}
