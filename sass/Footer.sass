@@ -1,7 +1,7 @@
 @import index
 
 .footer
-    height: 30vh
+    min-height: 30vh
     display: flex
     align-items: center
     justify-content: center
@@ -35,3 +35,10 @@
     @media screen and ( max-width: 1300px )
         .wrapper
             padding: 2em 4em
+
+    @media screen and ( max-width: 768px )
+        .wrapper
+            display: flex
+            flex-wrap: wrap
+            .logo, .title
+                border-bottom: 1px solid $cream

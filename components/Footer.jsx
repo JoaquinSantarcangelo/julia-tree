@@ -15,14 +15,14 @@ const Footer = () => {
         </div>
         <div className="divider"></div>
         <div className="video-by">
-          <div className="line">Video by:</div>
+          <div className="line title">Video by:</div>
           <div className="line">Alynor Diaz</div>
           <div className="line">Marcel Franco</div>
           <div className="line">William Verga</div>
           <div className="line">Agustin De Martino</div>
         </div>
         <div className="website-by">
-          <div className="line">Website by Salvé:</div>
+          <div className="line title">Website by Salvé:</div>
           <div className="line">Kyle Byrne</div>
           <div className="line">Juan Cadile</div>
           <div className="line">Guido Ponce</div>
