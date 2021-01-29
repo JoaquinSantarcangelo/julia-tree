@@ -38,6 +38,7 @@ export default function Index() {
 
   //Fake Loading
   useEffect(() => {
+    scrollTo(0, 0);
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
