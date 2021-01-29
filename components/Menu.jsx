@@ -42,7 +42,7 @@ const menuVariants = {
   transition: { ease: "easeInOut", when: "beforeChildren", duration: 0.6 },
 };
 
-const Menu = ({ menuOpen, handleMenu }) => {
+const Menu = ({ menuOpen, handleMenu, setVideoOpen }) => {
   const handleClick = () => {
     handleMenu(false);
     scrollTo(0, 0);
@@ -74,7 +74,11 @@ const Menu = ({ menuOpen, handleMenu }) => {
           initial="hidden"
           animate="visible"
           variants={variantsMenuItems}
-          onClick={() => handleClick()}
+          onClick={() => {
+            handleMenu(false);
+            scrollTo(0, 0);
+            setVideoOpen(true);
+          }}
         >
           {menuItems[1].text}
         </motion.div>

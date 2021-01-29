@@ -55,7 +55,11 @@ export default function Index() {
         handleMenu={handleMenu}
         setVideoOpen={setVideoOpen}
       />
-      <Menu menuOpen={menuOpen} handleMenu={handleMenu} />
+      <Menu
+        setVideoOpen={setVideoOpen}
+        menuOpen={menuOpen}
+        handleMenu={handleMenu}
+      />
       <div className="social-icons">
         <div className="icon">
           <FacebookIcon />
