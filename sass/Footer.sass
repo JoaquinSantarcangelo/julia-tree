@@ -6,7 +6,7 @@
     align-items: center
     justify-content: center
     z-index: 160000
-    
+
     color: $cream
     background-color: $green
     .wrapper
@@ -17,31 +17,63 @@
         display: flex
         align-items: top
         justify-content: space-between
-        .logo
-            img
-                width: 10em
-                filter: grayscale(1) brightness(5)
-        .links
-            .link
-                margin-bottom: 0.33em
+        .main-footer
+            width: 45%
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            .logo
+                width: 30%
+                max-width: 10em
+                min-width: 6em
+                img
+                    width: 100%
+                    filter: grayscale(1) brightness(5)
+            .links
+                .link
+                    margin-bottom: 0.33em
         .divider
             width: 0.2em
             height: 6.5em
             border-radius: 5em
             background-color: $cream
-        .video-by
-        .website-by
-    
+        .made-by-footer
+            width: 45%
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            .video-by
+            .website-by
+
+        @media screen and  (max-width: 800px)
+            .made-by-footer
+                display: flex
+                justify-content: space-around
+                width: 100%
+            .main-footer
+                display: flex
+                justify-content: space-around
+                width: 90%
+            .divider
+                width: 6.5em
+                height: 0.2em
+                border-radius: 5em
+                margin: 2em auto
+
     //Media queries
     @media screen and ( max-width: 1300px )
         .wrapper
             padding: 2em 3em
 
-    @media screen and ( max-width: 768px )
+    @media screen and (max-width: 900px)
+        .wrapper
+            padding: 2em 1em
+
+    @media screen and ( max-width: 800px )
         .wrapper
             display: flex
             flex-wrap: wrap
             .logo, .title
                 border-bottom: 1px solid $cream
 
-    
+                flex-direction: column
