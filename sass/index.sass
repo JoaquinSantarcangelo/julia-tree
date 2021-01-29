@@ -8,13 +8,18 @@ $grey1: #E8E8E8
 $green: #465D07
 
 .app
-
+    font-size: 1em
     background-color: $color1
     width: 100%
     overflow: hidden
     position: relative
     background-color: #181a29
 
+    @media screen and ( max-width: 1300px )
+        font-size: 0.9em
+    @media screen and ( max-width: 1000px )
+        font-size: 0.8em
+   
 .social-icons
     position: fixed
     z-index: 150000
@@ -53,3 +58,5 @@ $green: #465D07
 
 ::-webkit-scrollbar-thumb
     background: $color2
+
+    
