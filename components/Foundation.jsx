@@ -16,7 +16,7 @@ const Fundation = () => {
           </p>
         </div>
         <div className="item">
-          <img src="/assets/img/48.png" alt="" />
+          <img src="/assets/img/logo-tututeach.svg" alt="" />
           <h3 className="item-title">Tutu Teach Fundation</h3>
           <p className="item-paragraph">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
@@ -27,7 +27,7 @@ const Fundation = () => {
           </p>
         </div>
         <div className="item">
-          <img src="/assets/img/48.png" alt="" />
+          <img src="/assets/img/logo-orgiisghana.png" alt="" />
           <h3 className="item-title">Orgiis Ghana</h3>
           <p className="item-paragraph">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quod
