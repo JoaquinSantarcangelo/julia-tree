@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Video from "../components/Video";
 import Home from "../components/layout/Home";
 import Loading from "../components/Loading";
+import DonateForm from "../components/DonateForm";
 
 //Material Icons
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -17,6 +18,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [donateOpen, setDonateOpen] = useState(true);
   const [loading, setLoading] = useState(true);
 
   // Menu Hooks & Config
@@ -72,6 +74,9 @@ export default function Index() {
           <TwitterIcon />
         </div>
       </div>
+      <AnimatePresence exitBeforeEnter>
+        {donateOpen && <DonateForm />}
+      </AnimatePresence>
       <AnimatePresence exitBeforeEnter initial={false}>
         {videoOpen && <Video setVideoOpen={setVideoOpen} />}
       </AnimatePresence>

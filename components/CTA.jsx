@@ -38,6 +38,9 @@ const CTA = () => {
             <div className="button">
               <WhatsAppIcon />
             </div>
+            <div className="button">
+              <GetAppIcon />
+            </div>
           </div>
         </div>
         <div className="download-content">

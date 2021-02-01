@@ -76,6 +76,7 @@
                     position: absolute
             #layer0
                 z-index: 101
+                filter: blur(2px)
                 .img
                     height: 100%
                     width: 100%
@@ -112,8 +113,13 @@
                     margin-top: -20em
                     height: auto
                     width: 30vw
+                    &:nth-child(2)
+                        margin-top: -30em
                     &:nth-child(3)
                         width: 40vw
+                        
+                    &:nth-child(4)
+                        
 
     //Media queries
     @media screen and ( max-width: 1300px )
@@ -137,3 +143,19 @@
                 font-size: 1.2em
 
     @media screen and ( max-width: 600px )
+        .background
+            .layers
+                #layer1
+                    img
+                        left: -3em
+                        width: 50vw
+                #layer2
+                    img
+                        right: -10em
+                        width: 90vw
+                #layer3
+                    img
+                        &:nth-child(1)
+                            transform: translateY(100)
+                        &:nth-child(3)
+                            width: 60vw

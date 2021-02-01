@@ -1,11 +1,11 @@
 @import index
 
 .cta
-    height: 100vh
+    min-height: 100vh
     background-color: #fff
     
     .background
-        height: 85%
+        height: 85vh
         background-image: url("/assets/img/donate.jpg")
         background-size: cover
         background-position: center
@@ -20,6 +20,7 @@
             width: 100%
             height: 100%
             background-color: rgba(0,0,0,0.2)
+            backdrop-filter: blur(1px)
         .text
             margin-top: 6em
             .title
@@ -35,19 +36,20 @@
                 font-size: 1.4em
                 color: $cream
     .wrapper
-        
+        height: 15vh
+        min-height: 15vh
+        background-color: #fff
         display: flex
         align-items: center
         justify-content: space-between
         position: relative
-        height: 15%
         padding: 0 10em
         width: 100%
         z-index: 9998
         .heart
             z-index: 1000
             position: absolute
-            bottom: 25em
+            bottom: 60vh
             left: 0
             width: 100%
             margin: 0 auto
@@ -59,6 +61,7 @@
                 align-items: center
                 justify-content: center
                 transition: all 0.4s ease
+                background-color: transparent
                 .text
                     margin-top: -0.5em
                     position: absolute
@@ -67,14 +70,14 @@
                     align-items: center
                     justify-content: center
                     flex-direction: column
-                    font-size: 2.6em
+                    font-size: 2.6vw
                     font-weight: 600
                     color: $cream
                     .line1
                     .line2
                 img
                     transition: all 0.4s ease
-                    width: 25em
+                    width: 25vw
                     &::after
                         content: ""
                         width: 100%
@@ -101,7 +104,7 @@
             justify-content: center
             pointer-events: none
             img
-                width: 30em
+                width: 30vw
         .share-now
             width: fit-content
             display: flex
@@ -124,6 +127,11 @@
                     background-color: $grey1
                     margin-right: 1em
                     transition: all 0.4s ease
+                    position: relative
+                    &:last-child
+                        display: none
+                        margin-right: 0
+
                     &:hover
                         transform: scale(1.1)
                         cursor: pointer
@@ -150,18 +158,38 @@
     @media screen and ( max-width: 1300px )
         .wrapper
             padding: 2em 4em
-            
+
     @media screen and ( max-width: 1000px )
         .wrapper
             padding: 2em
-    @media screen and ( max-width: 900px )
-        .wrapper
-            height: 9em
-            .hand
-                bottom: 9em
             .heart
-                bottom: 35em
-    
+                .wrapper
+
+                    img
+                        width: 20em
+    @media screen and ( max-width: 800px )
+        .wrapper
+            align-items: center
+            justify-content: center
+
+            .hand
+                bottom: 15vh
+                img
+                    width: 40vw
+                    min-width: 20em
+            .heart
+                bottom: 60vh
+                .wrapper
+                    .text
+                        font-size: 2em
+            .share-now
+                .buttons
+                    .button
+                        &:last-child
+                            display: flex
+            .download-content
+                display: none
+
 //Heart animation
 
 @keyframes heartBeat
