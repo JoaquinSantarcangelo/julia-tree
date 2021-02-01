@@ -6,12 +6,12 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import GetAppIcon from "@material-ui/icons/GetApp";
 
-const CTA = () => {
+const CTA = ({ setDonateOpen }) => {
   return (
     <div className="cta">
       <div className="background"></div>
       <div className="wrapper">
-        <div className="heart">
+        <div onClick={() => setDonateOpen(true)} className="heart">
           <div className="wrapper">
             <div className="text">
               <div className="line1">Plan a</div>

@@ -18,7 +18,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
-  const [donateOpen, setDonateOpen] = useState(true);
+  const [donateOpen, setDonateOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // Menu Hooks & Config
@@ -50,6 +50,9 @@ export default function Index() {
         <title>Julia Tree</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <AnimatePresence exitBeforeEnter>
+        {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
+      </AnimatePresence>
       <AnimatePresence>{loading && <Loading />}</AnimatePresence>
       <Navbar
         offsetY={offsetY}
@@ -74,13 +77,15 @@ export default function Index() {
           <TwitterIcon />
         </div>
       </div>
-      <AnimatePresence exitBeforeEnter>
-        {donateOpen && <DonateForm />}
-      </AnimatePresence>
+
       <AnimatePresence exitBeforeEnter initial={false}>
         {videoOpen && <Video setVideoOpen={setVideoOpen} />}
       </AnimatePresence>
-      <Home setVideoOpen={setVideoOpen} loading={loading} />
+      <Home
+        setDonateOpen={setDonateOpen}
+        setVideoOpen={setVideoOpen}
+        loading={loading}
+      />
     </div>
   );
 }

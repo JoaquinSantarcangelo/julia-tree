@@ -8,15 +8,15 @@ import Foundation from "../Foundation";
 import Press from "../Press";
 import Footer from "../Footer";
 
-const Home = ({ loading, setVideoOpen }) => {
+const Home = ({ loading, setVideoOpen, setDonateOpen }) => {
   return (
     <div className="home">
       <Hero setVideoOpen={setVideoOpen} loading={loading} />
-      <CTA />
+      <CTA setDonateOpen={setDonateOpen} />
       <FAQ />
       <Foundation />
       {/* <Press/> */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
