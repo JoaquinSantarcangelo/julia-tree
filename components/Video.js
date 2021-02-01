@@ -47,6 +47,7 @@ const index = ({ setVideoOpen }) => {
           onEnd={() => setVideoOpen(false)}
           responsive
           background
+          fullscreen
           autoplay
         />
       </motion.div>

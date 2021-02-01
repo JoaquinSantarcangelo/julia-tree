@@ -13,6 +13,20 @@ const DonateForm = ({ setDonateOpen }) => {
   const [to, setTo] = useState("");
   const [message, setMessage] = useState("");
 
+  //Form Validation
+  const validation = () => {
+    const validated = true;
+    //Code
+    return validated;
+  };
+
+  const handleSubmit = () => {
+    if (validation) {
+      alert(`${from},${to},${message}`);
+      setDonateOpen(false);
+    }
+  };
+
   return (
     <motion.div
       variants={variants}
@@ -50,7 +64,9 @@ const DonateForm = ({ setDonateOpen }) => {
             name="message"
             id="message"
           ></textarea>
-          <div className="button">Sending</div>
+          <div onClick={() => handleSubmit()} className="button">
+            Sending
+          </div>
         </div>
       </div>
     </motion.div>
