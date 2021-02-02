@@ -6,6 +6,8 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import GetAppIcon from "@material-ui/icons/GetApp";
 
+import {FacebookShareButton, TwitterShareButton, InstagramShareButton, WhatsappShareButton} from 'react-share';
+
 const CTA = ({ setDonateOpen }) => {
   return (
     <div className="cta">
@@ -27,25 +29,41 @@ const CTA = ({ setDonateOpen }) => {
           <div className="title">Share now!</div>
           <div className="buttons">
             <div className="button">
-              <FacebookIcon />
+              <FacebookShareButton
+                url="https://julia-tree.vercel.app/"
+                quote={"Texto para que se vea con la publicación"}
+              >
+                <FacebookIcon />
+              </FacebookShareButton>
             </div>
             <div className="button">
               <InstagramIcon />
             </div>
             <div className="button">
-              <TwitterIcon />
+              <TwitterShareButton
+                url="https://julia-tree.vercel.app/"
+                title={"Texto para que se vea con la publicación"}
+              >
+                <TwitterIcon />
+              </TwitterShareButton>
             </div>
             <div className="button">
-              <WhatsAppIcon />
+              <WhatsappShareButton
+                url="https://julia-tree.vercel.app/"
+                title={"Texto para que se vea con la publicación:"}
+                separator=" "
+              >
+                <WhatsAppIcon />
+              </WhatsappShareButton>
             </div>
-            <div className="button">
+            <a href="#" download><div className="button">
               <GetAppIcon />
-            </div>
+            </div></a>
           </div>
         </div>
-        <div className="download-content">
+        <a href="#" download><div className="download-content">
           <GetAppIcon /> Download Content
-        </div>
+        </div></a>
       </div>
     </div>
   );
