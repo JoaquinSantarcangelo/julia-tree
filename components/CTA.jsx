@@ -36,9 +36,7 @@ const CTA = ({ setDonateOpen }) => {
                 <FacebookIcon />
               </FacebookShareButton>
             </div>
-            <div className="button">
-              <InstagramIcon />
-            </div>
+            
             <div className="button">
               <TwitterShareButton
                 url="https://julia-tree.vercel.app/"
@@ -70,3 +68,9 @@ const CTA = ({ setDonateOpen }) => {
 };
 
 export default CTA;
+
+/*
+<div className="button">
+              <InstagramIcon />
+            </div>
+*/
