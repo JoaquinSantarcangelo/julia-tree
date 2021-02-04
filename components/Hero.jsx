@@ -133,7 +133,7 @@ const Hero = ({ loading, setVideoOpen }) => {
                 }}
                 exit={{ filter: "brightness(100%)", y: 0 }}
                 transition={{ repeat: Infinity, duration: 3.2 }}
-                src="assets/img/hero/Layer3_1.png"
+                src="assets/img/hero/Fruto2.png"
                 alt=""
               />
               <motion.img
@@ -147,7 +147,7 @@ const Hero = ({ loading, setVideoOpen }) => {
                 }}
                 exit={{ filter: "brightness(100%)", y: 0 }}
                 transition={{ repeat: Infinity, duration: 2.5 }}
-                src="assets/img/hero/Layer3_1.png"
+                src="assets/img/hero/Fruto1.png"
                 alt=""
               />
               <motion.img
@@ -161,7 +161,7 @@ const Hero = ({ loading, setVideoOpen }) => {
                 }}
                 exit={{ filter: "brightness(100%)", y: 0 }}
                 transition={{ repeat: Infinity, duration: 3 }}
-                src="assets/img/hero/Layer3_1.png"
+                src="assets/img/hero/Fruto3.png"
                 alt=""
               />
               <motion.img
