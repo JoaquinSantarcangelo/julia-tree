@@ -15,7 +15,7 @@ const Home = ({ loading, setVideoOpen, setDonateOpen }) => {
       <CTA setDonateOpen={setDonateOpen} />
       <FAQ />
       <Foundation />
-      {/* <Press/> */}
+      <Press />
       <Footer />
     </div>
   );

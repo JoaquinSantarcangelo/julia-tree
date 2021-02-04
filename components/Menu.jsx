@@ -15,7 +15,7 @@ const menuItems = [
     href: "/",
   },
   {
-    text: "Questions & Answers",
+    text: "FAQ",
     href: "/",
   },
   {

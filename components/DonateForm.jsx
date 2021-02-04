@@ -43,6 +43,12 @@ const DonateForm = ({ setDonateOpen }) => {
           Julia Trees invite us to write our own story of love
         </div>
         <div className="form">
+          <div className="payment">
+            <input type="number" name="number" id="number" />
+            <div className="sub">
+              <input type="checkbox" name="" id="" />
+            </div>
+          </div>
           <input
             value={from}
             onChange={(e) => setFrom(e.target.value)}

@@ -1,0 +1,50 @@
+@import "index"
+
+.press
+    min-height: 150vh
+    position: relative
+    background-color: $lightblue
+    .clouds
+        display: flex
+        width: 100%
+        align-items: center
+        justify-content: center
+        position: absolute
+        top: 7em
+        .cloud
+            position: absolute
+            img
+                width: 50vw
+            &:first-child
+
+                left: -12em
+                transform: rotateZ(10deg)
+
+            &:last-child
+                right: -12em
+                transform: rotateZ(-15deg)
+
+    //Media Queries
+    @media screen and ( max-width: 1000px )
+        .clouds
+            .cloud
+                img
+                    width: 60vw
+
+    @media screen and ( max-width: 800px )
+        .clouds
+            top: 4em
+
+    @media screen and ( max-width: 500px )
+        .clouds
+            .cloud
+                img
+                    width: 60vw
+                &:first-child
+                    left: -6em
+                &:last-child
+                    right: -6em
+
+    @media screen and ( max-width: 500px )
+        .clouds
+            top: 2em
