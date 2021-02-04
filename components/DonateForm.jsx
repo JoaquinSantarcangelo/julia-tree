@@ -49,20 +49,21 @@ const DonateForm = ({ setDonateOpen }) => {
               <input type="checkbox" name="" id="" />
             </div>
           </div>
-          <input
-            value={from}
-            onChange={(e) => setFrom(e.target.value)}
-            id="from"
-            placeholder="From:"
-            type="text"
+          <div className="for-to"><input
+              value={from}
+              onChange={(e) => setFrom(e.target.value)}
+              id="from"
+              placeholder="From"
+              type="text"
           />
-          <input
-            value={to}
-            onChange={(e) => setTo(e.target.value)}
-            id="to"
-            placeholder="To:"
-            type="text"
-          />
+            <input
+                value={to}
+                onChange={(e) => setTo(e.target.value)}
+                id="to"
+                placeholder="To"
+                type="text"
+            />
+          </div>
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -71,7 +72,7 @@ const DonateForm = ({ setDonateOpen }) => {
             id="message"
           ></textarea>
           <div onClick={() => handleSubmit()} className="button">
-            Sending
+            Donate
           </div>
         </div>
       </div>
