@@ -38,7 +38,7 @@
                 font-size: 1.4em
                 color: $cream
     .wrapper
-        height: 15vh
+        height: 20vh
         min-height: 15vh
         background-color: #fff
         display: flex
@@ -51,7 +51,7 @@
         .heart
             z-index: 1000
             position: absolute
-            bottom: 60vh
+            bottom: 50vh
             left: 0
             width: 100%
             margin: 0 auto
@@ -76,7 +76,9 @@
                     font-weight: 600
                     color: $cream
                     .line1
+                        font-family: 'merriweather'
                     .line2
+                        font-family: 'merriweather'
                 img
                     transition: all 0.4s ease
                     width: 25vw
@@ -106,7 +108,7 @@
             justify-content: center
             pointer-events: none
             img
-                width: 30vw
+                width: 24vw
         .share-now
             width: fit-content
             display: flex
@@ -165,18 +167,23 @@
     @media screen and ( max-width: 1000px )
         .wrapper
             padding: 2em
+            .text
+                .line1
+                    font-size: 5vw
+                .line2
+                    font-size: 5vw
             .heart
                 .wrapper
 
                     img
-                        width: 20em
+                        width: 50vw
     @media screen and ( max-width: 800px )
         .wrapper
             align-items: center
             justify-content: center
 
             .hand
-                bottom: 15vh
+                bottom: 20vh
                 img
                     width: 40vw
                     min-width: 20em

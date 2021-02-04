@@ -41,11 +41,14 @@ export default function Index() {
   //Fake Loading
   useEffect(() => {
     scrollTo(0, 0);
-    setTimeout(() => setLoading(false), 1000);
   }, []);
 
+  const onPageLoad = () => {
+    setLoading(false);
+  }
+
   return (
-    <div className="app">
+    <div className="app" onLoad={onPageLoad}>
       <Head>
         <title>Julia Tree</title>
         <link rel="icon" href="/favicon.ico" />
