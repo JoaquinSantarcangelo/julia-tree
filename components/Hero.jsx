@@ -80,13 +80,13 @@ const Hero = ({ loading, setVideoOpen }) => {
             <div id="layer1" className="layer">
               <motion.img
                 animate={{
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(120%)",
-                    "brightness(100%)",
-                  ],
+                  filter: ["brightness(100%)", "brightness(120%)"],
                 }}
-                transition={{ repeat: Infinity, duration: 3 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 3,
+                }}
                 exit={{ filter: "brightness(100%)" }}
                 src="assets/img/hero/Layer1.png"
                 alt=""
@@ -95,14 +95,13 @@ const Hero = ({ loading, setVideoOpen }) => {
             <div id="layer2" className="layer">
               <motion.img
                 animate={{
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(130%)",
-                    "brightness(100%)",
-                  ],
+                  filter: ["brightness(100%)", "brightness(130%)"],
                 }}
-                exit={{ filter: "brightness(100%)" }}
-                transition={{ repeat: Infinity, duration: 3 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 3,
+                }}
                 src="assets/img/hero/Layer2.png"
                 alt=""
               />
@@ -110,72 +109,41 @@ const Hero = ({ loading, setVideoOpen }) => {
             <motion.div id="layer3" className="layer">
               <motion.img
                 animate={{
-                  y: [0, 20, 0],
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(170%)",
-                    "brightness(100%)",
-                  ],
+                  y: [0, 20],
+                  filter: ["brightness(100%)", "brightness(170%)"],
                 }}
-                exit={{ filter: "brightness(100%)", y: 0 }}
-                transition={{ repeat: Infinity, duration: 3 }}
-                src="assets/img/hero/Layer3_1.png"
-                alt=""
-              />
-              <motion.img
-                animate={{
-                  y: [0, 20, 0],
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(170%)",
-                    "brightness(100%)",
-                  ],
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 3.2,
                 }}
-                exit={{ filter: "brightness(100%)", y: 0 }}
-                transition={{ repeat: Infinity, duration: 3.2 }}
                 src="assets/img/hero/Fruto2.png"
                 alt=""
               />
               <motion.img
                 animate={{
-                  y: [0, 20, 0],
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(170%)",
-                    "brightness(100%)",
-                  ],
+                  y: [0, 20],
+                  filter: ["brightness(100%)", "brightness(170%)"],
                 }}
-                exit={{ filter: "brightness(100%)", y: 0 }}
-                transition={{ repeat: Infinity, duration: 2.5 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 2.5,
+                }}
                 src="assets/img/hero/Fruto1.png"
                 alt=""
               />
               <motion.img
                 animate={{
-                  y: [0, 20, 0],
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(170%)",
-                    "brightness(100%)",
-                  ],
+                  y: [0, 20],
+                  filter: ["brightness(100%)", "brightness(170%)"],
                 }}
-                exit={{ filter: "brightness(100%)", y: 0 }}
-                transition={{ repeat: Infinity, duration: 3 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 3,
+                }}
                 src="assets/img/hero/Fruto3.png"
-                alt=""
-              />
-              <motion.img
-                animate={{
-                  y: [0, 20, 0],
-                  filter: [
-                    "brightness(100%)",
-                    "brightness(170%)",
-                    "brightness(100%)",
-                  ],
-                }}
-                exit={{ filter: "brightness(100%)", y: 0 }}
-                transition={{ repeat: Infinity, duration: 3.2 }}
-                src="assets/img/hero/Layer3_1.png"
                 alt=""
               />
             </motion.div>
