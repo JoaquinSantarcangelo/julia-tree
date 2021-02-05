@@ -11,19 +11,22 @@
         align-items: center
         justify-content: center
         position: absolute
-        top: 7em
+        top: 4em
         .cloud
             position: absolute
+
             img
                 width: 50vw
-            &:first-child
-
+            &:nth-child(1)
                 left: -12em
                 transform: rotateZ(10deg)
-
-            &:last-child
+                animation: floating 17s both infinite
+            &:nth-child(2)
+                animation: floating 12s both infinite
+            &:nth-child(3)
                 right: -12em
                 transform: rotateZ(-15deg)
+                animation: floating 22s both infinite
 
     //Media Queries
     @media screen and ( max-width: 1000px )
@@ -49,3 +52,14 @@
     @media screen and ( max-width: 500px )
         .clouds
             top: 2em
+
+@keyframes floating
+    0%
+        transform: translateY(0)
+        filter: brightness(1.4)
+    50%
+        transform: translateY(50px)
+        filter: brightness(1)
+    100%
+        transform: translateY(0)
+        filter: brightness(1.4)
