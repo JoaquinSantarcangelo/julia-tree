@@ -50,7 +50,7 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
           ease: "easeInOut",
         }}
         initial="hidden"
-        animate={loading ? "hidden" : "visible"}
+        animate="visible"
         variants={variants2}
         className="wrapper"
       >
