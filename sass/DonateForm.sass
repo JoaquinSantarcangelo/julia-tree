@@ -24,7 +24,7 @@
         align-items: center
         justify-content: center
         height: 90%
-        width: 90%
+        width: 95%
         max-width: 30em
         max-height: 40em
         padding: 3em 2em 3em 2em
@@ -53,7 +53,7 @@
                 width: 100%
                 color: $brown
                 font-weight: 600
-                font-size: 1.4em
+                font-size: 1.2em
                 input
                     display: flex
                     align-items: center
@@ -132,6 +132,8 @@
                             margin-right: 0.8em
                         img
                             height: 2em
+                            @media screen and ( max-width: 400px )
+                                height: 1.6em
                         &:hover
                             transform: scale(1.05)
                             cursor: pointer
