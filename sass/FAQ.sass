@@ -1,7 +1,7 @@
 @import "index"
 
 .faq
-    min-height: 170vh
+    min-height: 150vh
     padding-top: 10vh
     background-image: url("/assets/img/faqs3.png")
     background-size: cover
@@ -29,13 +29,27 @@
         display: flex
         justify-content: space-between
         flex-wrap: wrap
-
+        padding: 2em 4em
+        @media screen and ( max-width: 800px )
+            padding: 1.5em
         .item
-            width: 50%
-            color: $cream
-            margin-bottom: 50px
-            @media screen and ( max-width: 768px )
+            background-color: $cream
+            border-radius: 6em
+            width: 48%
+            color: $color1
+            margin-bottom: 1em
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 1em 1em
+            font-size: 1.6em
+            transition: all 0.4s ease
+            text-align: center
+            @media screen and ( max-width: 800px )
                 width: 100%
+                font-size: 1.4em
+            @media screen and ( max-width: 500px )
+                font-size: 1.2em
             .question, .answer
                 width: 25vw
                 margin: auto
@@ -44,34 +58,11 @@
                 padding-bottom: 1vh
                 @media screen and ( max-width: 768px )
                     width: 90vw
-            .question
+            .questions
                 font-weight: bold
                 font-size: 20px
-            .answer
+            .answers
                 font-weight: lighter
-
-    .indicator
-        width: 100%
-        text-align: center
-        color: $cream
-        display: flex
-        align-items: center
-        justify-content: center
-        padding-bottom: 25px
-        transform: scale(1.5)
-        .arrow
-            transition: all 0.2s ease-out
-            margin: 0.5em
-            display: flex
-            align-items: center
-            justify-content: center
             &:hover
-                transform: scale(1.2)
+                transform: scale(1.05)
                 cursor: pointer
-
-        .right
-            transform: rotate(-45deg)
-            -webkit-transform: rotate(-45deg)
-        .left
-            transform: rotate(135deg)
-            -webkit-transform: rotate(135deg)
