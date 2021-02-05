@@ -21,6 +21,7 @@
             text-align: center
             font-weight: 800
             color: $cream
+
         .subtitle
             color: $cream
             max-width: 50vw
@@ -87,40 +88,52 @@
                     background-position: center
             #layer1
                 z-index: 102
+                animation: lighting 4s both infinite
                 img
                     position: absolute
                     bottom: 0
                     left: 2em
                     height: auto
                     width: 25vw
-                    min-width: 12em
+                    min-width: 15em
 
             #layer2
                 z-index: 103
+                animation: lighting 6s both infinite
                 img
                     position: absolute
                     bottom: 0
                     right: 2em
                     height: auto
                     width: 30vw
-                    min-width: 17em
+                    min-width: 20em
 
             #layer3
                 z-index: 104
                 display: flex
                 align-items: center
                 justify-content: center
+                width: 100%
+                height: 20em
+                margin-top: 10vw
                 img
                     margin: 0 auto
-                    margin-top: -20em
                     height: auto
                     width: 30vw
                     &:nth-child(1)
-                        margin-top: -30em
+                        position: absolute
+                        left: 2em
+                        animation: floating 4s both infinite
                     &:nth-child(2)
+                        z-index: 106
+                        position: absolute
                         width: 40vw
-                   
+                        animation: floating 3.5s both infinite
+                    &:nth-child(3)
+                        right: 2em
 
+                        position: absolute
+                        animation: floating 4.5s both infinite
     //Media queries
     @media screen and ( max-width: 1300px )
         .wrapper
@@ -130,6 +143,19 @@
                 max-width: 70vw
 
     @media screen and ( max-width: 1000px )
+        .background
+            .layers
+                #layer3
+                    margin-top: 25vw
+                    img
+                        width: 40vw
+                        &:nth-child(1)
+                            left: -2em
+                        &:nth-child(2)
+                            width: 50vw
+                        &:nth-child(3)
+                            right: -2em
+
         .wrapper
             .title
                 font-size: 12vw
@@ -154,15 +180,33 @@
             .layers
                 #layer1
                     img
-                        left: -3em
-                        width: 50vw
+                        left: -2em
                 #layer2
                     img
-                        right: -10em
-                        width: 90vw
+                        min-width: 25em
+                        right: -8em
                 #layer3
+                    margin-top: 35vw
                     img
-                        &:nth-child(1)
-                            transform: translateY(100)
-                        &:nth-child(3)
-                            width: 60vw
+                        &:nth-child(2)
+                            width: 90vw
+
+//Animations
+@keyframes floating
+    0%
+        transform: translateY(0)
+        filter: brightness(1.4)
+    50%
+        transform: translateY(50px)
+        filter: brightness(1)
+    100%
+        transform: translateY(0)
+        filter: brightness(1.4)
+
+@keyframes lighting
+    0%
+        filter: brightness(1.3)
+    50%
+        filter: brightness(1)
+    100%
+        filter: brightness(1.3)
