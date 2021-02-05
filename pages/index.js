@@ -55,6 +55,8 @@ export default function Index() {
         <Head>
           <title>Julia Tree</title>
           <link rel="icon" href="/favicon.ico" />
+          <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"/>
+
         </Head>
         <AnimatePresence exitBeforeEnter>
           {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
