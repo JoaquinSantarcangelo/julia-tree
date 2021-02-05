@@ -41,9 +41,13 @@ const index = ({ setVideoOpen }) => {
         </motion.div>
       )} */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, height: "0" }}
+            animate={{
+              opacity: 1,
+              height: "fit-content",
+              transition: { delay: 1 },
+            }}
+            exit={{ opacity: 0, height: "0%" }}
             className="video-container"
           >
             <Vimeo

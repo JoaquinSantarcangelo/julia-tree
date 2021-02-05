@@ -2,18 +2,20 @@ import React from "react";
 
 const Fundation = () => {
   return (
-    <div className="impact">
+    <div id="foundation" className="foundation">
       <div className="wrapper">
         <div className="title">
           <h2>An initiative of</h2>
         </div>
         <div className="items">
           <div className="item">
-            <img
-              id="hope"
-              src="/assets/img/logo-hope.svg"
-              alt="Logo Hope Initiatives"
-            />
+            <div className="logo">
+              <img
+                id="hope"
+                src="/assets/img/logo-hope.svg"
+                alt="Logo Hope Initiatives"
+              />
+            </div>
             <h3 className="item-title">Hopes Initiatives International</h3>
             <p className="item-paragraph">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -23,11 +25,13 @@ const Fundation = () => {
             </p>
           </div>
           <div className="item">
-            <img
-              id="tututeach"
-              src="/assets/img/logo-tututeach.svg"
-              alt="Logo Tututeach"
-            />
+            <div className="logo">
+              <img
+                id="tututeach"
+                src="/assets/img/logo-tututeach.svg"
+                alt="Logo Tututeach"
+              />
+            </div>
             <h3 className="item-title">Tutu Teach Fundation</h3>
             <p className="item-paragraph">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
@@ -38,11 +42,13 @@ const Fundation = () => {
             </p>
           </div>
           <div className="item">
-            <img
-              id="orgiisghana"
-              src="/assets/img/logo-orgiisghana.png"
-              alt="Logo Orgiisghana"
-            />
+            <div className="logo">
+              <img
+                id="orgiisghana"
+                src="/assets/img/logo-orgiisghana.png"
+                alt="Logo Orgiisghana"
+              />
+            </div>
             <h3 className="item-title">Orgiis Ghana</h3>
             <p className="item-paragraph">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet

@@ -1,5 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 const menuItems = [
   {
@@ -58,16 +67,26 @@ const Menu = ({ menuOpen, handleMenu, setVideoOpen }) => {
       className="menu"
     >
       <div className="wrapper">
-        <motion.div
-          className="menu-item"
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={variantsMenuItems}
-          onClick={() => handleClick()}
+        <Link
+          activeClass="link active"
+          className="link"
+          to="hero"
+          spy={true}
+          smooth={true}
+          duration={500}
         >
-          {menuItems[0].text}
-        </motion.div>
+          <motion.div
+            className="menu-item"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={variantsMenuItems}
+            onClick={() => handleClick()}
+          >
+            {menuItems[0].text}
+          </motion.div>
+        </Link>
+
         <motion.div
           className="menu-item"
           custom={0}
@@ -82,36 +101,63 @@ const Menu = ({ menuOpen, handleMenu, setVideoOpen }) => {
         >
           {menuItems[1].text}
         </motion.div>
-        <motion.div
-          className="menu-item"
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={variantsMenuItems}
-          onClick={() => handleClick()}
+        <Link
+          activeClass="active"
+          className="link"
+          to="cta"
+          spy={true}
+          smooth={true}
+          duration={500}
         >
-          {menuItems[2].text}
-        </motion.div>
-        <motion.div
-          className="menu-item"
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={variantsMenuItems}
-          onClick={() => handleClick()}
+          <motion.div
+            className="menu-item"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={variantsMenuItems}
+            onClick={() => handleClick()}
+          >
+            {menuItems[2].text}
+          </motion.div>
+        </Link>
+        <Link
+          activeClass="active"
+          className="link"
+          to="faq"
+          spy={true}
+          smooth={true}
+          duration={500}
         >
-          {menuItems[3].text}
-        </motion.div>
-        <motion.div
-          className="menu-item"
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={variantsMenuItems}
-          onClick={() => handleClick()}
+          <motion.div
+            className="menu-item"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={variantsMenuItems}
+            onClick={() => handleClick()}
+          >
+            {menuItems[3].text}
+          </motion.div>
+        </Link>
+        <Link
+          activeClass="active"
+          className="link"
+          to="foundation"
+          spy={true}
+          smooth={true}
+          duration={500}
         >
-          {menuItems[4].text}
-        </motion.div>
+          <motion.div
+            className="menu-item"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={variantsMenuItems}
+            onClick={() => handleClick()}
+          >
+            {menuItems[4].text}
+          </motion.div>
+        </Link>
       </div>
     </motion.div>
   );

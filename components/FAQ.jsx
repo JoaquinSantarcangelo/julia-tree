@@ -76,7 +76,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="faq">
+    <div id="faq" className="faq">
       <AnimatePresence>
         {modalVisible && (
           <motion.div

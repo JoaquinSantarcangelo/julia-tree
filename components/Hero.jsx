@@ -40,6 +40,7 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
         staggerChildren: 0.5,
       }}
       exit="exit"
+      id="hero"
       className="hero"
     >
       <motion.div

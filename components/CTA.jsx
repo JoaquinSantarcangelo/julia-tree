@@ -6,11 +6,16 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import GetAppIcon from "@material-ui/icons/GetApp";
 
-import {FacebookShareButton, TwitterShareButton, InstagramShareButton, WhatsappShareButton} from 'react-share';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  InstagramShareButton,
+  WhatsappShareButton,
+} from "react-share";
 
 const CTA = ({ setDonateOpen }) => {
   return (
-    <div className="cta">
+    <div id="cta" className="cta">
       <div className="background"></div>
       <div className="wrapper">
         <div onClick={() => setDonateOpen(true)} className="heart">
@@ -36,7 +41,7 @@ const CTA = ({ setDonateOpen }) => {
                 <FacebookIcon />
               </FacebookShareButton>
             </div>
-            
+
             <div className="button">
               <TwitterShareButton
                 url="https://julia-tree.vercel.app/"
@@ -45,7 +50,7 @@ const CTA = ({ setDonateOpen }) => {
                 <TwitterIcon />
               </TwitterShareButton>
             </div>
-            <div className="button"> 
+            <div className="button">
               <WhatsappShareButton
                 url="https://julia-tree.vercel.app/"
                 title={"Texto para que se vea con la publicación:"}
@@ -54,14 +59,18 @@ const CTA = ({ setDonateOpen }) => {
                 <WhatsAppIcon />
               </WhatsappShareButton>
             </div>
-            <a href="#" download><div className="button">
-              <GetAppIcon />
-            </div></a>
+            <a href="#" download>
+              <div className="button">
+                <GetAppIcon />
+              </div>
+            </a>
           </div>
         </div>
-        <a href="#" download><div className="download-content">
-          <GetAppIcon /> Download Content
-        </div></a>
+        <a href="#" download>
+          <div className="download-content">
+            <GetAppIcon /> Download Content
+          </div>
+        </a>
       </div>
     </div>
   );
