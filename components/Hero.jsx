@@ -58,9 +58,7 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
           The Julia Tree
         </motion.div>
         <motion.div variants={variants2} className="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quos
-          vitae maiores, ullam unde, praesentium dicta ea corporis labore, quia
-          quidem nam. Tempore dolores illum earum eveniet ipsam hic laboriosam!
+          Growing hope, jobs, justice, and peace on Africa’s Great Green Wall.
         </motion.div>
         <motion.div
           onClick={() => setVideoOpen(true)}
