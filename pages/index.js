@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import OnImagesLoaded from "react-on-images-loaded";
 
 //Components
 import Menu from "../components/Menu";
@@ -46,51 +47,53 @@ export default function Index() {
   const onPageLoad = () => {
     console.log("Ya cargo");
     setLoading(false);
-  }
+  };
 
   return (
-    <div className="app">
-      <Head>
-        <title>Julia Tree</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <AnimatePresence exitBeforeEnter>
-        {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
-      </AnimatePresence>
-      <AnimatePresence>{loading && <Loading />}</AnimatePresence>
-      <Navbar
-        offsetY={offsetY}
-        videoOpen={videoOpen}
-        menuOpen={menuOpen}
-        handleMenu={handleMenu}
-        setVideoOpen={setVideoOpen}
-      />
-      <Menu
-        setVideoOpen={setVideoOpen}
-        menuOpen={menuOpen}
-        handleMenu={handleMenu}
-      />
-      <div className="social-icons">
-        <div className="icon">
-          <FacebookIcon />
+    <OnImagesLoaded onLoaded={() => setLoading(false)} timeout={3000}>
+      <div className="app">
+        <Head>
+          <title>Julia Tree</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <AnimatePresence exitBeforeEnter>
+          {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
+        </AnimatePresence>
+        <AnimatePresence>{loading && <Loading />}</AnimatePresence>
+        <Navbar
+          offsetY={offsetY}
+          videoOpen={videoOpen}
+          menuOpen={menuOpen}
+          handleMenu={handleMenu}
+          setVideoOpen={setVideoOpen}
+        />
+        <Menu
+          setVideoOpen={setVideoOpen}
+          menuOpen={menuOpen}
+          handleMenu={handleMenu}
+        />
+        <div className="social-icons">
+          <div className="icon">
+            <FacebookIcon />
+          </div>
+          <div className="icon">
+            <InstagramIcon />
+          </div>
+          <div className="icon">
+            <TwitterIcon />
+          </div>
         </div>
-        <div className="icon">
-          <InstagramIcon />
-        </div>
-        <div className="icon">
-          <TwitterIcon />
-        </div>
-      </div>
 
-      <AnimatePresence exitBeforeEnter initial={false}>
-        {videoOpen && <Video setVideoOpen={setVideoOpen} />}
-      </AnimatePresence>
-      <Home
-        setDonateOpen={setDonateOpen}
-        setVideoOpen={setVideoOpen}
-        onPageLoad={onPageLoad}
-        loading={loading}
-      />
-    </div>
+        <AnimatePresence exitBeforeEnter initial={false}>
+          {videoOpen && <Video setVideoOpen={setVideoOpen} />}
+        </AnimatePresence>
+        <Home
+          setDonateOpen={setDonateOpen}
+          setVideoOpen={setVideoOpen}
+          onPageLoad={onPageLoad}
+          loading={loading}
+        />
+      </div>
+    </OnImagesLoaded>
   );
 }

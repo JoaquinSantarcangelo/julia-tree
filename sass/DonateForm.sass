@@ -9,8 +9,14 @@
     z-index: 99999
     display: grid
     place-items: center
+    .overlay
+        z-index: 100
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
     .wrapper
-
+        z-index: 101
         position: relative
         background-color: #fff
         display: flex

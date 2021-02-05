@@ -6,6 +6,7 @@ const variants = {
   visible: { y: 0 },
   hidden: { y: "-100vh" },
   transition: { ease: "easeInOut", when: "beforeChildren", duration: 0.6 },
+  exit: { y: "100vh", transition: { when: "afterChildren" } },
 };
 
 const DonateForm = ({ setDonateOpen }) => {
@@ -32,7 +33,7 @@ const DonateForm = ({ setDonateOpen }) => {
       variants={variants}
       initial="hidden"
       animate="visible"
-      exit="hidden"
+      exit="exit"
       className="donate-form"
     >
       <div className="wrapper">
@@ -49,19 +50,20 @@ const DonateForm = ({ setDonateOpen }) => {
               <input type="checkbox" name="" id="" />
             </div>
           </div>
-          <div className="for-to"><input
+          <div className="for-to">
+            <input
               value={from}
               onChange={(e) => setFrom(e.target.value)}
               id="from"
               placeholder="From"
               type="text"
-          />
+            />
             <input
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
-                id="to"
-                placeholder="To"
-                type="text"
+              value={to}
+              onChange={(e) => setTo(e.target.value)}
+              id="to"
+              placeholder="To"
+              type="text"
             />
           </div>
           <textarea
@@ -76,6 +78,13 @@ const DonateForm = ({ setDonateOpen }) => {
           </div>
         </div>
       </div>
+      <motion.div
+        initial={{ backdropFilter: "blur(0px)" }}
+        animate={{ backdropFilter: "blur(10px)" }}
+        exit={{ backdropFilter: "blur(0px)", transition: { delay: 0, duration: 1 } }}
+        transition={{ delay: 0.2, duration: 1 }}
+        className="overlay"
+      ></motion.div>
     </motion.div>
   );
 };

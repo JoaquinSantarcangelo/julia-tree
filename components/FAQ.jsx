@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const faqsDB = [
   {
@@ -56,11 +54,9 @@ const faqsDB = [
   },
 ];
 
-const Item = ({info}) => {
-  return (
-    <div className="item">{info.question}</div>
-  )
-}
+const Item = ({ info }) => {
+  return <div className="item">{info.question}</div>;
+};
 
 const FAQ = () => {
   return (
