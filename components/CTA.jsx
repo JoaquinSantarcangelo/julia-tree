@@ -34,12 +34,14 @@ const CTA = ({ setDonateOpen }) => {
           <div className="title">Share now!</div>
           <div className="buttons">
             <div className="button">
-              <FacebookShareButton
-                url="https://julia-tree.vercel.app/"
-                quote={"Texto para que se vea con la publicación"}
-              >
-                <FacebookIcon />
-              </FacebookShareButton>
+              <span>
+                <FacebookShareButton
+                  url="https://julia-tree.vercel.app/"
+                  quote={"Texto para que se vea con la publicación"}
+                >
+                  <FacebookIcon />
+                </FacebookShareButton>
+              </span>
             </div>
 
             <div className="button">
