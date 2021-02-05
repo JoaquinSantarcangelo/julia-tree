@@ -13,6 +13,8 @@ const DonateForm = ({ setDonateOpen }) => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [message, setMessage] = useState("");
+  const [payment, setPayment] = useState("stripe");
+  const [quantity, setQuantity] = useState(1);
 
   //Form Validation
   const validation = () => {
@@ -44,13 +46,17 @@ const DonateForm = ({ setDonateOpen }) => {
           Julia Trees invite us to write our own story of love
         </div>
         <div className="form">
-          <div className="payment">
-            <input type="number" name="number" id="number" />
-            <div className="sub">
-              <input type="checkbox" name="" id="" />
-            </div>
+          <div className="quantity">
+            <div className="text">I want to plant</div>
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              value={quantity}
+            />
+            <div className="text">Julia Trees</div>
           </div>
-          <div className="for-to">
+          <div className="from-to">
             <input
               value={from}
               onChange={(e) => setFrom(e.target.value)}
@@ -73,6 +79,29 @@ const DonateForm = ({ setDonateOpen }) => {
             name="message"
             id="message"
           ></textarea>
+          <div className="payment">
+            <div className="label">Select your payment</div>
+            <div className="selector">
+              <div
+                onClick={() => setPayment("stripe")}
+                className={payment === "stripe" ? "item active" : "item"}
+              >
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/stripe.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                onClick={() => setPayment("paypal")}
+                className={payment === "paypal" ? "item active" : "item"}
+              >
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
           <div onClick={() => handleSubmit()} className="button">
             Donate
           </div>
@@ -81,7 +110,10 @@ const DonateForm = ({ setDonateOpen }) => {
       <motion.div
         initial={{ backdropFilter: "blur(0px)" }}
         animate={{ backdropFilter: "blur(10px)" }}
-        exit={{ backdropFilter: "blur(0px)", transition: { delay: 0, duration: 1 } }}
+        exit={{
+          backdropFilter: "blur(0px)",
+          transition: { delay: 0, duration: 1 },
+        }}
         transition={{ delay: 0.2, duration: 1 }}
         className="overlay"
       ></motion.div>

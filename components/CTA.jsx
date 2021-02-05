@@ -45,7 +45,7 @@ const CTA = ({ setDonateOpen }) => {
                 <TwitterIcon />
               </TwitterShareButton>
             </div>
-            <div className="button">
+            <div className="button"> 
               <WhatsappShareButton
                 url="https://julia-tree.vercel.app/"
                 title={"Texto para que se vea con la publicación:"}
