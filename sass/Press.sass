@@ -36,7 +36,11 @@
         img
             width: 25vw
             height: auto
+            @media screen and ( max-width: 600px )
+                width: 33vw
             &:nth-child(1)
+                @media screen and ( max-width: 600px )
+                    display: none
             &:nth-child(2)
                 margin-left: 1em
             &:nth-child(3)
@@ -44,10 +48,14 @@
             &:nth-child(5)
 
     .background
-        
         display: flex
         position: absolute
         bottom: 0
+        height: 60vw
+        width: 100%
+        background-image: url("/assets/img/press/bg.png")
+        background-attachment: top
+        background-size: cover
     //Media Queries
     @media screen and ( max-width: 1000px )
         .clouds
@@ -56,14 +64,15 @@
                     width: 60vw
 
     @media screen and ( max-width: 800px )
+        min-height: 100vh
         .clouds
-            top: 4em
+            top: 2em
 
     @media screen and ( max-width: 500px )
         .clouds
             .cloud
                 img
-                    width: 60vw
+                    width: 70vw
                 &:first-child
                     left: -6em
                 &:last-child
@@ -71,14 +80,14 @@
 
     @media screen and ( max-width: 500px )
         .clouds
-            top: 2em
+            top: 0em
 
 @keyframes floating
     0%
         transform: translateY(0)
         filter: brightness(1.4)
     50%
-        transform: translateY(50px)
+        transform: translateY(40px)
         filter: brightness(1)
     100%
         transform: translateY(0)
