@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import CloseIcon from "@material-ui/icons/Close";
+import { motion, AnimatePresence } from "framer-motion";
 
 const items = [
   {
@@ -26,11 +28,32 @@ const items = [
 
 const Fundation = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [activeFaq, setActiveFaq] = useState(1);
+  const [activeFoundation, setActiveFoundation] = useState(items[0]);
 
   return (
     <div id="foundation" className="foundation">
-      {modalVisible && <div className="foundation-modal">Modal</div>}
+      <AnimatePresence exitBeforeEnter>
+        {modalVisible && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="foundation-modal"
+          >
+            <div className="card">
+              <div
+                onClick={() => setModalVisible(false)}
+                className="close-icon"
+              >
+                <CloseIcon />
+              </div>
+              <img id={activeFoundation.id} src={activeFoundation.img} alt="" />
+              <div className="name">{activeFoundation.name}</div>
+              <div className="desc">{activeFoundation.desc}</div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="overlay"></div>
       <div className="wrapper">
         <div className="title">
@@ -38,7 +61,13 @@ const Fundation = () => {
         </div>
         <div className="items">
           {items.map((f) => (
-            <div className="item">
+            <div
+              onClick={() => {
+                setActiveFoundation(f);
+                setModalVisible(true);
+              }}
+              className="item"
+            >
               <div className="logo">
                 <img id={f.id} src={f.img} alt="Logo Hope Initiatives" />
               </div>

@@ -13,23 +13,18 @@ import {
 const menuItems = [
   {
     text: "Home",
-    href: "/",
   },
   {
     text: "Video",
-    href: "/video",
   },
   {
     text: "Donate",
-    href: "/",
   },
   {
     text: "FAQ",
-    href: "/",
   },
   {
-    text: "Fundation",
-    href: "/",
+    text: "Foundation",
   },
 ];
 
