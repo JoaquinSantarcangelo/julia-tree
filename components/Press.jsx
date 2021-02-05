@@ -20,9 +20,7 @@ const Press = () => {
         <img src="/assets/img/press/press4.png" alt="" />
         <img src="/assets/img/press/press5.png" alt="" />
       </div>
-      <div className="background">
-        <img src="/assets/img/press/bg.png" alt=""/>
-      </div>
+      <div className="background"></div>
     </div>
   );
 };
