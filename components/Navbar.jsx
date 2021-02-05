@@ -41,6 +41,7 @@ const Navbar = ({ menuOpen, setVideoOpen, videoOpen, handleMenu, offsetY }) => {
             className="close-icon"
             onClick={() => {
               if (videoOpen) {
+                document.querySelector("#logo").classList.remove("hide");
                 setVideoOpen(false);
               } else {
                 handleMenu();

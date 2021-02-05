@@ -9,7 +9,11 @@ const Fundation = () => {
         </div>
         <div className="items">
           <div className="item">
-            <img src="/assets/img/48.png" alt="" />
+            <img
+              id="hope"
+              src="/assets/img/logo-hope.svg"
+              alt="Logo Hope Initiatives"
+            />
             <h3 className="item-title">Hopes Initiatives International</h3>
             <p className="item-paragraph">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -19,7 +23,11 @@ const Fundation = () => {
             </p>
           </div>
           <div className="item">
-            <img id="tututeach" src="/assets/img/logo-tututeach.svg" alt="" />
+            <img
+              id="tututeach"
+              src="/assets/img/logo-tututeach.svg"
+              alt="Logo Tututeach"
+            />
             <h3 className="item-title">Tutu Teach Fundation</h3>
             <p className="item-paragraph">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
@@ -30,7 +38,11 @@ const Fundation = () => {
             </p>
           </div>
           <div className="item">
-            <img src="/assets/img/logo-orgiisghana.png" alt="" />
+            <img
+              id="orgiisghana"
+              src="/assets/img/logo-orgiisghana.png"
+              alt="Logo Orgiisghana"
+            />
             <h3 className="item-title">Orgiis Ghana</h3>
             <p className="item-paragraph">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet

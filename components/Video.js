@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Vimeo from "@u-wave/react-vimeo";
+import OnImagesLoaded from "react-on-images-loaded";
+
 import { motion } from "framer-motion";
 
 const index = ({ setVideoOpen }) => {
   const [videoPaused, setVideoPaused] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     if (!videoPaused) {
@@ -14,13 +17,16 @@ const index = ({ setVideoOpen }) => {
   }, [videoPaused]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="video"
-    >
-      {/* {videoPaused && (
+    <OnImagesLoaded onLoaded={() => setLoaded(true)} timeout={3000}>
+      {loaded && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="video"
+          onLoad={() => console.log("Cargo")}
+        >
+          {/* {videoPaused && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,24 +40,26 @@ const index = ({ setVideoOpen }) => {
           </div>
         </motion.div>
       )} */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="video-container"
-      >
-        <Vimeo
-          video="340200656"
-          onPause={() => setVideoPaused(true)}
-          onPlay={() => setVideoPaused(false)}
-          onEnd={() => setVideoOpen(false)}
-          responsive
-          background
-          fullscreen
-          autoplay
-        />
-      </motion.div>
-    </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="video-container"
+          >
+            <Vimeo
+              video="340200656"
+              onPause={() => setVideoPaused(true)}
+              onPlay={() => setVideoPaused(false)}
+              onEnd={() => setVideoOpen(false)}
+              responsive
+              background
+              fullscreen
+              autoplay
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </OnImagesLoaded>
   );
 };
 

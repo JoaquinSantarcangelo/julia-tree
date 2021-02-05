@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import CloseIcon from "@material-ui/icons/Close";
+import { AnimatePresence, motion } from "framer-motion";
 
 const faqsDB = [
   {
@@ -54,13 +56,49 @@ const faqsDB = [
   },
 ];
 
-const Item = ({ info }) => {
-  return <div className="item">{info.question}</div>;
-};
-
 const FAQ = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [activeFaq, setActiveFaq] = useState(1);
+
+  //Item Component
+  const Item = ({ info }) => {
+    return (
+      <div
+        onClick={() => {
+          setActiveFaq(info.id);
+          setModalVisible(true);
+        }}
+        className="item"
+      >
+        {info.question}
+      </div>
+    );
+  };
+
   return (
     <div className="faq">
+      <AnimatePresence>
+        {modalVisible && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="faq-modal"
+          >
+            <div className="card">
+              <div
+                onClick={() => setModalVisible(false)}
+                className="close-icon"
+              >
+                <CloseIcon />
+              </div>
+              <div className="question">{faqsDB[activeFaq].question}</div>
+              <div className="divider"></div>
+              <div className="answer">{faqsDB[activeFaq].answer}</div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="title">
         <h2 className="questions">Questions</h2>
         <h3>&</h3>
