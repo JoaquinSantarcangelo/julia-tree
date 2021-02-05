@@ -15,18 +15,28 @@ const DonateForm = ({ setDonateOpen }) => {
   const [message, setMessage] = useState("");
   const [payment, setPayment] = useState("stripe");
   const [quantity, setQuantity] = useState(1);
+  const [subscription, setSubscription] = useState(false);
 
   //Form Validation
   const validation = () => {
-    const validated = true;
+    let validated = true;
+
+    console.log(subscription);
+
     //Code
+    if(from.trim() === '' || to.trim() === '' || message.trim() === '' || payment.trim() === '' || quantity < 1){
+      validated = false;
+    }
+    
     return validated;
   };
 
   const handleSubmit = () => {
-    if (validation) {
+    if (validation()) {
       alert(`${from},${to},${message}`);
       setDonateOpen(false);
+    }else{
+      alert('All form fields must be completed');
     }
   };
 
@@ -80,6 +90,13 @@ const DonateForm = ({ setDonateOpen }) => {
             name="message"
             id="message"
           ></textarea>
+          <div>
+            <input type="checkbox"
+              name="subscription"
+              id="subscription"
+              onChange={(e) => setSubscription(!subscription)}
+            /> I want to Subscribe
+          </div>
           <div className="payment">
             <div className="label">Select your payment</div>
             <div className="selector">
