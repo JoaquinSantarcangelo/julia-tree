@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { animate, AnimatePresence, motion, useAnimation } from "framer-motion";
 
-const Hero = ({ loading, setVideoOpen }) => {
+const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
   //On component render configs
   useEffect(() => {
     document.querySelector("#logo").classList.remove("hide");
@@ -72,7 +72,7 @@ const Hero = ({ loading, setVideoOpen }) => {
         </motion.div>
       </motion.div>
       <AnimatePresence>
-        <div className="background">
+        <div className="background" onLoad={() => onPageLoad()}>
           <div className="layers">
             <div id="layer0" className="layer">
               <div className="img"></div>

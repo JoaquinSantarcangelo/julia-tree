@@ -8,10 +8,14 @@ import Foundation from "../Foundation";
 import Press from "../Press";
 import Footer from "../Footer";
 
-const Home = ({ loading, setVideoOpen, setDonateOpen }) => {
+const Home = ({ onPageLoad, loading, setVideoOpen, setDonateOpen }) => {
   return (
     <div className="home">
-      <Hero setVideoOpen={setVideoOpen} loading={loading} />
+      <Hero
+        onPageLoad={onPageLoad}
+        setVideoOpen={setVideoOpen}
+        loading={loading}
+      />
       <CTA setDonateOpen={setDonateOpen} />
       <FAQ />
       <Foundation />

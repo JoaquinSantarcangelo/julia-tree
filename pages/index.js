@@ -44,11 +44,12 @@ export default function Index() {
   }, []);
 
   const onPageLoad = () => {
+    console.log("Ya cargo");
     setLoading(false);
   }
 
   return (
-    <div className="app" onLoad={onPageLoad}>
+    <div className="app">
       <Head>
         <title>Julia Tree</title>
         <link rel="icon" href="/favicon.ico" />
@@ -87,6 +88,7 @@ export default function Index() {
       <Home
         setDonateOpen={setDonateOpen}
         setVideoOpen={setVideoOpen}
+        onPageLoad={onPageLoad}
         loading={loading}
       />
     </div>
