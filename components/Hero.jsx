@@ -31,27 +31,12 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
 
   return (
     <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-      transition={{
-        ease: "easeInOut",
-        when: "beforeChildren",
-        staggerChildren: 0.5,
-      }}
-      exit="exit"
+      
       id="hero"
       className="hero"
     >
       <motion.div
-        transition={{
-          when: "beforeChildren",
-          staggerChildren: 0.4,
-          ease: "easeInOut",
-        }}
-        initial="hidden"
-        animate="visible"
-        variants={variants2}
+        
         className="wrapper"
       >
         <motion.div variants={variants2} className="title">

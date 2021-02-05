@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
 
 const variants = {
-  visible: { y: 0 },
-  hidden: { y: "-100vh" },
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
   transition: { ease: "easeInOut", when: "beforeChildren", duration: 0.6 },
-  exit: { y: "100vh", transition: { when: "afterChildren" } },
+  exit: { opacity: 0, transition: { when: "afterChildren" } },
 };
 
 const DonateForm = ({ setDonateOpen }) => {
@@ -109,12 +109,12 @@ const DonateForm = ({ setDonateOpen }) => {
       </div>
       <motion.div
         initial={{ backdropFilter: "blur(0px)" }}
-        animate={{ backdropFilter: "blur(10px)" }}
+        animate={{ backdropFilter: "blur(8px)" }}
         exit={{
           backdropFilter: "blur(0px)",
           transition: { delay: 0, duration: 1 },
         }}
-        transition={{ delay: 0.2, duration: 1 }}
+        transition={{ delay: 0.2, duration: 0.4 }}
         className="overlay"
       ></motion.div>
     </motion.div>
