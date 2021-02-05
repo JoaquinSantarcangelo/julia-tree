@@ -18,10 +18,7 @@ const Fundation = () => {
             </div>
             <h3 className="item-title">Hopes Initiatives International</h3>
             <p className="item-paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem optio, quisquam magnam laboriosam explicabo temporibus
-              quis impedit tempore adipisci, ut, voluptas distinctio nulla
-              recusandae omnis minima doloremque. Dolor, magnam ipsum.
+              Hope Initiatives International was established as the conduit through which Irish author, humanitarian and concept developer, Don Mullan, will bring to fulfillment major legacy projects he is developing. His initiatives include inspirational and creative campaigns such as the Julia Tree, and public artworks that seek to inspire and help heal the hurts of history. Projects include: supporting the African Union’s Great Green Wall; a UNESCO World Heritage site commemorating the 1914 Christmas Truce; an international memorial to the Transatlantic Slave Trade; a visitor’s centre in SOWETO commemorating the role of faith communities in the overthrow of Apartheid; supporting the National Centre for Race Amity, USA, in establishing racial justice and amity projects in all 50 US States; and a series of public monuments celebrating changemakers in history, including Matilda Joslyn Gage, Thomas Sankara, Wangari Maathai, and St. Francis of Assisi’s encounter with the Sultan of Egypt.
             </p>
           </div>
           <div className="item">
@@ -51,12 +48,7 @@ const Fundation = () => {
             </div>
             <h3 className="item-title">Orgiis Ghana</h3>
             <p className="item-paragraph">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-              quod nihil officia asperiores sequi repellendus voluptatem quae
-              vero natus porro, aliquid, hic commodi consequuntur unde assumenda
-              officiis ex, velit perspiciatis animi voluptate modi distinctio
-              praesentium recusandae est. Velit vel nesciunt eveniet, cum iste
-              labore, autem perspiciatis quod voluptatem temporibus modi?
+              ORGIIS Ghana is an environmental and biodiversity conservation organization. We strive to reduce the impact of climate change, especially desertification and land degradation. Since 2016, ORGIIS has implemented a value chain approach to our tree planting programs. We are working in partnership with the African Union to deliver the Great Green Wall Initiative to increase tree cover and reduce desertification and migration. We are also creating green business opportunities. Women are the driving force of our interventions, through a cooperative model, creating green job opportunities. We focus on organizing women groups to build their capacity to mobilize agriculture products and we facilitate access to domestic and International markets. We also use inclusive Banking tools to facilitate the improvement of livelihoods to reduce pressure on the natural environment. ORGIIS uses a collaborative approach with likeminded individuals and Institutions to fight for the survival of our planet for current and future generations.
             </p>
           </div>
         </div>
