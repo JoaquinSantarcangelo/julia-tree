@@ -1,7 +1,8 @@
 @import "index"
 
 .press
-    min-height: 150vh
+    height: 150vw
+    max-height: 100em
     position: relative
     background-color: $lightblue
     z-index: 100
@@ -43,6 +44,8 @@
                     display: none
             &:nth-child(2)
                 margin-left: 1em
+                @media screen and ( max-width: 600px )
+                    margin-left: 0
             &:nth-child(3)
             &:nth-child(4)
             &:nth-child(5)
@@ -64,7 +67,7 @@
                     width: 60vw
 
     @media screen and ( max-width: 800px )
-        min-height: 100vh
+        max-height: 50em
         .clouds
             top: 2em
 

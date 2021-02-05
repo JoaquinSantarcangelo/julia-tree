@@ -31,6 +31,7 @@ const Fundation = () => {
   return (
     <div id="foundation" className="foundation">
       {modalVisible && <div className="foundation-modal">Modal</div>}
+      <div className="overlay"></div>
       <div className="wrapper">
         <div className="title">
           <h2>An initiative of</h2>

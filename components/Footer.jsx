@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="line">Juan Cadile</div>
             <div className="line">Guido Ponce</div>
             <div className="line">Gianluca Nicolicchia</div>
-            <div className="line">Joaquin Santarcangelo</div>
+            <div className="line">Joaquin Santarcángelo</div>
           </div>
         </div>
       </div>

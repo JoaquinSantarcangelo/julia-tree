@@ -49,6 +49,7 @@ const DonateForm = ({ setDonateOpen }) => {
           <div className="quantity">
             <div className="text">I want to plant</div>
             <input
+              onChange={(e) => setQuantity(e.target.value)}
               type="number"
               name="quantity"
               id="quantity"
