@@ -40,8 +40,8 @@
                 font-size: 1.4em
                 color: $cream
     .wrapper
-        height: 20vh
-        min-height: 5em
+        height: 10em
+        
         background-color: #fff
         display: flex
         align-items: center
@@ -85,6 +85,8 @@
                     transition: all 0.4s ease
                     width: 20vw
                     min-width: 25em
+                    @media screen and ( max-width: 600px )
+                        min-width: 20em
                     &::after
                         content: ""
                         width: 100%
@@ -179,7 +181,7 @@
             align-items: center
             justify-content: center
             .hand
-                bottom: 20vh
+                bottom: 10em
                 img
                     width: 40vw
                     min-width: 20em

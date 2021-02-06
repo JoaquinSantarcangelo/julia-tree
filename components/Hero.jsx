@@ -30,15 +30,8 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
   };
 
   return (
-    <motion.div
-      
-      id="hero"
-      className="hero"
-    >
-      <motion.div
-        
-        className="wrapper"
-      >
+    <motion.div id="hero" className="hero">
+      <motion.div className="wrapper">
         <motion.div variants={variants2} className="title">
           The Julia Tree
         </motion.div>
@@ -70,6 +63,13 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
             <div id="layer3" className="layer">
               <img src="assets/img/hero/Fruto2.png" alt="" />
               <img src="assets/img/hero/Fruto1.png" alt="" />
+              <img src="assets/img/hero/Fruto3.png" alt="" />
+            </div>
+            <div id="layer3-alt" className="layer">
+              <img src="assets/img/hero/Fruto2.png" alt="" />
+              <img src="assets/img/hero/Fruto1.png" alt="" />
+              <img src="assets/img/hero/Fruto3.png" alt="" />
+              <img src="assets/img/hero/Fruto2.png" alt="" />
               <img src="assets/img/hero/Fruto3.png" alt="" />
             </div>
           </div>

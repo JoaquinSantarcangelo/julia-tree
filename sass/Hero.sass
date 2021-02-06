@@ -3,7 +3,7 @@
 .hero
     width: 100%
     height: 100vh
-    
+
     display: flex
     align-items: center
     justify-content: center
@@ -25,9 +25,9 @@
 
         .subtitle
             color: $cream
-            max-width: 25vw
+            max-width: 20em
             text-align: center
-            font-size: 1.6em
+            font-size: 1.8em
             font-weight: 400
             margin-bottom: 0.6em
         .buttons
@@ -116,7 +116,8 @@
                 justify-content: center
                 width: 100%
                 height: 20em
-                margin-top: 10vw
+                margin-top: 5vw
+                opacity: 0.95
                 img
                     margin: 0 auto
                     height: auto
@@ -136,19 +137,64 @@
 
                         position: absolute
                         animation: floating 4.5s both infinite
+
+            #layer3-alt
+                z-index: 101
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 100%
+                height: 20em
+                margin-top: 10vw
+                filter: blur(4px)
+                opacity: 0.9
+                img
+                    margin: 0 auto
+                    height: auto
+                    width: 10vw
+                    min-width: 10em
+                    
+                    &:nth-child(1)
+                        position: absolute
+                        left: 0em
+                        width: 15vw
+                        animation: floating 8s both infinite
+                        
+                    &:nth-child(2)
+                        position: absolute
+                        left: 30vw
+                        animation: floating 9s both infinite
+                        min-width: 9em
+                        width: 9em
+                    &:nth-child(3)
+                        right: 6vw
+                        min-width: 5em
+                        width: 5em
+                        position: absolute
+                        animation: floating 9.5s both infinite
+                    &:nth-child(4)
+                        animation: floating 8.5s both infinite
+                        @media screen and ( max-width: 1000px )
+                            display: none
+                    &:nth-child(5)
+                        right: 30vw
+                        width: 5vw
+                        position: absolute
+                        animation: floating 10s both infinite
+
     //Media queries
     @media screen and ( max-width: 1300px )
         .wrapper
             .title
                 font-size: 12vw
-            .subtitle
-                max-width: 70vw
 
     @media screen and ( max-width: 1000px )
         .background
             .layers
+                #layer3-alt
+                    margin-top: 0
                 #layer3
-                    margin-top: 25vw
+                    margin-top: 20vw
                     img
                         width: 40vw
                         &:nth-child(1)
@@ -161,14 +207,11 @@
         .wrapper
             .title
                 font-size: 12vw
-            .subtitle
-                max-width: 80%
-                margin: 0 2em
 
     @media screen and ( max-width: 800px )
         .wrapper
             .subtitle
-                font-size: 1.2em
+                font-size: 1.4em
 
     @media screen and ( max-width: 600px )
         .wrapper
@@ -176,6 +219,8 @@
                 font-size: 16vw
                 line-height: 1em
                 margin-bottom: 0.2em
+            .subtitle
+                max-width: 90vw
 
         .background
             .layers
@@ -191,8 +236,14 @@
                     img
                         &:nth-child(2)
                             width: 90vw
-
-//Animations
+                #layer3-alt
+                    margin-top: -5vw
+    @media screen and ( max-width: 400px )
+        .background
+            .layers
+                #layer3-alt
+                    margin-top: -20vw
+//Animations    
 @keyframes floating
     0%
         transform: translateY(0)
