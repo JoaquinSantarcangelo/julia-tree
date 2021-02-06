@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import OnImagesLoaded from "react-on-images-loaded";
+import { Scroll, animateScroll } from "react-scroll";
 
 //Components
 import Menu from "../components/Menu";
@@ -39,9 +40,9 @@ export default function Index() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
-  //Fake Loading
+  //Scroll To Top
   useEffect(() => {
-    scrollTo(0, 0);
+    animateScroll.scrollToTop();
   }, []);
 
   const onPageLoad = () => {
@@ -55,8 +56,7 @@ export default function Index() {
         <Head>
           <title>Julia Tree</title>
           <link rel="icon" href="/favicon.ico" />
-          <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"/>
-
+          <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
         </Head>
         <AnimatePresence exitBeforeEnter>
           {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
@@ -87,7 +87,9 @@ export default function Index() {
         </div>
 
         <AnimatePresence exitBeforeEnter initial={false}>
-          {videoOpen && <Video setVideoOpen={setVideoOpen} />}
+          {videoOpen && (
+            <Video setDonateOpen={setDonateOpen} setVideoOpen={setVideoOpen} />
+          )}
         </AnimatePresence>
         <Home
           setDonateOpen={setDonateOpen}

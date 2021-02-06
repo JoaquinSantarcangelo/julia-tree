@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Vimeo from "@u-wave/react-vimeo";
 import OnImagesLoaded from "react-on-images-loaded";
+import Scroll from "react-scroll";
 
 import { motion } from "framer-motion";
 
-const index = ({ setVideoOpen }) => {
+const index = ({ setVideoOpen, setDonateOpen }) => {
   const [videoPaused, setVideoPaused] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -15,6 +16,22 @@ const index = ({ setVideoOpen }) => {
       document.querySelector("#logo").classList.remove("hide");
     }
   }, [videoPaused]);
+
+  const onVideoEnd = () => {
+    setVideoOpen(false);
+
+    setTimeout(
+      () =>
+        Scroll.scroller.scrollTo("cta", {
+          duration: 1500,
+          delay: 100,
+          smooth: true,
+          offset: 50,
+        }),
+      500
+    );
+    setTimeout(() => setDonateOpen(true), 2500);
+  };
 
   return (
     <OnImagesLoaded onLoaded={() => setLoaded(true)} timeout={3000}>
@@ -54,7 +71,7 @@ const index = ({ setVideoOpen }) => {
               video="340200656"
               onPause={() => setVideoPaused(true)}
               onPlay={() => setVideoPaused(false)}
-              onEnd={() => setVideoOpen(false)}
+              onEnd={() => onVideoEnd()}
               responsive
               background
               fullscreen
