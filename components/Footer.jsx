@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -9,9 +10,15 @@ const Footer = () => {
             <img src="/assets/logo.svg" alt="" />
           </div>
           <div className="links">
-            <div className="link">Donate</div>
-            <div className="link">Faqs</div>
-            <div className="link">News</div>
+            <Link to="cta" spy={true} smooth={true} duration={500}>
+              <div className="link">Donate</div>
+            </Link>
+            <Link to="faq" spy={true} smooth={true} duration={500}>
+              <div className="link">Faqs</div>
+            </Link>
+            <Link to="foundation" spy={true} smooth={true} duration={500}>
+              <div className="link">Foundation</div>
+            </Link>
             <div className="link">Website Policy</div>
           </div>
         </div>
@@ -25,7 +32,16 @@ const Footer = () => {
             <div className="line">Agustin De Martino</div>
           </div>
           <div className="website-by">
-            <div className="line title">Website by Salvé:</div>
+            <div className="line title">
+              Website by{" "}
+              <a
+                style={{ textDecoration: "none", color: "inherit" }}
+                href="https://salve.agency"
+                target="_blank"
+              >
+                Salvé:
+              </a>
+            </div>
             <div className="line">Kyle Byrne</div>
             <div className="line">Juan Cadile</div>
             <div className="line">Guido Ponce</div>
