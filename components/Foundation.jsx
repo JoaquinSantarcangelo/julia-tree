@@ -47,9 +47,15 @@ const Fundation = () => {
               >
                 <CloseIcon />
               </div>
-              <img id={activeFoundation.id} src={activeFoundation.img} alt="" />
-              <div className="name">{activeFoundation.name}</div>
-              <div className="desc">{activeFoundation.desc}</div>
+              <div className="wrapper">
+                <img
+                  id={activeFoundation.id}
+                  src={activeFoundation.img}
+                  alt=""
+                />
+                <div className="name">{activeFoundation.name}</div>
+                <div className="desc">{activeFoundation.desc}</div>
+              </div>
             </div>
           </motion.div>
         )}
@@ -69,7 +75,7 @@ const Fundation = () => {
               className="item"
             >
               <div className="logo">
-                <img id={f.id} src={f.img} alt="Logo Hope Initiatives" />
+                <img id={f.id} src={f.img} alt={f.name} />
               </div>
               <h3 className="item-title">{f.name}</h3>
             </div>

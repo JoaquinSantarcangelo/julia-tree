@@ -24,10 +24,16 @@ const DonateForm = ({ setDonateOpen }) => {
     console.log(subscription);
 
     //Code
-    if(from.trim() === '' || to.trim() === '' || message.trim() === '' || payment.trim() === '' || quantity < 1){
+    if (
+      from.trim() === "" ||
+      to.trim() === "" ||
+      message.trim() === "" ||
+      payment.trim() === "" ||
+      quantity < 1
+    ) {
       validated = false;
     }
-    
+
     return validated;
   };
 
@@ -35,8 +41,8 @@ const DonateForm = ({ setDonateOpen }) => {
     if (validation()) {
       alert(`${from},${to},${message}`);
       setDonateOpen(false);
-    }else{
-      alert('All form fields must be completed');
+    } else {
+      alert("All form fields must be completed");
     }
   };
 
@@ -90,15 +96,9 @@ const DonateForm = ({ setDonateOpen }) => {
             name="message"
             id="message"
           ></textarea>
-          <div>
-            <input type="checkbox"
-              name="subscription"
-              id="subscription"
-              onChange={(e) => setSubscription(!subscription)}
-            /> I want to Subscribe
-          </div>
+
           <div className="payment">
-            <div className="label">Select your payment</div>
+            {/* <div className="label">Select your payment</div> */}
             <div className="selector">
               <div
                 onClick={() => setPayment("stripe")}
@@ -119,6 +119,15 @@ const DonateForm = ({ setDonateOpen }) => {
                 />
               </div>
             </div>
+          </div>
+          <div className="subscription">
+            <input
+              type="checkbox"
+              name="subscription"
+              id="subscription"
+              onChange={(e) => setSubscription(!subscription)}
+            />{" "}
+            Monthly subscription
           </div>
           <div onClick={() => handleSubmit()} className="button">
             Donate

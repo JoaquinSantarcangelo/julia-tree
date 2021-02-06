@@ -25,6 +25,7 @@
         display: grid
         place-items: center
         z-index: 1000000
+        
         &::before
             content: ""
             width: 100%
@@ -37,17 +38,15 @@
             border: 1em solid $brown
             width: 90%
             max-width: 60em
-            max-height: 90%
+            max-height: 75%
             position: relative
-            padding: 4em 2em
+            padding: 2em
             z-index: 10000
             overflow-y: auto
-            display: flex
-            align-items: center
-            justify-content: center
+            background-image: url("/assets/img/paper-texture3.png")
             flex-direction: column
             @media screen and ( max-width: 600px )
-                padding: 1.5em
+                padding: 1em
             .close-icon
                 top: 0.75em
                 right: 0.75em
@@ -59,28 +58,34 @@
                 &:hover
                     transform: scale(1.1)
                     cursor: pointer
-            img
-                width: 15em
-                max-height: 13em
-                margin-bottom: 1em
-            #hope
-                filter: invert(1)
-            .name
-                font-size: 2em
-                font-weight: 600
-                color: $brown
-                width: 100%
+            .wrapper
                 display: flex
                 align-items: center
                 justify-content: center
-                margin-bottom: 2em
-            .desc
-                width: 100%
-                display: flex
-                justify-content: center
-                align-items: center
-                text-align: center
-                font-size: 1.2em
+                padding: 0
+                img
+                    width: 15em
+                    max-height: 13em
+                    margin-bottom: 1em
+                #hope
+                    filter: invert(1)
+                .name
+                    font-size: 2em
+                    font-weight: 600
+                    color: $brown
+                    width: 100%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    margin-bottom: 2em
+                    text-align: center
+                .desc
+                    width: 100%
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    text-align: center
+                    font-size: 1.2em
 
     .wrapper
         display: flex
