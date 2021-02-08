@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import { AnimatePresence, motion } from "framer-motion";
+import { ClickAwayListener } from "@material-ui/core";
 
 const faqsDB = [
   {
@@ -85,17 +86,19 @@ const FAQ = () => {
             exit={{ opacity: 0 }}
             className="faq-modal"
           >
-            <div className="card">
-              <div
-                onClick={() => setModalVisible(false)}
-                className="close-icon"
-              >
-                <CloseIcon />
+            <ClickAwayListener onClickAway={() => setModalVisible(false)}>
+              <div className="card">
+                <div
+                  onClick={() => setModalVisible(false)}
+                  className="close-icon"
+                >
+                  <CloseIcon />
+                </div>
+                <div className="question">{faqsDB[activeFaq].question}</div>
+                <div className="divider"></div>
+                <div className="answer">{faqsDB[activeFaq].answer}</div>
               </div>
-              <div className="question">{faqsDB[activeFaq].question}</div>
-              <div className="divider"></div>
-              <div className="answer">{faqsDB[activeFaq].answer}</div>
-            </div>
+            </ClickAwayListener>
           </motion.div>
         )}
       </AnimatePresence>

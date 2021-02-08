@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import { motion, AnimatePresence } from "framer-motion";
+import { ClickAwayListener } from "@material-ui/core";
 
 const items = [
   {
@@ -40,23 +41,25 @@ const Fundation = () => {
             exit={{ opacity: 0 }}
             className="foundation-modal"
           >
-            <div className="card">
-              <div
-                onClick={() => setModalVisible(false)}
-                className="close-icon"
-              >
-                <CloseIcon />
+            <ClickAwayListener onClickAway={() => setModalVisible(false)}>
+              <div className="card">
+                <div
+                  onClick={() => setModalVisible(false)}
+                  className="close-icon"
+                >
+                  <CloseIcon />
+                </div>
+                <div className="wrapper">
+                  <img
+                    id={activeFoundation.id}
+                    src={activeFoundation.img}
+                    alt=""
+                  />
+                  <div className="name">{activeFoundation.name}</div>
+                  <div className="desc">{activeFoundation.desc}</div>
+                </div>
               </div>
-              <div className="wrapper">
-                <img
-                  id={activeFoundation.id}
-                  src={activeFoundation.img}
-                  alt=""
-                />
-                <div className="name">{activeFoundation.name}</div>
-                <div className="desc">{activeFoundation.desc}</div>
-              </div>
-            </div>
+            </ClickAwayListener>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
+import { ClickAwayListener } from "@material-ui/core";
 
 const variants = {
   visible: { opacity: 1 },
@@ -54,86 +55,88 @@ const DonateForm = ({ setDonateOpen }) => {
       exit="exit"
       className="donate-form"
     >
-      <div className="wrapper">
-        <div onClick={() => setDonateOpen(false)} className="close-icon">
-          <CloseIcon />
-        </div>
-        <div className="title">
-          Julia Trees invite us to write our own story of love
-        </div>
-        <div className="form">
-          <div className="quantity">
-            <div className="text">I want to plant</div>
-            <input
-              onChange={(e) => setQuantity(e.target.value)}
-              type="number"
-              name="quantity"
-              id="quantity"
-              value={quantity}
-            />
-            <div className="text">Julia Trees</div>
+      <ClickAwayListener onClickAway={() => setDonateOpen(false)}>
+        <div className="wrapper">
+          <div onClick={() => setDonateOpen(false)} className="close-icon">
+            <CloseIcon />
           </div>
-          <div className="from-to">
-            <input
-              value={from}
-              onChange={(e) => setFrom(e.target.value)}
-              id="from"
-              placeholder="From"
-              type="text"
-            />
-            <input
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
-              id="to"
-              placeholder="To"
-              type="text"
-            />
+          <div className="title">
+            Julia Trees invite us to write our own story of love
           </div>
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Message"
-            name="message"
-            id="message"
-          ></textarea>
+          <div className="form">
+            <div className="quantity">
+              <div className="text">I want to plant</div>
+              <input
+                onChange={(e) => setQuantity(e.target.value)}
+                type="number"
+                name="quantity"
+                id="quantity"
+                value={quantity}
+              />
+              <div className="text">Julia Trees</div>
+            </div>
+            <div className="from-to">
+              <input
+                value={from}
+                onChange={(e) => setFrom(e.target.value)}
+                id="from"
+                placeholder="From"
+                type="text"
+              />
+              <input
+                value={to}
+                onChange={(e) => setTo(e.target.value)}
+                id="to"
+                placeholder="To"
+                type="text"
+              />
+            </div>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Message"
+              name="message"
+              id="message"
+            ></textarea>
 
-          <div className="payment">
-            {/* <div className="label">Select your payment</div> */}
-            <div className="selector">
-              <div
-                onClick={() => setPayment("stripe")}
-                className={payment === "stripe" ? "item active" : "item"}
-              >
-                <img
-                  src="https://cdn.worldvectorlogo.com/logos/stripe.svg"
-                  alt=""
-                />
-              </div>
-              <div
-                onClick={() => setPayment("paypal")}
-                className={payment === "paypal" ? "item active" : "item"}
-              >
-                <img
-                  src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg"
-                  alt=""
-                />
+            <div className="payment">
+              {/* <div className="label">Select your payment</div> */}
+              <div className="selector">
+                <div
+                  onClick={() => setPayment("stripe")}
+                  className={payment === "stripe" ? "item active" : "item"}
+                >
+                  <img
+                    src="https://cdn.worldvectorlogo.com/logos/stripe.svg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  onClick={() => setPayment("paypal")}
+                  className={payment === "paypal" ? "item active" : "item"}
+                >
+                  <img
+                    src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="subscription">
-            <input
-              type="checkbox"
-              name="subscription"
-              id="subscription"
-              onChange={(e) => setSubscription(!subscription)}
-            />{" "}
-            Monthly subscription
-          </div>
-          <div onClick={() => handleSubmit()} className="button">
-            Donate
+            <div className="subscription">
+              <input
+                type="checkbox"
+                name="subscription"
+                id="subscription"
+                onChange={(e) => setSubscription(!subscription)}
+              />{" "}
+              Monthly subscription
+            </div>
+            <div onClick={() => handleSubmit()} className="button">
+              Donate
+            </div>
           </div>
         </div>
-      </div>
+      </ClickAwayListener>
       <motion.div
         initial={{ backdropFilter: "blur(0px)" }}
         animate={{ backdropFilter: "blur(8px)" }}
