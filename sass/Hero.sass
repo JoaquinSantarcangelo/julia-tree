@@ -8,7 +8,6 @@
     align-items: center
     justify-content: center
     position: relative
-    
 
     .wrapper
         color: #fff
@@ -157,7 +156,7 @@
                     min-width: 10em
 
                     &:nth-child(1)
-                        position: absolute
+                        position: absolutew
                         left: 0em
                         width: 15vw
                         animation: floating 8s both infinite
@@ -175,6 +174,8 @@
                         position: absolute
                         animation: floating 9.5s both infinite
                     &:nth-child(4)
+                        display: none
+                        margin-top: 50vh
                         animation: floating 8.5s both infinite
                         @media screen and ( max-width: 1000px )
                             display: none
@@ -240,11 +241,17 @@
                             width: 90vw
                 #layer3-alt
                     margin-top: -5vw
+                    img
+                        &:nth-child(5)
+                            right: 20vw
     @media screen and ( max-width: 400px )
         .background
             .layers
                 #layer3-alt
                     margin-top: -20vw
+                    img
+                        &:nth-child(5)
+                            top: 10vw
 //Animations    
 @keyframes floating
     0%

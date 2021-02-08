@@ -29,26 +29,41 @@
                 animation: floating 22s both infinite
 
     .people
+        width: 100%
         position: absolute
         display: flex
         align-items: flex-end
         bottom: 0
         z-index: 100
         img
-            width: 25%
-            height: 100%
-            @media screen and ( max-width: 600px )
-                width: 33vw
+            height: auto
+
             &:nth-child(1)
+                width: 50%
+                position: absolute
+                height: auto
                 @media screen and ( max-width: 600px )
-                    display: none
+                    width: 70%
             &:nth-child(2)
-                margin-left: 1em
+                position: absolute
+                left: 27vw
+                width: 24%
                 @media screen and ( max-width: 600px )
-                    margin-left: 0
+                    width: 35%
+                    left: 36vw
             &:nth-child(3)
+                position: absolute
+                right: 25vw
+                width: 25%
+                @media screen and ( max-width: 600px )
+                    right: 0
+                    width: 40%
             &:nth-child(4)
-            &:nth-child(5)
+                width: 35%
+                position: absolute
+                right: 0
+                @media screen and ( max-width: 600px )
+                    width: 25%
 
     .background
         display: flex
