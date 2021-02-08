@@ -1,13 +1,24 @@
 @import "index"
 
 .faq
-    min-height: 150vh
+    min-height: 130vh
     padding-top: 10vh
-    background-image: url("/assets/img/faqs3.png")
-    background-size: cover
-    background-position: bottom
+    background: rgb(226,147,0)
+    background: linear-gradient(180deg, rgba(226,147,0,1) 0%, rgba(248,129,0,1) 100%)
     position: relative
-
+    @media screen and ( max-width: 500px )
+        min-height: 130vh
+    .background
+        display: flex
+        position: absolute
+        bottom: 0
+        width: 100%
+        z-index: 10
+        img
+            width: 100%
+            @media screen and ( max-width: 600px )
+                width: 200%
+                transform: translateX(-7vh)
     .faq-modal
         position: fixed
         top: 0
@@ -73,6 +84,7 @@
         text-align: center
         margin-bottom: 50px
         line-height: 55px
+        
         .question
             padding-right: 5vw
         .answer
@@ -86,13 +98,14 @@
         width: 100%
         display: flex
         align-items: center
-
+        z-index: 100
         justify-content: space-between
         flex-wrap: wrap
         padding: 2em 4em
         @media screen and ( max-width: 800px )
             padding: 1.5em
         .item
+            z-index: 100
             background-color: $cream
             border-radius: 6em
             width: 48%
@@ -109,7 +122,7 @@
             &:hover
                 transform: scale(1.1)
                 cursor: pointer
-            @media screen and ( max-width: 800px )
+            @media screen and ( max-width: 750px )
                 width: 80%
                 font-size: 1.4em
                 margin: 1vh auto

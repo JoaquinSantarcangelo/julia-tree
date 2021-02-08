@@ -31,23 +31,19 @@ const Footer = () => {
             <div className="line">William Verga</div>
             <div className="line">Agustin De Martino</div>
           </div>
-          <div className="website-by">
-            <div className="line title">
-              Website by{" "}
-              <a
-                style={{ textDecoration: "none", color: "inherit" }}
-                href="https://salve.agency"
-                target="_blank"
-              >
-                Salvé:
-              </a>
+          <a
+            style={{ textDecoration: "none", color: "inherit" }}
+            href="https://salve.agency"
+            target="_blank"
+          >
+            <div className="website-by">
+              <div className="line title">Website by Salvé:</div>
+              <div className="line">Juan Cadile</div>
+              <div className="line">Guido Ponce</div>
+              <div className="line">Gianluca Nicolicchia</div>
+              <div className="line">Joaquin Santarcángelo</div>
             </div>
-            <div className="line">Kyle Byrne</div>
-            <div className="line">Juan Cadile</div>
-            <div className="line">Guido Ponce</div>
-            <div className="line">Gianluca Nicolicchia</div>
-            <div className="line">Joaquin Santarcángelo</div>
-          </div>
+          </a>
         </div>
       </div>
     </div>

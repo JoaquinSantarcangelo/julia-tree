@@ -111,6 +111,9 @@ const FAQ = () => {
           ))}
         </div>
       </div>
+      <div className="background">
+        <img src="/assets/img/faqs.png" alt="" />
+      </div>
     </div>
   );
 };
