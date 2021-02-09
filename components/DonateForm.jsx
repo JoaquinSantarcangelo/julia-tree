@@ -3,6 +3,11 @@ import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
 import { ClickAwayListener } from "@material-ui/core";
 
+import {loadStripe} from '@stripe/stripe-js';
+const stripePromise = loadStripe(
+  'pk_test_51IIvlAB5HIQWMe8gmTN2V6rC7XgwnhwnMiv8kI48BYDXtoRG20eRuRXskTLm5alzJiIZkIRrjh4rFzoIXuZljOjO00tXlqqsas'
+);
+
 const variants = {
   visible: { opacity: 1 },
   hidden: { opacity: 0 },
@@ -17,6 +22,8 @@ const DonateForm = ({ setDonateOpen }) => {
   const [payment, setPayment] = useState("stripe");
   const [quantity, setQuantity] = useState(1);
   const [subscription, setSubscription] = useState(false);
+
+  const donation_value = 1;
 
   //Form Validation
   const validation = () => {
@@ -38,8 +45,47 @@ const DonateForm = ({ setDonateOpen }) => {
     return validated;
   };
 
+  const handleStipePayment = async () => {
+    /*
+    // Get Stripe.js instance
+    const stripe = await stripePromise;
+
+    // Call your backend to create the Checkout Session
+    const response = await fetch('http://localhost:4000/api/stripe/donation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        donation_amount: donation_value,
+        quantity: quantity
+      })
+    })
+    .catch(error => console.log(error))
+
+    const session = await response.json();
+
+    console.log(session)
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }*/
+  }
+
   const handleSubmit = () => {
     if (validation()) {
+      if(payment === 'paypal'){
+
+      }else if(payment === 'stripe'){
+        handleStipePayment();
+      }
       alert(`${from},${to},${message}`);
       setDonateOpen(false);
     } else {
