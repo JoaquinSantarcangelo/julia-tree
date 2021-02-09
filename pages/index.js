@@ -57,6 +57,7 @@ export default function Index() {
           <title>Julia Tree</title>
           <link rel="icon" href="/favicon.ico" />
           <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+          <script src="https://www.paypal.com/sdk/js?client-id=ID"></script>
         </Head>
         <AnimatePresence exitBeforeEnter>
           {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
