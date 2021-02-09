@@ -16,7 +16,7 @@ const items = [
     img: "/assets/img/logo-tututeach.svg",
     name: "Tutu Teach Fundation",
     desc:
-      "Hope Initiatives International was established as the conduit through which Irish author, humanitarian and concept developer, Don Mullan, will bring to fulfillment major legacy projects he is developing. His initiatives include inspirational and creative campaigns such as the Julia Tree, and public artworks that seek to inspire and help heal the hurts of history. Projects include: supporting the African Union’s Great Green Wall; a UNESCO World Heritage site commemorating the 1914 Christmas Truce; an international memorial to the Transatlantic Slave Trade; a visitor’s centre in SOWETO commemorating the role of faith communities in the overthrow of Apartheid; supporting the National Centre for Race Amity, USA, in establishing racial justice and amity projects in all 50 US States; and a series of public monuments celebrating changemakers in history, including Matilda Joslyn Gage, Thomas Sankara, Wangari Maathai, and St. Francis of Assisi’s encounter with the Sultan of Egypt.",
+      "The objective of the foundation is to improve equal access to opportunities for everyone within society, especially women, and to do everything connected with or beneficial to this in the broadest sense of the word. Developing, implementung and/or supporting projects and programs designed to improve educatioal opportunities for girls. Developing, implementung and/or supporting projects and programs designed to support women in realising their dreams, in their personal and/or career lives and development",
   },
   {
     id: "orgiis-ghana",
