@@ -46,12 +46,14 @@ const DonateForm = ({ setDonateOpen }) => {
   };
 
   const handleStipePayment = async () => {
-    /*
+    
     // Get Stripe.js instance
     const stripe = await stripePromise;
 
+    let url = (subscription) ? 'http://localhost:4000/api/stripe/donation-sub' : 'http://localhost:4000/api/stripe/donation'
+
     // Call your backend to create the Checkout Session
-    const response = await fetch('http://localhost:4000/api/stripe/donation', {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -76,7 +78,7 @@ const DonateForm = ({ setDonateOpen }) => {
       // If `redirectToCheckout` fails due to a browser or network
       // error, display the localized error message to your customer
       // using `result.error.message`.
-    }*/
+    }
   }
 
   const handleSubmit = () => {
