@@ -42,6 +42,13 @@ export default function Index() {
 
   //Scroll To Top
   useEffect(() => {
+
+    const pageLoaded = () => {
+      window.addEventListener('load', () => {
+        setLoading(false);
+      })
+    }
+    pageLoaded();
     animateScroll.scrollToTop();
   }, []);
 
@@ -51,8 +58,7 @@ export default function Index() {
   };
 
   return (
-    <OnImagesLoaded onLoaded={() => setLoading(false)} timeout={3000}>
-      <div className="app">
+    <div className="app">
         <Head>
           <title>Julia Tree</title>
           <link rel="icon" href="/favicon.ico" />
@@ -99,6 +105,5 @@ export default function Index() {
           loading={loading}
         />
       </div>
-    </OnImagesLoaded>
   );
 }

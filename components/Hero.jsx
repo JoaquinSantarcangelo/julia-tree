@@ -49,7 +49,7 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
         </motion.div>
       </motion.div>
       <AnimatePresence>
-        <div className="background" onLoad={() => onPageLoad()}>
+        <div className="background">
           <div className="layers">
             <div id="layer0" className="layer">
               <div className="img"></div>
