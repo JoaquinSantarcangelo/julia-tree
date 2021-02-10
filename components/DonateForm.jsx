@@ -67,17 +67,13 @@ const DonateForm = ({ setDonateOpen }) => {
 
     const session = await response.json();
 
-    console.log(session);
-
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
 
     if (result.error) {
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `result.error.message`.
+      alert('Ups! There was an error! Try later');
     }
   };
 
