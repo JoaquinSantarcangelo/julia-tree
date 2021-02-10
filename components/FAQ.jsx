@@ -115,7 +115,7 @@ const FAQ = () => {
         </div>
       </div>
       <div className="background">
-        <img src="/assets/img/faqs.png" alt="" />
+        <img src="/assets/img/faqs.webp" alt="" />
       </div>
     </div>
   );

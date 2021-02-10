@@ -55,22 +55,22 @@ const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
               <div className="img"></div>
             </div>
             <div id="layer1" className="layer">
-              <img src="assets/img/hero/Layer1.png" alt="" />
+              <img src="assets/img/hero/Layer1.webp" alt="" />
             </div>
             <div id="layer2" className="layer">
-              <img src="assets/img/hero/Layer2.png" alt="" />
+              <img src="assets/img/hero/Layer2.webp" alt="" />
             </div>
             <div id="layer3" className="layer">
-              <img src="assets/img/hero/Fruto2.png" alt="" />
-              <img src="assets/img/hero/Fruto1.png" alt="" />
-              <img src="assets/img/hero/Fruto3.png" alt="" />
+              <img src="assets/img/hero/Fruto2.webp" alt="" />
+              <img src="assets/img/hero/Fruto1.webp" alt="" />
+              <img src="assets/img/hero/Fruto3.webp" alt="" />
             </div>
             <div id="layer3-alt" className="layer">
-              <img src="assets/img/hero/Fruto2.png" alt="" />
-              <img src="assets/img/hero/Fruto1.png" alt="" />
-              <img src="assets/img/hero/Fruto3.png" alt="" />
-              <img src="assets/img/hero/Fruto2.png" alt="" />
-              <img src="assets/img/hero/Fruto3.png" alt="" />
+              <img src="assets/img/hero/Fruto2.webp" alt="" />
+              <img src="assets/img/hero/Fruto1.webp" alt="" />
+              <img src="assets/img/hero/Fruto3.webp" alt="" />
+              <img src="assets/img/hero/Fruto2.webp" alt="" />
+              <img src="assets/img/hero/Fruto3.webp" alt="" />
             </div>
           </div>
         </div>

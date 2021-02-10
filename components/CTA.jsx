@@ -28,7 +28,7 @@ const CTA = ({ setDonateOpen }) => {
           </div>
         </div>
         <div className="hand">
-          <img src="/assets/img/donate-hand.png" alt="" />
+          <img src="/assets/img/donate-hand.webp" alt="" />
         </div>
         <div className="share-now">
           <div className="title">Share now!</div>

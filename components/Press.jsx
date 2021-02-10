@@ -15,10 +15,10 @@ const Press = () => {
         </div>
       </div>
       <div className="people">
-        <img src="/assets/img/press/press1.png" alt="" />
-        <img src="/assets/img/press/press3.png" alt="" />
-        <img src="/assets/img/press/press4.png" alt="" />
-        <img src="/assets/img/press/press5.png" alt="" />
+        <img src="/assets/img/press/press1.webp" alt="" />
+        <img src="/assets/img/press/press3.webp" alt="" />
+        <img src="/assets/img/press/press4.webp" alt="" />
+        <img src="/assets/img/press/press5.webp" alt="" />
       </div>
       <div className="background"></div>
     </div>
