@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
 import { ClickAwayListener } from "@material-ui/core";
@@ -81,10 +81,55 @@ const DonateForm = ({ setDonateOpen }) => {
     }
   }
 
+  useEffect(() => {
+    /*window.paypal.Button.render({
+      env: 'sandbox', // Or 'production'
+      // Set up the payment:
+      // 1. Add a payment callback
+      payment: function(data, actions) {
+        // 2. Make a request to your server
+        return actions.request.post('/my-api/create-payment/')
+          .then(function(res) {
+            // 3. Return res.id from the response
+            return res.id;
+          });
+      },
+      // Execute the payment:
+      // 1. Add an onAuthorize callback
+      onAuthorize: function(data, actions) {
+        // 2. Make a request to your server
+        return actions.request.post('/my-api/execute-payment/', {
+          paymentID: data.paymentID,
+          payerID:   data.payerID
+        })
+          .then(function(res) {
+            // 3. Show the buyer a confirmation message.
+          });
+      }
+    }, '#paypal-button');*/
+  }, [])
+
+  const handlePaypalPayment = async () => {
+    let url = 'http://localhost:4000/api/paypal/create-payment';
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        value: donation_value,
+        amount: quantity
+      })
+    })
+    .catch(error => console.log(error))
+
+    console.log(response)
+  }
+
   const handleSubmit = () => {
     if (validation()) {
       if(payment === 'paypal'){
-
+        handlePaypalPayment();
       }else if(payment === 'stripe'){
         handleStipePayment();
       }
@@ -159,7 +204,9 @@ const DonateForm = ({ setDonateOpen }) => {
                     alt=""
                   />
                 </div>
+                
                 <div
+                  id="paypal-button"
                   onClick={() => setPayment("paypal")}
                   className={payment === "paypal" ? "item active" : "item"}
                 >
