@@ -50,8 +50,8 @@ const DonateForm = ({ setDonateOpen }) => {
     const stripe = await stripePromise;
 
     let url = subscription
-      ? "http://localhost:4000/api/stripe/donation-sub"
-      : "http://localhost:4000/api/stripe/donation";
+      ? "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
+      : "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
 
     // Call your backend to create the Checkout Session
     const response = await fetch(url, {
