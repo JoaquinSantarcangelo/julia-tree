@@ -63,7 +63,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="assets/img/49.png"></link>
         <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
-        <script src="https://www.paypal.com/sdk/js?client-id=ID"></script>
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
       </Head>
       <AnimatePresence exitBeforeEnter>
         {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
