@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-thejuliatree-dev-185712-authRole",
+            "UnauthRoleArn": "arn:aws:iam::574693122733:role/amplify-thejuliatree-dev-185712-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::574693122733:role/amplify-thejuliatree-dev-185712-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-thejuliatree-dev-185712-deployment",
+            "UnauthRoleName": "amplify-thejuliatree-dev-185712-unauthRole",
+            "StackName": "amplify-thejuliatree-dev-185712",
+            "StackId": "arn:aws:cloudformation:us-east-1:574693122733:stack/amplify-thejuliatree-dev-185712/c6bed4e0-6b21-11eb-b8af-0a7396047ff3",
+            "AmplifyAppId": "dg02xv8c549zg"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dg02xv8c549zg",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

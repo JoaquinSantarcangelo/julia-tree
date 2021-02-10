@@ -10,13 +10,23 @@
     display: grid
     place-items: center
     position: fixed
-    z-index: 10000
+    z-index: 1000000
     background-color: $color2
+    &::before
+        content: ""
+        position: absolute
+        width: 100vw
+        height: 100vh
+        left: 0
+        top: 0
+        background-color: rgba(0,0,0,0.35)
+        z-index: 10
     .wrapper
         display: flex
         align-items: center
         justify-content: center
         flex-direction: column
+        z-index: 100
         .text
             font-size: 1.2em
             font-weight: 200
@@ -100,3 +110,61 @@
 
             50%
                 transform: scale(1.5)
+
+    .clouds
+        position: absolute
+        width: 100vh
+        height: 100vh
+
+        img
+            width: 80vw
+            max-width: 60em
+            min-width: 50em
+            &:nth-child(1)
+                position: absolute
+                opacity: 0.9
+                bottom: -30vw
+                left: -20vw
+                animation: floating 10s both infinite
+            &:nth-child(2)
+                position: absolute
+                opacity: 0.8
+                top: 0
+                right: -15vw
+                animation: floating 12s both infinite
+            &:nth-child(3)
+
+                position: absolute
+                opacity: 0.7
+                top: -10vw
+                left: -25vw
+                animation: floating 14s both infinite
+            &:nth-child(4)
+                position: absolute
+                opacity: 0.6
+                bottom: -15vw
+                right: -35vw
+                animation: floating 16s both infinite
+            &:nth-child(5)
+                position: absolute
+                opacity: 0.5
+                top: -20em
+                right: -40em
+                animation: floating 18s both infinite
+            &:nth-child(6)
+                position: absolute
+                opacity: 0.4
+                bottom: 10em
+                left: -20em
+                animation: floating 20s both infinite
+
+@keyframes floating
+    0%
+        transform: translateY(0)
+        filter: brightness(1.4)
+    50%
+        transform: translateY(100px)
+        filter: brightness(1)
+    100%
+        transform: translateY(0)
+        filter: brightness(1.4)

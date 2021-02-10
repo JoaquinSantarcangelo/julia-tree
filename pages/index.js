@@ -58,7 +58,7 @@ export default function Index() {
   };
 
   return (
-    <div className="app">
+    <div className={!loading ? "app" : "app fixed"}>
         <Head>
           <title>Julia Tree</title>
           <link rel="icon" href="/favicon.ico" />
