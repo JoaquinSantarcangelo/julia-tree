@@ -35,6 +35,7 @@ const Footer = () => {
             style={{ textDecoration: "none", color: "inherit" }}
             href="https://salve.agency"
             target="_blank"
+            rel="noreferrer"
           >
             <div className="website-by">
               <div className="line title">Website by Salvé:</div>

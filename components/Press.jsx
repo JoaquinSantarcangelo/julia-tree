@@ -7,7 +7,7 @@ const Press = () => {
         <div className="cloud">
           <img src="/assets/img/49.png" alt="" />
         </div>
-        <div className="cloud fixed">
+        <div className="cloud">
           <img src="/assets/img/49.png" alt="" />
         </div>
         <div className="cloud">

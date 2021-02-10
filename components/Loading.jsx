@@ -43,7 +43,7 @@ const Loading = () => {
         initial={{ opacity: 1 }}
         animate={!loading ? { opacity: 0 } : { opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="clouds"
+        className="clouds-load"
       >
         <img src="/assets/img/49.png" alt="" />
         <img src="/assets/img/49.png" alt="" />
