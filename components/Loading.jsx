@@ -41,7 +41,7 @@ const Loading = () => {
 
       <motion.div
         initial={{ opacity: 1 }}
-        animate={loading ? { opacity: 0 } : { opacity: 1 }}
+        animate={!loading ? { opacity: 0 } : { opacity: 1 }}
         exit={{ opacity: 0 }}
         className="clouds"
       >
