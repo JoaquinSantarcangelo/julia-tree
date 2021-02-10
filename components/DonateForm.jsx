@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
 import { ClickAwayListener } from "@material-ui/core";
@@ -23,7 +23,7 @@ const DonateForm = ({ setDonateOpen }) => {
   const [quantity, setQuantity] = useState(1);
   const [subscription, setSubscription] = useState(false);
 
-  const donation_value = 1;
+  const donation_value = 10;
 
   //Form Validation
   const validation = () => {
@@ -45,7 +45,7 @@ const DonateForm = ({ setDonateOpen }) => {
     return validated;
   };
 
-  const handleStipePayment = async () => {
+  const handleStripePayment = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
 
@@ -81,56 +81,10 @@ const DonateForm = ({ setDonateOpen }) => {
     }
   };
 
-  useEffect(() => {
-    /*window.paypal.Button.render({
-      env: 'sandbox', // Or 'production'
-      // Set up the payment:
-      // 1. Add a payment callback
-      payment: function(data, actions) {
-        // 2. Make a request to your server
-        return actions.request.post('/my-api/create-payment/')
-          .then(function(res) {
-            // 3. Return res.id from the response
-            return res.id;
-          });
-      },
-      // Execute the payment:
-      // 1. Add an onAuthorize callback
-      onAuthorize: function(data, actions) {
-        // 2. Make a request to your server
-        return actions.request.post('/my-api/execute-payment/', {
-          paymentID: data.paymentID,
-          payerID:   data.payerID
-        })
-          .then(function(res) {
-            // 3. Show the buyer a confirmation message.
-          });
-      }
-    }, '#paypal-button');*/
-  }, []);
-
-  const handlePaypalPayment = async () => {
-    let url = "http://localhost:4000/api/paypal/create-payment";
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        value: donation_value,
-        amount: quantity,
-      }),
-    }).catch((error) => console.log(error));
-
-    console.log(response);
-  };
-
   const handleSubmit = () => {
     if (validation()) {
-      if (payment === "paypal") {
-        handlePaypalPayment();
-      } else if (payment === "stripe") {
-        handleStipePayment();
+      if (payment === "stripe") {
+        handleStripePayment();
       }
       alert(`${from},${to},${message}`);
       setDonateOpen(false);
@@ -190,32 +144,7 @@ const DonateForm = ({ setDonateOpen }) => {
               name="message"
               id="message"
             ></textarea>
-            {/* 
-            <div className="payment">
-              <div className="label">Select your payment</div> 
-              <div className="selector">
-                <div
-                  onClick={() => setPayment("stripe")}
-                  className={payment === "stripe" ? "item active" : "item"}
-                >
-                  <img
-                    src="https://cdn.worldvectorlogo.com/logos/stripe.svg"
-                    alt=""
-                  />
-                </div>
-                
-                <div
-                  id="paypal-button"
-                  onClick={() => setPayment("paypal")}
-                  className={payment === "paypal" ? "item active" : "item"}
-                >
-                  <img
-                    src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div> */}
+
             <div className="subscription">
               <input
                 type="checkbox"
@@ -227,6 +156,13 @@ const DonateForm = ({ setDonateOpen }) => {
             </div>
             <div onClick={() => handleSubmit()} className="button">
               Donate
+            </div>
+            <div className="payment">
+              powered by
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/stripe.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
