@@ -45,10 +45,10 @@ export default function Index() {
     const pageLoaded = () => {
       window.addEventListener("load", () => {
         setLoading(false);
+        animateScroll.scrollToTop();
       });
     };
     pageLoaded();
-    animateScroll.scrollToTop();
   }, []);
 
   const onPageLoad = () => {

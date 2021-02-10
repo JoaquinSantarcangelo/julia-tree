@@ -2,12 +2,72 @@
 
 .press
     height: 150vw
-    max-height: 100em
+    max-height: 140em
+    min-height: 70em
     position: relative
     background-color: $lightblue
     background: linear-gradient(0deg, $lightblue 0%, $lightblueC 100%)
-
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    flex-direction: column
     z-index: 100
+    .title
+        margin-top: 30vw
+        font-weight: 600
+        color: $cream
+        font-size: 2.5em
+    .press-hearts
+        width: 100%
+        height: 25vw
+        margin-top: 5vh
+        display: flex
+        align-items: center
+        justify-content: center
+        .press-heart
+            height: 100%
+            width: 23vw
+            height: 20vw
+            min-height: 15em
+            min-width: 18em
+            transition: all 0.4s ease
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            background-image: url("/assets/img/press-heart.png")
+            background-size: cover
+            background-position: center
+
+            &:hover
+                transform: scale(1.1)
+
+            .title
+                margin-top: 0
+                width: 80%
+                font-size: 1.2em
+                color: $cream
+                text-align: center
+            .read-more
+                color: $cream
+                border: 2px solid $cream
+                padding: 0.25em 1em
+                border-radius: 2em
+                transition: all 0.4s ease
+                margin-top: 1em
+                &:hover
+                    background-color: $cream
+                    color: $color1
+                    transform: scale(1.05)
+                    cursor: pointer
+            &:nth-child(1)
+                animation: floating-hearts 10s both infinite
+            &:nth-child(2)
+                animation: floating-hearts 8s both infinite
+                margin-top: 10vw
+            &:nth-child(3)
+                animation: floating-hearts 9s both infinite
     .clouds
         display: flex
         width: 100%
@@ -22,13 +82,13 @@
             &:nth-child(1)
                 left: -12em
                 transform: rotateZ(10deg)
-                animation: floating 17s both infinite
+                animation: floating-cloud 17s both infinite
             &:nth-child(2)
-                animation: floating 12s both infinite
+                animation: floating-cloud 15s both infinite
             &:nth-child(3)
                 right: -12em
                 transform: rotateZ(-15deg)
-                animation: floating 22s both infinite
+                animation: floating-cloud 22s both infinite
 
     .people
         width: 100%
@@ -91,7 +151,10 @@
             top: 2em
 
     @media screen and ( max-width: 500px )
+        min-height: 40em
+
         .clouds
+            top: 0em
             .cloud
                 img
                     width: 70vw
@@ -100,17 +163,10 @@
                 &:last-child
                     right: -6em
 
-    @media screen and ( max-width: 500px )
-        .clouds
-            top: 0em
-
-@keyframes floating
+@keyframes floating-hearts
     0%
         transform: translateY(0)
-        filter: brightness(1.4)
     50%
         transform: translateY(40px)
-        filter: brightness(1)
     100%
         transform: translateY(0)
-        filter: brightness(1.4)
