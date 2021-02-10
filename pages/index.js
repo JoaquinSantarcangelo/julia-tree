@@ -42,12 +42,11 @@ export default function Index() {
 
   //Scroll To Top
   useEffect(() => {
-
     const pageLoaded = () => {
-      window.addEventListener('load', () => {
+      window.addEventListener("load", () => {
         setLoading(false);
-      })
-    }
+      });
+    };
     pageLoaded();
     animateScroll.scrollToTop();
   }, []);
@@ -58,52 +57,53 @@ export default function Index() {
   };
 
   return (
-    <div className="app">
-        <Head>
-          <title>Julia Tree</title>
-          <link rel="icon" href="/favicon.ico" />
-          <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
-          <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-        </Head>
-        <AnimatePresence exitBeforeEnter>
-          {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
-        </AnimatePresence>
-        <AnimatePresence>{loading && <Loading />}</AnimatePresence>
-        <Navbar
-          offsetY={offsetY}
-          videoOpen={videoOpen}
-          menuOpen={menuOpen}
-          handleMenu={handleMenu}
-          setVideoOpen={setVideoOpen}
-        />
-        <Menu
-          setVideoOpen={setVideoOpen}
-          menuOpen={menuOpen}
-          handleMenu={handleMenu}
-        />
-        <div className="social-icons">
-          <div className="icon">
-            <FacebookIcon />
-          </div>
-          <div className="icon">
-            <InstagramIcon />
-          </div>
-          <div className="icon">
-            <TwitterIcon />
-          </div>
+    <div className={!loading ? "app" : "app fixed"}>
+      <Head>
+        <title>Julia Tree</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" as="image" href="assets/img/49.png"></link>
+        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+      </Head>
+      <AnimatePresence exitBeforeEnter>
+        {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
+      </AnimatePresence>
+      <AnimatePresence>{loading && <Loading />}</AnimatePresence>
+      <Navbar
+        offsetY={offsetY}
+        videoOpen={videoOpen}
+        menuOpen={menuOpen}
+        handleMenu={handleMenu}
+        setVideoOpen={setVideoOpen}
+      />
+      <Menu
+        setVideoOpen={setVideoOpen}
+        menuOpen={menuOpen}
+        handleMenu={handleMenu}
+      />
+      <div className="social-icons">
+        <div className="icon">
+          <FacebookIcon />
         </div>
-
-        <AnimatePresence exitBeforeEnter initial={false}>
-          {videoOpen && (
-            <Video setDonateOpen={setDonateOpen} setVideoOpen={setVideoOpen} />
-          )}
-        </AnimatePresence>
-        <Home
-          setDonateOpen={setDonateOpen}
-          setVideoOpen={setVideoOpen}
-          onPageLoad={onPageLoad}
-          loading={loading}
-        />
+        <div className="icon">
+          <InstagramIcon />
+        </div>
+        <div className="icon">
+          <TwitterIcon />
+        </div>
       </div>
+
+      <AnimatePresence exitBeforeEnter initial={false}>
+        {videoOpen && (
+          <Video setDonateOpen={setDonateOpen} setVideoOpen={setVideoOpen} />
+        )}
+      </AnimatePresence>
+      <Home
+        setDonateOpen={setDonateOpen}
+        setVideoOpen={setVideoOpen}
+        onPageLoad={onPageLoad}
+        loading={loading}
+      />
+    </div>
   );
 }
