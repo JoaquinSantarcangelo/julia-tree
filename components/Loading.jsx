@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+  exit: { opacity: 0, transition: { duration: 2, ease: "easeInOut" } },
+};
+
 const Loading = () => {
-  useEffect(() => {
-    const pageLoaded = () => {
-      window.addEventListener("load", () => {
-        setLoading(false);
-      });
-    };
-    pageLoaded();
-  }, []);
-
-  const [loading, setLoading] = useState(true);
-
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1, ease: "easeInOut" }}
+      animate="visible"
+      exit="exit"
+      variants={variants}
       className="loading"
     >
       <div className="wrapper">
@@ -39,19 +34,14 @@ const Loading = () => {
         Loading...
       </div>
 
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={!loading ? { opacity: 0 } : { opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="clouds-load"
-      >
+      <div className="clouds-load">
         <img src="/assets/img/49.png" alt="" />
         <img src="/assets/img/49.png" alt="" />
         <img src="/assets/img/49.png" alt="" />
         <img src="/assets/img/49.png" alt="" />
         <img src="/assets/img/49.png" alt="" />
         <img src="/assets/img/49.png" alt="" />
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

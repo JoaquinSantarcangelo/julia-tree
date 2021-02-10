@@ -65,12 +65,12 @@
         background-position: center
         transition: all 0.8s ease
         &::before
-            z-index: 105
+            z-index: 106
             content: ""
             position: absolute
             width: 100%
             height: 100%
-            background-color: rgba(0,0,0,0.4)
+            background-color: rgba(0,0,0,0.3)
         .layers
 
             .layer
@@ -85,11 +85,11 @@
                 .img
                     height: 100%
                     width: 100%
-                    background-image: url("/assets/img/hero/Layer0.png")
+                    background-image: url("/assets/img/hero/Layer0.webp")
                     background-size: cover
                     background-position: center
             #layer1
-                z-index: 102
+                z-index: 105
                 animation: lighting 4s both infinite
                 img
                     position: absolute
@@ -230,10 +230,11 @@
                 #layer1
                     img
                         left: -2em
+                        min-width: 13em
                 #layer2
                     img
-                        min-width: 25em
-                        right: -8em
+                        min-width: 18em
+                        right: -20vw
                 #layer3
                     margin-top: 35vw
                     img

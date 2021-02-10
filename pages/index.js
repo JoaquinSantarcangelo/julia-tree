@@ -45,10 +45,10 @@ export default function Index() {
     const pageLoaded = () => {
       window.addEventListener("load", () => {
         setLoading(false);
+        animateScroll.scrollToTop();
       });
     };
     pageLoaded();
-    animateScroll.scrollToTop();
   }, []);
 
   const onPageLoad = () => {
@@ -67,7 +67,9 @@ export default function Index() {
       <AnimatePresence exitBeforeEnter>
         {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
       </AnimatePresence>
-      <AnimatePresence>{loading && <Loading />}</AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
+        {loading && <Loading />}
+      </AnimatePresence>
       <Navbar
         offsetY={offsetY}
         videoOpen={videoOpen}
