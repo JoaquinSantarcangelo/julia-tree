@@ -82,13 +82,13 @@
             &:nth-child(1)
                 left: -12em
                 transform: rotateZ(10deg)
-                animation: floating-cloud 17s both infinite
+                animation: floating-cloud2 17s both infinite
             &:nth-child(2)
-                animation: floating-cloud 15s both infinite
+                animation: floating-cloud2 15s both infinite
             &:nth-child(3)
                 right: -12em
                 transform: rotateZ(-15deg)
-                animation: floating-cloud 22s both infinite
+                animation: floating-cloud2 22s both infinite
 
     .people
         width: 100%
@@ -170,3 +170,14 @@
         transform: translateY(40px)
     100%
         transform: translateY(0)
+
+@keyframes floating-cloud2
+    0%
+        transform: translateY(0)
+        filter: brightness(1.4)
+    50%
+        transform: translateY(40px)
+        filter: brightness(1)
+    100%
+        transform: translateY(0)
+        filter: brightness(1.4)

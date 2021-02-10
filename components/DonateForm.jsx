@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
 import { ClickAwayListener } from "@material-ui/core";
 
-import {loadStripe} from '@stripe/stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(
-  'pk_test_51IIvlAB5HIQWMe8gmTN2V6rC7XgwnhwnMiv8kI48BYDXtoRG20eRuRXskTLm5alzJiIZkIRrjh4rFzoIXuZljOjO00tXlqqsas'
+  "pk_test_51IIvlAB5HIQWMe8gmTN2V6rC7XgwnhwnMiv8kI48BYDXtoRG20eRuRXskTLm5alzJiIZkIRrjh4rFzoIXuZljOjO00tXlqqsas"
 );
 
 const variants = {
@@ -46,28 +46,28 @@ const DonateForm = ({ setDonateOpen }) => {
   };
 
   const handleStipePayment = async () => {
-    
     // Get Stripe.js instance
     const stripe = await stripePromise;
 
-    let url = (subscription) ? 'http://localhost:4000/api/stripe/donation-sub' : 'http://localhost:4000/api/stripe/donation'
+    let url = subscription
+      ? "http://localhost:4000/api/stripe/donation-sub"
+      : "http://localhost:4000/api/stripe/donation";
 
     // Call your backend to create the Checkout Session
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         donation_amount: donation_value,
-        quantity: quantity
-      })
-    })
-    .catch(error => console.log(error))
+        quantity: quantity,
+      }),
+    }).catch((error) => console.log(error));
 
     const session = await response.json();
 
-    console.log(session)
+    console.log(session);
 
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
@@ -79,7 +79,7 @@ const DonateForm = ({ setDonateOpen }) => {
       // error, display the localized error message to your customer
       // using `result.error.message`.
     }
-  }
+  };
 
   useEffect(() => {
     /*window.paypal.Button.render({
@@ -107,30 +107,29 @@ const DonateForm = ({ setDonateOpen }) => {
           });
       }
     }, '#paypal-button');*/
-  }, [])
+  }, []);
 
   const handlePaypalPayment = async () => {
-    let url = 'http://localhost:4000/api/paypal/create-payment';
+    let url = "http://localhost:4000/api/paypal/create-payment";
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         value: donation_value,
-        amount: quantity
-      })
-    })
-    .catch(error => console.log(error))
+        amount: quantity,
+      }),
+    }).catch((error) => console.log(error));
 
-    console.log(response)
-  }
+    console.log(response);
+  };
 
   const handleSubmit = () => {
     if (validation()) {
-      if(payment === 'paypal'){
+      if (payment === "paypal") {
         handlePaypalPayment();
-      }else if(payment === 'stripe'){
+      } else if (payment === "stripe") {
         handleStipePayment();
       }
       alert(`${from},${to},${message}`);
@@ -191,9 +190,9 @@ const DonateForm = ({ setDonateOpen }) => {
               name="message"
               id="message"
             ></textarea>
-
+            {/* 
             <div className="payment">
-              {/* <div className="label">Select your payment</div> */}
+              <div className="label">Select your payment</div> 
               <div className="selector">
                 <div
                   onClick={() => setPayment("stripe")}
@@ -216,7 +215,7 @@ const DonateForm = ({ setDonateOpen }) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="subscription">
               <input
                 type="checkbox"
