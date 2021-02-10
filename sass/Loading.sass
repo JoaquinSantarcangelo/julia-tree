@@ -2,6 +2,7 @@
 
 // Loading
 .loading
+
     width: 100%
     height: 100vh
     top: 0
@@ -11,7 +12,8 @@
     place-items: center
     position: fixed
     z-index: 1000000
-    background-color: $color2
+    background: linear-gradient(0deg, $lightblueC 0%, $lightblue 100%)
+
     &::before
         content: ""
         position: absolute
@@ -19,7 +21,7 @@
         height: 100vh
         left: 0
         top: 0
-        background-color: rgba(0,0,0,0.35)
+        background-color: rgba(0,0,0,0.15)
         z-index: 10
     .wrapper
         display: flex

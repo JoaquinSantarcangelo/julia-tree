@@ -68,7 +68,9 @@ export default function Index() {
       <AnimatePresence exitBeforeEnter>
         {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
       </AnimatePresence>
-      <AnimatePresence>{loading && <Loading />}</AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
+        {loading && <Loading />}
+      </AnimatePresence>
       <Navbar
         offsetY={offsetY}
         videoOpen={videoOpen}
