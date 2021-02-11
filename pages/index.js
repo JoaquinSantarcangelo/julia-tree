@@ -5,6 +5,8 @@ import OnImagesLoaded from "react-on-images-loaded";
 import { Scroll, animateScroll } from "react-scroll";
 import { saveAs } from 'file-saver';
 
+import axiosClient from '../config/axios';
+
 //Components
 import Menu from "../components/Menu";
 import Navbar from "../components/Navbar";
@@ -91,48 +93,26 @@ export default function Index({ query }) {
       .catch((error) => console.log(error));
   };
 
-<<<<<<< HEAD
-  const requestLetter = () => {
-    fetch(
-      'http://localhost:4000/api/fetch-pdf',
-      {
-        method: "GET",
-        headers: { 
-          'Accept': 'application/pdf',
-          'Content-Type': 'application/pdf' 
-        }
-      }
-    )
-    .then(pdf => {
-      console.log(pdf.data)
-    })
-    .catch((error) => console.log(error));
-
-/*
-    let downloableFile = new Blob([pdf.data], {type: 'application/pdf'});
-    saveAs(downloableFile, 'The-Julia-Tree.pdf');*/
-  }
-=======
   const requestLetter = async () => {
-    const pdf = await fetch("http://localhost:4000/api/fetch-pdf", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    }).catch((error) => console.log(error));
-  };
->>>>>>> 5354feb9ac809a631989070b80c99360c395be68
+
+    try{
+      const pdf = await axiosClient('/api/fetch-pdf', {responseType: 'blob'});
+      let downloableFile = new Blob([pdf.data], {type: 'application/pdf'});
+      saveAs(downloableFile, 'The-Julia-Tree.pdf');
+
+    }catch(error){
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
     if (query !== {}) {
       if (verifyDonation()) {
-        setDonateSucess(true);
+        setDonateSuccess(true);
       }
     }
   }, []);
   //#endregion
-  console.log(query);
 
   return (
     <div className={!loading ? "app" : "app fixed"}>
