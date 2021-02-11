@@ -29,7 +29,7 @@ const Navbar = ({ menuOpen, setVideoOpen, videoOpen, handleMenu, offsetY }) => {
       className="navbar"
       onMouseOver={() => controls.start({ opacity: 1 })}
     >
-      <div id="logo" className="logo">
+      <div id="logo" className={videoOpen ? "logo hide" : "logo"}>
         <img src="/assets/logo.svg" alt="" />
       </div>
       <div className="menu-button">
