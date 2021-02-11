@@ -40,8 +40,8 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
     const stripe = await stripePromise;
     
     let url = formState.subscription
-      ? "//juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
-      : "//juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
+      ? "https://julia-tree-api.herokuapp.com/api/stripe/donation-sub"
+      : "https://julia-tree-api.herokuapp.com/api/stripe/donation";
 
     // Call your backend to create the Checkout Session
     //application/json
