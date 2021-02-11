@@ -58,6 +58,65 @@ export default function Index({ query }) {
     pageLoaded();
   }, []);
 
+
+  //#region LETTER SECTION
+  const verifyDonation = () => {
+    if (window.location.href.includes("success")) {
+      //MODAL GRACIAS POR LA DONACION
+      return true;
+    } else if (window.location.href.includes("failed")) {
+      //MODAL ERROR EN LA DONACION
+      return false;
+    }
+  };
+
+  const createLetter = () => {
+    //"https://api.thejuliatree.org/api/create-pdf"
+    fetch(
+      'http://localhost:4000/api/create-pdf',
+      {
+        method: "POST",
+        headers: { 
+          'Accept': 'application/json',
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(query),
+      }
+    )
+    .then(response => response.json())
+    .then(result => {
+      if(result.msg==='success'){
+        requestLetter();
+      }
+    })
+    .catch((error) => console.log(error));   
+  };
+
+  const requestLetter = async () => {
+    const pdf = await fetch(
+      'http://localhost:4000/api/fetch-pdf',
+      {
+        method: "GET",
+        headers: { 
+          'Accept': 'application/json',
+          'Content-Type': 'application/json' 
+        }
+      }
+    )
+    .catch((error) => console.log(error));
+
+    
+  }
+
+  useEffect(() => {
+    if(query !== {}){
+      if (verifyDonation()) {
+        createLetter();
+      }
+    }
+    
+  }, []);
+  //#endregion
   console.log(query);
 
   return (
