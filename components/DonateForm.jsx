@@ -67,6 +67,8 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       sessionId: session.id,
     });
 
+    console.log(result)
+
     if (result.error) {
       alert("Ups! There was an error! Try later");
     }
