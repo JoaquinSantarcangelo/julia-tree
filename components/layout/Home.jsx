@@ -11,6 +11,7 @@ import Footer from "../Footer";
 const Home = ({ loading, setVideoOpen, setDonateOpen }) => {
   useEffect(() => {
     console.log(window.location);
+    //verificar si hay from to y msg para evitar hardcodeo
     if (window.location.href.includes("success")) {
       alert("Thank you for your donation!");
     } else if (window.location.href.includes("failed")) {
