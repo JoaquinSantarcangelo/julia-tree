@@ -12,6 +12,7 @@ import Video from "../components/Video";
 import Home from "../components/layout/Home";
 import Loading from "../components/Loading";
 import DonateForm from "../components/DonateForm";
+import DonateSuccess from "../components/DonateSuccess";
 
 //Material Icons
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -22,6 +23,7 @@ export default function Index({ query }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [donateOpen, setDonateOpen] = useState(false);
+  const [donateSuccess, setDonateSuccess] = useState(false);
   const [loading, setLoading] = useState(true);
   const [formState, setFormState] = useState({
     from: "",
@@ -59,7 +61,6 @@ export default function Index({ query }) {
     pageLoaded();
   }, []);
 
-
   //#region LETTER SECTION
   const verifyDonation = () => {
     if (window.location.href.includes("success")) {
@@ -73,26 +74,24 @@ export default function Index({ query }) {
 
   const createLetter = () => {
     //"https://api.thejuliatree.org/api/create-pdf"
-    fetch(
-      'http://localhost:4000/api/create-pdf',
-      {
-        method: "POST",
-        headers: { 
-          'Accept': 'application/json',
-          'Content-Type': 'application/json' 
-        },
-        body: JSON.stringify(query),
-      }
-    )
-    .then(response => response.json())
-    .then(result => {
-      if(result.msg==='success'){
-        requestLetter();
-      }
+    fetch("http://localhost:4000/api/create-pdf", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(query),
     })
-    .catch((error) => console.log(error));   
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.msg === "success") {
+          requestLetter();
+        }
+      })
+      .catch((error) => console.log(error));
   };
 
+<<<<<<< HEAD
   const requestLetter = () => {
     fetch(
       'http://localhost:4000/api/fetch-pdf',
@@ -113,14 +112,24 @@ export default function Index({ query }) {
     let downloableFile = new Blob([pdf.data], {type: 'application/pdf'});
     saveAs(downloableFile, 'The-Julia-Tree.pdf');*/
   }
+=======
+  const requestLetter = async () => {
+    const pdf = await fetch("http://localhost:4000/api/fetch-pdf", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }).catch((error) => console.log(error));
+  };
+>>>>>>> 5354feb9ac809a631989070b80c99360c395be68
 
   useEffect(() => {
-    if(query !== {}){
+    if (query !== {}) {
       if (verifyDonation()) {
-        createLetter();
+        setDonateSucess(true);
       }
     }
-    
   }, []);
   //#endregion
   console.log(query);
@@ -138,6 +147,15 @@ export default function Index({ query }) {
             formState={formState}
             setFormState={setFormState}
             setDonateOpen={setDonateOpen}
+          />
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {donateSuccess && (
+          <DonateSuccess
+            setDonateSuccess={setDonateSuccess}
+            user={formState.from}
+            createLetter={createLetter}
           />
         )}
       </AnimatePresence>

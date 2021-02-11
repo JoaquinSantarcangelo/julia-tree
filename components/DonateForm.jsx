@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import CloseIcon from "@material-ui/icons/Close";
 import { ClickAwayListener } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 
 import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(
