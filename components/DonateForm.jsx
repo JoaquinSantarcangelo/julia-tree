@@ -52,13 +52,10 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
     //application/json
     const response = await fetch(url, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: {
+      body: JSON.stringify({
         donation_amount: donation_value,
         quantity: formState.quantity,
-      }
+      })
     }).catch((error) => console.log(error));
 
     const session = await response.json();
