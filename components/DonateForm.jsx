@@ -15,29 +15,20 @@ const variants = {
   exit: { opacity: 0, transition: { when: "afterChildren" } },
 };
 
-const DonateForm = ({ setDonateOpen }) => {
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
-  const [message, setMessage] = useState("");
-  const [payment, setPayment] = useState("stripe");
-  const [quantity, setQuantity] = useState(1);
-  const [subscription, setSubscription] = useState(false);
-
+const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const donation_value = 10;
 
   //Form Validation
   const validation = () => {
     let validated = true;
 
-    console.log(subscription);
-
     //Code
     if (
-      from.trim() === "" ||
-      to.trim() === "" ||
-      message.trim() === "" ||
-      payment.trim() === "" ||
-      quantity < 1
+      formState.from.trim() === "" ||
+      formState.to.trim() === "" ||
+      formState.message.trim() === "" ||
+      formState.payment.trim() === "" ||
+      formState.quantity < 1
     ) {
       validated = false;
     }
@@ -49,7 +40,7 @@ const DonateForm = ({ setDonateOpen }) => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
 
-    let url = subscription
+    let url = formState.subscription
       ? "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
       : "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
 
@@ -61,7 +52,7 @@ const DonateForm = ({ setDonateOpen }) => {
       },
       body: JSON.stringify({
         donation_amount: donation_value,
-        quantity: quantity,
+        quantity: formState.quantity,
       }),
     }).catch((error) => console.log(error));
 
@@ -73,7 +64,7 @@ const DonateForm = ({ setDonateOpen }) => {
     });
 
     if (result.error) {
-      alert('Ups! There was an error! Try later');
+      alert("Ups! There was an error! Try later");
     }
   };
 
@@ -82,7 +73,7 @@ const DonateForm = ({ setDonateOpen }) => {
       if (payment === "stripe") {
         handleStripePayment();
       }
-      alert(`${from},${to},${message}`);
+      alert(`${formState.from},${formState.to},${formState.message}`);
       setDonateOpen(false);
     } else {
       alert("All form fields must be completed");
@@ -109,33 +100,41 @@ const DonateForm = ({ setDonateOpen }) => {
             <div className="quantity">
               <div className="text">I want to plant</div>
               <input
-                onChange={(e) => setQuantity(e.target.value)}
+                onChange={(e) =>
+                  setFormState({ ...formState, quantity: e.target.value })
+                }
                 type="number"
                 name="quantity"
                 id="quantity"
-                value={quantity}
+                value={formState.quantity}
               />
               <div className="text">Julia Trees</div>
             </div>
             <div className="from-to">
               <input
-                value={from}
-                onChange={(e) => setFrom(e.target.value)}
+                value={formState.from}
+                onChange={(e) =>
+                  setFormState({ ...formState, from: e.target.value })
+                }
                 id="from"
                 placeholder="From"
                 type="text"
               />
               <input
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
+                value={formState.to}
+                onChange={(e) =>
+                  setFormState({ ...formState, to: e.target.value })
+                }
                 id="to"
                 placeholder="To"
                 type="text"
               />
             </div>
             <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              value={formState.message}
+              onChange={(e) =>
+                setFormState({ ...formState, message: e.target.value })
+              }
               placeholder="Message"
               name="message"
               id="message"
@@ -146,7 +145,12 @@ const DonateForm = ({ setDonateOpen }) => {
                 type="checkbox"
                 name="subscription"
                 id="subscription"
-                onChange={(e) => setSubscription(!subscription)}
+                onChange={(e) =>
+                  setFormState({
+                    ...formState,
+                    subscription: !formState.subscription,
+                  })
+                }
               />{" "}
               Monthly subscription
             </div>

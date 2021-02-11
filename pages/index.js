@@ -22,6 +22,13 @@ export default function Index() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [donateOpen, setDonateOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [formState, setFormState] = useState({
+    from: "",
+    to: "",
+    message: "",
+    quantity: 1,
+    subscription: false,
+  });
 
   // Menu Hooks & Config
   useEffect(() => {
@@ -65,7 +72,13 @@ export default function Index() {
         <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
       </Head>
       <AnimatePresence exitBeforeEnter>
-        {donateOpen && <DonateForm setDonateOpen={setDonateOpen} />}
+        {donateOpen && (
+          <DonateForm
+            formState={formState}
+            setFormState={setFormState}
+            setDonateOpen={setDonateOpen}
+          />
+        )}
       </AnimatePresence>
       <AnimatePresence exitBeforeEnter>
         {loading && <Loading />}
