@@ -27,7 +27,6 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       formState.from.trim() === "" ||
       formState.to.trim() === "" ||
       formState.message.trim() === "" ||
-      formState.payment.trim() === "" ||
       formState.quantity < 1
     ) {
       validated = false;
@@ -39,6 +38,11 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const handleStripePayment = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
+/*
+    let url = formState.subscription
+      ? "http://localhost:4000/api/stripe/donation"
+      : "http://localhost:4000/api/stripe/donation"
+*/
 
     let url = formState.subscription
       ? "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
@@ -53,7 +57,7 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       body: JSON.stringify({
         donation_amount: donation_value,
         quantity: formState.quantity,
-      }),
+      })
     }).catch((error) => console.log(error));
 
     const session = await response.json();
@@ -70,9 +74,9 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
 
   const handleSubmit = () => {
     if (validation()) {
-      if (payment === "stripe") {
-        handleStripePayment();
-      }
+      
+      handleStripePayment();
+
       alert(`${formState.from},${formState.to},${formState.message}`);
       setDonateOpen(false);
     } else {
