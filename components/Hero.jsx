@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { animate, AnimatePresence, motion, useAnimation } from "framer-motion";
 
-const Hero = ({ loading, setVideoOpen, onPageLoad }) => {
+const Hero = ({ loading, setVideoOpen }) => {
   //On component render configs
   useEffect(() => {
     document.querySelector("#logo").classList.remove("hide");

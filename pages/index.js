@@ -58,11 +58,6 @@ export default function Index() {
     pageLoaded();
   }, []);
 
-  const onPageLoad = () => {
-    console.log("Ya cargo");
-    setLoading(false);
-  };
-
   return (
     <div className={!loading ? "app" : "app fixed"}>
       <Head>
@@ -115,7 +110,6 @@ export default function Index() {
       <Home
         setDonateOpen={setDonateOpen}
         setVideoOpen={setVideoOpen}
-        onPageLoad={onPageLoad}
         loading={loading}
       />
     </div>
