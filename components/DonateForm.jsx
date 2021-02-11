@@ -55,10 +55,10 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
+      body: {
         donation_amount: donation_value,
         quantity: formState.quantity,
-      })
+      }
     }).catch((error) => console.log(error));
 
     const session = await response.json();
