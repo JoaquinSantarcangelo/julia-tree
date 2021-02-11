@@ -38,20 +38,18 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const handleStripePayment = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
-/*
+    
     let url = formState.subscription
-      ? "http://localhost:4000/api/stripe/donation"
-      : "http://localhost:4000/api/stripe/donation"
-*/
-
-    let url = formState.subscription
-      ? "https://Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
-      : "https://Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
+      ? "//juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
+      : "//juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
 
     // Call your backend to create the Checkout Session
     //application/json
     const response = await fetch(url, {
       method: "POST",
+      header:{
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
         donation_amount: donation_value,
         quantity: formState.quantity,
