@@ -45,8 +45,8 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
 */
 
     let url = formState.subscription
-      ? "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
-      : "Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
+      ? "https://Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
+      : "https://Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
 
     // Call your backend to create the Checkout Session
     const response = await fetch(url, {
