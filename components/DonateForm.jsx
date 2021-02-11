@@ -38,11 +38,7 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const handleStripePayment = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
-/*
-    let url = formState.subscription
-      ? "http://localhost:4000/api/stripe/donation"
-      : "http://localhost:4000/api/stripe/donation"
-*/
+    
     let url = formState.subscription
       ? "http://juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation-sub"
       : "http://juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
