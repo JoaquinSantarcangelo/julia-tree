@@ -17,7 +17,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 
-export default function Index() {
+export default function Index({ query }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [donateOpen, setDonateOpen] = useState(false);
@@ -57,6 +57,8 @@ export default function Index() {
     };
     pageLoaded();
   }, []);
+
+  console.log(query);
 
   return (
     <div className={!loading ? "app" : "app fixed"}>
@@ -115,3 +117,7 @@ export default function Index() {
     </div>
   );
 }
+
+Index.getInitialProps = ({ query }) => {
+  return { query };
+};
