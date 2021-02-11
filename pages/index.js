@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import OnImagesLoaded from "react-on-images-loaded";
 import { Scroll, animateScroll } from "react-scroll";
+import { saveAs } from 'file-saver';
 
 //Components
 import Menu from "../components/Menu";
@@ -92,20 +93,25 @@ export default function Index({ query }) {
     .catch((error) => console.log(error));   
   };
 
-  const requestLetter = async () => {
-    const pdf = await fetch(
+  const requestLetter = () => {
+    fetch(
       'http://localhost:4000/api/fetch-pdf',
       {
         method: "GET",
         headers: { 
-          'Accept': 'application/json',
-          'Content-Type': 'application/json' 
+          'Accept': 'application/pdf',
+          'Content-Type': 'application/pdf' 
         }
       }
     )
+    .then(pdf => {
+      console.log(pdf.data)
+    })
     .catch((error) => console.log(error));
 
-    
+/*
+    let downloableFile = new Blob([pdf.data], {type: 'application/pdf'});
+    saveAs(downloableFile, 'The-Julia-Tree.pdf');*/
   }
 
   useEffect(() => {
