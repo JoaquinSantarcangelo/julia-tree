@@ -49,10 +49,12 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       : "https://Juliatreeserverapi-env.eba-bmujhgcs.us-east-1.elasticbeanstalk.com/api/stripe/donation";
 
     // Call your backend to create the Checkout Session
+    //application/json
     const response = await fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+        
       },
       body: JSON.stringify({
         donation_amount: donation_value,
