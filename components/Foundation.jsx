@@ -17,7 +17,7 @@ const items = [
     id: "tututeach",
     img: "/assets/img/logo-tututeach.svg",
     website: "https://www.tututeach.org/",
-    name: "Tutu Teach Fundation",
+    name: "Tutu Teach Foundation",
     desc:
       "The objective of the foundation is to improve equal access to opportunities for everyone within society, especially women, and to do everything connected with or beneficial to this in the broadest sense of the word. Developing, implementung and/or supporting projects and programs designed to improve educatioal opportunities for girls. Developing, implementung and/or supporting projects and programs designed to support women in realising their dreams, in their personal and/or career lives and development",
   },
