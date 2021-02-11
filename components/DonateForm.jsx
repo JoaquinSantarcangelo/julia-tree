@@ -54,7 +54,7 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        
+        "Access-Control-Allow-Credentials": "true"
       },
       body: JSON.stringify({
         donation_amount: donation_value,
