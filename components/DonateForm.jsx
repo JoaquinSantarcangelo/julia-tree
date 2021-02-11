@@ -18,6 +18,9 @@ const variants = {
 const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const donation_value = 10;
 
+  const {quantity} = formState;
+
+
   //Form Validation
   const validation = () => {
     let validated = true;
@@ -38,21 +41,25 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const handleStripePayment = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
-    
+    let url = formState.subscription
+      ? "http://localhost:4000/api/stripe/donation-sub"
+      : "http://localhost:4000/api/stripe/donation";
+    /*
     let url = formState.subscription
       ? "https://julia-tree-api.herokuapp.com/api/stripe/donation-sub"
       : "https://julia-tree-api.herokuapp.com/api/stripe/donation";
-
+*/
     // Call your backend to create the Checkout Session
     //application/json
     const response = await fetch(url, {
       method: "POST",
-      header:{
-        "Content-Type": "application/json"
+      headers: { 
+        'Accept': 'application/json',
+        'Content-Type': 'application/json' 
       },
       body: JSON.stringify({
         donation_amount: donation_value,
-        quantity: formState.quantity,
+        quantity: quantity,
       })
     }).catch((error) => console.log(error));
 
