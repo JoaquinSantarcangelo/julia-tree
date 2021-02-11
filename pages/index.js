@@ -61,9 +61,8 @@ export default function Index() {
   return (
     <div className={!loading ? "app" : "app fixed"}>
       <Head>
-        <title>Julia Tree</title>
+        <title>The Julia Tree</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preload" as="image" href="assets/img/49.png"></link>
         <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
       </Head>
       <AnimatePresence exitBeforeEnter>

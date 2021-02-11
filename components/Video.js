@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Vimeo from "@u-wave/react-vimeo";
+import YouTube from "@u-wave/react-youtube";
 import OnImagesLoaded from "react-on-images-loaded";
 import Scroll from "react-scroll";
 
@@ -58,23 +58,20 @@ const index = ({ setVideoOpen, setDonateOpen }) => {
         </motion.div>
       )} */}
           <motion.div
-            initial={{ opacity: 0, height: "0" }}
+            initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              height: "fit-content",
-              transition: { delay: 1 },
             }}
-            exit={{ opacity: 0, height: "0%" }}
+            exit={{ opacity: 0 }}
             className="video-container"
           >
-            <Vimeo
-              video="340200656"
+            <YouTube
+              video="ncwTUQ8mhHQ"
               onPause={() => setVideoPaused(true)}
               onPlay={() => setVideoPaused(false)}
               onEnd={() => onVideoEnd()}
-              responsive
-              background
-              fullscreen
+              width="100%"
+              height="100%"
               autoplay
             />
           </motion.div>
