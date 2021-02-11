@@ -40,21 +40,23 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
 
   const handleStripePayment = async () => {
     // Get Stripe.js instance
-    const stripe = await stripePromise;/*
+    const stripe = await stripePromise;
     let url = formState.subscription
       ? "http://localhost:4000/api/stripe/donation-sub"
       : "http://localhost:4000/api/stripe/donation";
-    */
+    
    /*
     let url = formState.subscription
       ? "https://julia-tree-api.herokuapp.com/api/stripe/donation-sub"
       : "https://julia-tree-api.herokuapp.com/api/stripe/donation";
-*/
+*//*
     let url = formState.subscription
       ? "https://api.thejuliatree.org/api/stripe/donation-sub"
       : "https://api.thejuliatree.org/api/stripe/donation";
+      */
     // Call your backend to create the Checkout Session
     //application/json
+
     const response = await fetch(url, {
       method: "POST",
       headers: { 
@@ -73,8 +75,6 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
-
-    console.log(result)
 
     if (result.error) {
       alert("Ups! There was an error! Try later");

@@ -110,6 +110,7 @@ export default function Index() {
         setDonateOpen={setDonateOpen}
         setVideoOpen={setVideoOpen}
         loading={loading}
+        formState={formState}
       />
     </div>
   );
