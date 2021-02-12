@@ -20,8 +20,7 @@ const variants = {
 const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const donation_value = 10;
 
-  const {quantity, from, to, message} = formState;
-
+  const { quantity, from, to, message } = formState;
 
   //Form Validation
   const validation = () => {
@@ -63,22 +62,22 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
 
     const response = await fetch(url, {
       method: "POST",
-      headers: { 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json' 
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         donation_amount: donation_value,
         quantity: quantity,
         from: from,
         to: to,
-        message: message
-      })
+        message: message,
+      }),
     }).catch((error) => console.log(error));
 
     const session = await response.json();
 
-    sessionStorage.setItem('data', JSON.stringify(formState));
+    sessionStorage.setItem("data", JSON.stringify(formState));
 
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
@@ -152,9 +151,11 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
             </div>
             <textarea
               value={formState.message}
-              onChange={(e) =>
-                setFormState({ ...formState, message: e.target.value })
-              }
+              onChange={(e) => {
+                if (message.length < 600) {
+                  setFormState({ ...formState, message: e.target.value });
+                }
+              }}
               placeholder="Message"
               name="message"
               id="message"

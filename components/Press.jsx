@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 const pressItems = [
-  { title: "Lorem Ipsum CNN Ipsum", link: "https://www.google.com" },
-  { title: "Lorem Ipsum CNN Ipsum", link: "https://www.google.com" },
-  { title: "Lorem Ipsum CNN Ipsum", link: "https://www.google.com" },
+  { title: "A message from our patrons", link: "https://www.google.com" },
+  { title: "Grow a Julia Tree", link: "#cta" },
+  { title: "Great Green Wall Film", link: "https://www.youtube.com/watch?v=kB1qK_yBVxU&ab_channel=TheGreatGreenWall" },
 ];
 
-const Press = () => {
+const Press = ({ setDonateOpen }) => {
   return (
     <div className="press">
       <div className="clouds">
@@ -21,7 +21,7 @@ const Press = () => {
         </div>
       </div>
       <div className="title">
-        <h2>Press</h2>
+        <h2 hidden>Press</h2>
       </div>
       <motion.div
         drag="x"
