@@ -114,7 +114,22 @@ export default function Index({ query }) {
       <Head>
         <title>The Julia Tree</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta charset="UTF-8" />
+
+        <meta property="og:title" content="Facebook Open Graph META Tags" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/HP71Srw/social.jpg"
+        />
+        <meta property="og:site_name" content="The Julia Tree" />
+        <meta
+          name="description"
+          content="The Julia Tree Challenge grows trees on Africa’s Great Green Wall"
+        />
+        <meta property="og:url" content="http://thejuliatree.org" />
         <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       <AnimatePresence>
