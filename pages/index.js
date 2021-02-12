@@ -66,6 +66,7 @@ export default function Index({ query }) {
   //#region LETTER SECTION
   const createLetter = () => {
     //"https://api.thejuliatree.org/api/create-pdf"
+    //https://the-julia-tree-api.herokuapp.com
     fetch("https://the-julia-tree-api.herokuapp.com/api/create-pdf", {
       method: "POST",
       headers: {
@@ -98,9 +99,11 @@ export default function Index({ query }) {
   useEffect(() => {
     let formValue = JSON.parse(sessionStorage.getItem('data'));
     
-    if(formValue && formValue.from !== ''){
-      setFormState(formValue);
-      setDonateSuccess(true);
+    if(window.location.href.includes('success')){
+      if(formValue && formValue.from !== ''){
+        setFormState(formValue);
+        setDonateSuccess(true);
+      }
     }
   }, [])
   //#endregion
