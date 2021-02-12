@@ -21,7 +21,7 @@ const CTA = ({ setDonateOpen }) => {
         <div onClick={() => setDonateOpen(true)} className="heart">
           <div className="wrapper">
             <div className="text">
-              <div className="line1">Plant a</div>
+              <div className="line1">Grow a</div>
               <div className="line2">Julia Tree</div>
             </div>
             <img src="/assets/img/donate-heart.png" alt="" />
