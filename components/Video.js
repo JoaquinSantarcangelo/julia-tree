@@ -27,7 +27,6 @@ const index = ({ setVideoOpen, setDonateOpen }) => {
           duration: 1500,
           delay: 100,
           smooth: true,
-          offset: 50,
         }),
       500
     );
