@@ -97,7 +97,8 @@ export default function Index({ query }) {
 
   useEffect(() => {
     let formValue = JSON.parse(sessionStorage.getItem('data'));
-    if(formValue.from !== ''){
+    
+    if(formValue && formValue.from !== ''){
       setFormState(formValue);
       setDonateSuccess(true);
     }
