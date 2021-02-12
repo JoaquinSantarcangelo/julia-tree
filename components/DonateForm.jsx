@@ -95,7 +95,7 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
 
       setDonateOpen(false);
     } else {
-      alert("All form fields must be completed");
+      //no completo el formulario
     }
   };
 
@@ -152,7 +152,7 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
             <textarea
               value={formState.message}
               onChange={(e) => {
-                if (message.length < 600) {
+                if (message.length < 300) {
                   setFormState({ ...formState, message: e.target.value });
                 }
               }}
