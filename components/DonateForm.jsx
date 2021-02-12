@@ -4,9 +4,9 @@ import { ClickAwayListener } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
 import { loadStripe } from "@stripe/stripe-js";
-
+//pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX
 const stripePromise = loadStripe(
-  'pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX'
+  'pk_test_51IIvlAB5HIQWMe8gmTN2V6rC7XgwnhwnMiv8kI48BYDXtoRG20eRuRXskTLm5alzJiIZkIRrjh4rFzoIXuZljOjO00tXlqqsas'
 );
 
 const variants = {
@@ -46,16 +46,6 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       ? "https://the-julia-tree-api.herokuapp.com/api/stripe/donation-sub"
       : "https://the-julia-tree-api.herokuapp.com/api/stripe/donation";
     
-  /*ESTE
-    let url = formState.subscription
-      ? "https://the-julia-tree-api.herokuapp.com/api/stripe/donation-sub"
-      : "https://the-julia-tree-api.herokuapp.com/api/stripe/donation";
-*/
-/*
-    let url = formState.subscription
-      ? "https://api.thejuliatree.org/api/stripe/donation-sub"
-      : "https://api.thejuliatree.org/api/stripe/donation";
-      */
     // Call your backend to create the Checkout Session
     //application/json
 
