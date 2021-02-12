@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import YouTube from "@u-wave/react-youtube";
 import OnImagesLoaded from "react-on-images-loaded";
 import Scroll from "react-scroll";
+import { ClickAwayListener } from "@material-ui/core";
 
 import { motion } from "framer-motion";
 
@@ -43,38 +44,26 @@ const index = ({ setVideoOpen, setDonateOpen }) => {
           className="video"
           onLoad={() => console.log("Cargo")}
         >
-          {/* {videoPaused && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="pause-modal"
-        >
-          <div className="container">
-            <div onClick={() => setVideoOpen(false)}>
-              <h1>Volver al inicio </h1>
-            </div>
-          </div>
-        </motion.div>
-      )} */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{ opacity: 0 }}
-            className="video-container"
-          >
-            <YouTube
-              video="ncwTUQ8mhHQ"
-              onPause={() => setVideoPaused(true)}
-              onPlay={() => setVideoPaused(false)}
-              onEnd={() => onVideoEnd()}
-              width="100%"
-              height="100%"
-              autoplay
-            />
-          </motion.div>
+          <ClickAwayListener onClickAway={() => setVideoOpen(false)}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{ opacity: 0 }}
+              className="video-container"
+            >
+              <YouTube
+                video="ncwTUQ8mhHQ"
+                onPause={() => setVideoPaused(true)}
+                onPlay={() => setVideoPaused(false)}
+                onEnd={() => onVideoEnd()}
+                width="100%"
+                height="100%"
+                autoplay
+              />
+            </motion.div>
+          </ClickAwayListener>
         </motion.div>
       )}
     </OnImagesLoaded>

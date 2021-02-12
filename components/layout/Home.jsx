@@ -8,14 +8,20 @@ import Foundation from "../Foundation";
 import Press from "../Press";
 import Footer from "../Footer";
 
-const Home = ({ loading, setVideoOpen, setDonateOpen, formState }) => {
+const Home = ({
+  loading,
+  setVideoOpen,
+  setDonateOpen,
+  formState,
+  setPressOpen,
+}) => {
   return (
     <div className="home">
       <Hero setVideoOpen={setVideoOpen} loading={loading} />
       <CTA setDonateOpen={setDonateOpen} />
       <FAQ />
       <Foundation />
-      <Press setDonateOpen={setDonateOpen} />
+      <Press setPressOpen={setPressOpen} setDonateOpen={setDonateOpen} />
       <Footer />
     </div>
   );

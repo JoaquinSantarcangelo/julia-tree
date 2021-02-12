@@ -1,5 +1,76 @@
 @import "index"
 
+.press-modal
+    position: fixed
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0,0,0,0.5)
+    z-index: 1000000
+    display: grid
+    place-items: center
+    .wrapper
+        background-color: $cream
+        border: solid 10px $brown
+        width: 90%
+        height: fit-content
+        padding: 1.5em
+        max-width: 35em
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        position: relative
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px
+        .title
+            font-size: 1.4em
+            font-weight: 600
+            color: $brown
+        .download
+            font-family: 'merriweather', serif
+            width: fit-content
+            color: $cream
+            background: $brown
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: 1.2em
+            padding: 0.75em 1.5em
+            border-radius: 0.8em
+            transition: all 0.4s ease
+            margin-top: 1em
+
+            .MuiSvgIcon-root
+                font-size: 1.6em
+                margin-right: 0.2em
+                margin-left: -0.2em
+            &::after
+                content: ""
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                background: inherit
+                filter: blur(10px)
+                z-index: -1
+                transition: all 0.4s ease
+                opacity: 0
+            &:hover
+                transform: scale(1.1)
+                cursor: pointer
+                &::after
+                    opacity: 1
+        .close-icon
+            color: $brown
+            position: absolute
+            top: 0.5em
+            right: 0.5em
+            transition: all 0.4s ease
+            .MuiSvgIcon-root
+                font-size: 2em
+            &:hover
+                transform: scale(1.1)
+                cursor: pointer
+
 .foundation
     min-height: 120vh
     padding-top: 10vh
@@ -161,6 +232,8 @@
                         height: 15em
                     #tututeach
                         filter: invert(2)
+
+
 
     @media screen and ( max-width: 800px )
         .wrapper

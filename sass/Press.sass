@@ -1,8 +1,41 @@
 @import "index"
 
+.press-modal
+    .card
+        background-color: $cream
+        border: 1em solid $brown
+        width: 90%
+        max-width: 40em
+        position: relative
+        padding: 4em 2em
+        z-index: 10000
+        max-height: 80vh
+        overflow-y: auto
+        background-image: url("/assets/img/paper-texture2.png")
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px
+        @media screen and ( max-width: 600px )
+            padding: 2.5em 1.5em 1.5em 1.5em
+            width: 95%
+        .close-icon
+            top: 0.75em
+            right: 0.75em
+            position: absolute
+            transition: all 0.4s ease
+
+            .MuiSvgIcon-root
+                font-size: 2em
+                color: $brown
+            &:hover
+                transform: scale(1.1)
+                cursor: pointer
+        .text
+            span
+                width: 100%
+                display: block
+                margin-bottom: 0.75em
+
 .press
     height: fit-content
-
     position: relative
     background-color: $lightblue
     background: linear-gradient(0deg, $lightblue 0%, $lightblueC 100%)
@@ -11,21 +44,18 @@
     justify-content: flex-start
     flex-direction: column
     z-index: 100
-    .title
-        margin-top: 30vw
-        margin-bottom: -1em
-        font-weight: 600
-        color: $cream
-        font-size: 2.5em
+
     .press-hearts
         width: 100%
         height: 25vw
-        margin-top: 6em
+        margin-top: 40vw
         margin-bottom: 80vw
         display: flex
         align-items: center
         justify-content: center
+        
         .press-heart
+            
             height: 100%
             width: 30vw
             height: 28vw
@@ -47,16 +77,18 @@
             .title
                 margin-top: 0
                 width: 70%
-                font-size: 1.2em
+                font-size: 2vw
                 color: $cream
                 text-align: center
+                @media screen and ( max-width: 700px )
+                    font-size: 1.4em
             .read-more
                 color: $cream
                 border: 2px solid $cream
                 padding: 0.25em 1em
                 border-radius: 2em
                 transition: all 0.4s ease
-                margin-top: 2em
+                margin-top: 1em
                 &:hover
                     background-color: $cream
                     color: $color1
