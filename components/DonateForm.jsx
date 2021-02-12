@@ -52,8 +52,8 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
       : "https://julia-tree-api.herokuapp.com/api/stripe/donation";
 */
     let url = formState.subscription
-      ? "https://api.thejuliatree.org/api/stripe/donation-sub"
-      : "https://api.thejuliatree.org/api/stripe/donation";
+      ? "157.230.11.232/api/stripe/donation-sub"
+      : "157.230.11.232/api/stripe/donation";
       
     // Call your backend to create the Checkout Session
     //application/json
