@@ -20,9 +20,7 @@ const Press = () => {
           <img src="/assets/img/49.png" alt="" />
         </div>
       </div>
-      <div className="title">
-        <h2>Press</h2>
-      </div>
+      
       <motion.div
         drag="x"
         dragConstraints={{ left: -300, right: 300 }}
