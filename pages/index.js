@@ -164,6 +164,13 @@ export default function Index({ query }) {
           <TwitterIcon />
         </div>
       </div>
+      <div
+        onClick={() => setDonateOpen(!donateOpen)}
+        className="fixed-donation"
+      >
+        <div className="text">Donate</div>
+        <img src="/assets/img/donate-heart.png" alt="" />
+      </div>
 
       <AnimatePresence exitBeforeEnter initial={false}>
         {videoOpen && (

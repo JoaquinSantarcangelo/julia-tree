@@ -12,9 +12,6 @@ $green: #465D07
 $lightblue: #3288C2
 $lightblueC: #a9d9f8
 
-body
-    
-
 .app
     font-size: 1em
     background-color: $color1
@@ -22,7 +19,7 @@ body
     overflow: hidden
     position: relative
     background-color: #181a29
-    
+
     @media screen and ( max-width: 800px )
         font-size: 0.9em
     @media screen and ( max-width: 500px )
@@ -72,3 +69,36 @@ a
 
 ::-webkit-scrollbar-thumb
     background: $color2
+
+.fixed-donation
+    z-index: 999999
+    position: fixed
+    bottom: 2em
+    right: 4em
+    width: 6em
+    height: 5em
+    transition: all 0.4s ease
+    filter: hue-rotate(0)
+    @media screen and ( max-width: 800px )
+        right: 1.5em
+        bottom: 1.5em
+    img
+        transition: all 0.4s ease
+
+        width: 100%
+        -webkit-filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.25))
+    .text
+        z-index: 10
+        position: absolute
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        font-weight: 700
+        color: $cream
+        transform: translateY(-4px)
+    &:hover
+        filter: hue-rotate(-60deg)
+        cursor: pointer
+        animation: heartBeat forwards 2s infinite
