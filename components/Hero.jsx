@@ -36,7 +36,7 @@ const Hero = ({ loading, setVideoOpen }) => {
           The Julia Tree
         </motion.div>
         <motion.div variants={variants2} className="subtitle">
-          Growing hope, jobs, justice, and peace on Africa’s Great Green Wall.
+          Growing hope, jobs, justice, and peace around the world and Africa’s Great Green Wall.
         </motion.div>
         <motion.div
           onClick={() => setVideoOpen(true)}
