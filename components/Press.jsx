@@ -1,19 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 const pressItems = [
-  { title: "Lorem Ipsum CNN Ipsum", link: "https://www.google.com" },
-  { title: "Lorem Ipsum CNN Ipsum", link: "https://www.google.com" },
-  { title: "Lorem Ipsum CNN Ipsum", link: "https://www.google.com" },
+  { title: "A message from our patrons", link: "https://www.google.com" },
+  { title: "Grow a Julia Tree", link: "https://www.google.com" },
+  { title: "Great Green Wall Film", link: "https://www.youtube.com/watch?v=kB1qK_yBVxU&ab_channel=TheGreatGreenWall" },
 ];
 
-const Press = () => {
+const Press = ({ setDonateOpen }) => {
   return (
     <div className="press">
       <div className="clouds">
         <div className="cloud">
           <img src="/assets/img/49.png" alt="" />
         </div>
-        <div className="cloud">
+        <div className="cloud" onClick={()=>setDonateOpen(true)}>
           <img src="/assets/img/49.png" alt="" />
         </div>
         <div className="cloud">
