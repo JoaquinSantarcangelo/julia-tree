@@ -64,25 +64,15 @@ export default function Index({ query }) {
   }, []);
 
   //#region LETTER SECTION
-  const verifyDonation = () => {
-    if (window.location.href.includes("success")) {
-      //MODAL GRACIAS POR LA DONACION
-      return true;
-    } else if (window.location.href.includes("failed")) {
-      //MODAL ERROR EN LA DONACION
-      return false;
-    }
-  };
-
   const createLetter = () => {
     //"https://api.thejuliatree.org/api/create-pdf"
-    fetch("http://localhost:4000/api/create-pdf", {
+    fetch("https://the-julia-tree-api.herokuapp.com/api/create-pdf", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(query),
+      body: JSON.stringify(formState),
     })
       .then((response) => response.json())
       .then((result) => {
@@ -99,20 +89,23 @@ export default function Index({ query }) {
       const pdf = await axiosClient('/api/fetch-pdf', {responseType: 'blob'});
       let downloableFile = new Blob([pdf.data], {type: 'application/pdf'});
       saveAs(downloableFile, 'The-Julia-Tree.pdf');
-
+      sessionStorage.removeItem('data');
     }catch(error){
       console.log(error)
     }
   }
 
   useEffect(() => {
-    if (query !== {}) {
-      if (verifyDonation()) {
-        setDonateSuccess(true);
-      }
+    let formValue = JSON.parse(sessionStorage.getItem('data'));
+    
+    if(formValue && formValue.from !== ''){
+      setFormState(formValue);
+      setDonateSuccess(true);
     }
-  }, []);
+  }, [])
   //#endregion
+
+  
 
   return (
     <div className={!loading ? "app" : "app fixed"}>

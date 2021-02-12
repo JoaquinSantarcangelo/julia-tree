@@ -4,6 +4,8 @@ import { ClickAwayListener } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
 import { loadStripe } from "@stripe/stripe-js";
+
+//pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX
 const stripePromise = loadStripe(
   "pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX"
 );
@@ -42,9 +44,9 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
     const stripe = await stripePromise;
     /*
     let url = formState.subscription
-      ? "http://localhost:4000/api/stripe/donation-sub"
-      : "http://localhost:4000/api/stripe/donation";
-    **/
+      ? "http://localhost:8080/api/stripe/donation-sub"
+      : "http://localhost:8080/api/stripe/donation";
+    */
 
     let url = formState.subscription
       ? "https://the-julia-tree-api.herokuapp.com/api/stripe/donation-sub"
@@ -74,6 +76,8 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
     }).catch((error) => console.log(error));
 
     const session = await response.json();
+
+    sessionStorage.setItem("data", JSON.stringify(formState));
 
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
