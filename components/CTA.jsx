@@ -36,8 +36,8 @@ const CTA = ({ setDonateOpen }) => {
             <div className="button">
               <span>
                 <FacebookShareButton
-                  url="https://julia-tree.vercel.app/"
-                  quote={"Texto para que se vea con la publicación"}
+                  url="https://www.thejuliatree.org/"
+                  quote={"Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"}
                 >
                   <FacebookIcon />
                 </FacebookShareButton>
@@ -46,16 +46,16 @@ const CTA = ({ setDonateOpen }) => {
 
             <div className="button">
               <TwitterShareButton
-                url="https://julia-tree.vercel.app/"
-                title={"Texto para que se vea con la publicación"}
+                url="https://www.thejuliatree.org/"
+                title={"Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"}
               >
                 <TwitterIcon />
               </TwitterShareButton>
             </div>
             <div className="button">
               <WhatsappShareButton
-                url="https://julia-tree.vercel.app/"
-                title={"Texto para que se vea con la publicación:"}
+                url="https://www.thejuliatree.org/"
+                title={"Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"}
                 separator=" "
               >
                 <WhatsAppIcon />
@@ -79,9 +79,3 @@ const CTA = ({ setDonateOpen }) => {
 };
 
 export default CTA;
-
-/*
-<div className="button">
-              <InstagramIcon />
-            </div>
-*/
