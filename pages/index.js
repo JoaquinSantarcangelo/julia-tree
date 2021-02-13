@@ -92,6 +92,7 @@ export default function Index({ query }) {
       const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
+      console.log('request')
       //sessionStorage.removeItem("data");
       if(automatic){
         console.log('paso')
@@ -102,6 +103,8 @@ export default function Index({ query }) {
         link.href = data;
         link.download = "The-Julia-Tree.pdf";
         link.click();
+      }else{
+        console.log('no automatic')
       }
     } catch (error) {
       console.log(error);
