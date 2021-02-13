@@ -116,6 +116,7 @@ export default function Index({ query }) {
     const response = axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState);
     
     if (response.msg === "success") {
+      console.log('se mando la automatica')
       requestLetter(true);
     }
   }
