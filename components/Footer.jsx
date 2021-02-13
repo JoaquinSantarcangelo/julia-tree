@@ -24,13 +24,6 @@ const Footer = () => {
         </div>
         <div className="divider"></div>
         <div className="made-by-footer">
-          <div className="video-by">
-            <div className="line title">Video by:</div>
-            <div className="line">Alynor Diaz</div>
-            <div className="line">Marcel Franco</div>
-            <div className="line">William Verga</div>
-            <div className="line">Agustin De Martino</div>
-          </div>
           <a
             style={{ textDecoration: "none", color: "inherit" }}
             href="https://salve.agency"
@@ -45,6 +38,13 @@ const Footer = () => {
               <div className="line">Joaquin Santarcángelo</div>
             </div>
           </a>
+          <div className="video-by">
+            <div className="line title">Video by:</div>
+            <div className="line">Alynor Diaz</div>
+            <div className="line">Marcel Franco</div>
+            <div className="line">William Verga</div>
+            <div className="line">Agustin De Martino</div>
+          </div>
         </div>
       </div>
     </div>

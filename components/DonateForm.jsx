@@ -6,7 +6,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { loadStripe } from "@stripe/stripe-js";
 //pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX
 const stripePromise = loadStripe(
-  'pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX'
+  "pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX"
 );
 
 const variants = {
@@ -41,11 +41,11 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
   const handleStripePayment = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
-    
+
     let url = formState.subscription
       ? "https://the-julia-tree-api.herokuapp.com/api/stripe/donation-sub"
       : "https://the-julia-tree-api.herokuapp.com/api/stripe/donation";
-    
+
     // Call your backend to create the Checkout Session
     //application/json
 
@@ -106,7 +106,7 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
           </div>
           <div className="form">
             <div className="quantity">
-              <div className="text">I want to plant</div>
+              <div className="text">I want to grow</div>
               <input
                 onChange={(e) =>
                   setFormState({ ...formState, quantity: e.target.value })
@@ -162,7 +162,8 @@ const DonateForm = ({ setDonateOpen, formState, setFormState }) => {
                   })
                 }
               />{" "}
-              Monthly subscription
+              Monthly subscription{" "}
+              <span style={{ fontStyle: "italic" }}>(optional)</span>
             </div>
             <div onClick={() => handleSubmit()} className="button">
               Donate

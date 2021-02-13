@@ -175,9 +175,6 @@ export default function Index({ query }) {
         <div className="icon">
           <InstagramIcon />
         </div>
-        <div className="icon">
-          <TwitterIcon />
-        </div>
       </div>
       <div
         onClick={() => setDonateOpen(!donateOpen)}
