@@ -114,7 +114,8 @@ export default function Index({ query }) {
 
   const automaticDownload = async () => {
     const response = axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState);
-    
+    console.log(response)
+    console.log(response.json())
     if (response.msg === "success") {
       console.log('se mando la automatica')
       requestLetter(true);
