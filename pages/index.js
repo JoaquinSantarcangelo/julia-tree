@@ -68,61 +68,31 @@ export default function Index({ query }) {
 
   //#region LETTER SECTION
   const createLetter = async () => {
-    //"https://api.thejuliatree.org/api/create-pdf"
-    //https://the-julia-tree-api.herokuapp.com
     try{
       const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState, { responseType: "blob" });
-      console.log(response)
       const pdf = response;
-      //const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
 
     }catch(error){
       console.log(error);
     }
-    console.log(formState)
-/*    fetch("https://the-julia-tree-api.herokuapp.com/api/create-pdf", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formState),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.msg === "success") {
-          requestLetter();
-        }
-      })
-      .catch((error) => console.log(error));*/
-  };
-
-  const requestLetter = async (automatic=false) => {
-    try {
-      const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
-      let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
-      saveAs(downloableFile, "The-Julia-Tree.pdf");
-      
-      if(automatic){
-        const data = window.URL.createObjectURL(downloableFile);
-        const link = document.createElement('a');
-        link.href = data;
-        link.download = "The-Julia-Tree.pdf";
-      }else{
-        console.log('no automatic')
-      }
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const automaticDownload = async () => {
-    const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState);
-    
-    if (response.data.msg === "success") {
-      requestLetter(true);
+    try{
+      const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState, { responseType: "blob" });
+      const pdf = response;
+      let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
+      saveAs(downloableFile, "The-Julia-Tree.pdf");
+
+      const data = window.URL.createObjectURL(downloableFile);
+      const link = document.createElement('a');
+      link.href = data;
+      link.download = "The-Julia-Tree.pdf";
+
+    }catch(error){
+      console.log(error);
     }
   }
 
