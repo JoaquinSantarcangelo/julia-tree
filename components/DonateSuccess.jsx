@@ -9,7 +9,7 @@ const variants = {
   exit: { opacity: 0, transition: { when: "afterChildren" } },
 };
 
-const DonateSuccess = ({ user, setDonateSuccess, createLetter }) => {
+const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, sendEmail  }) => {
   return (
     <motion.div
       variants={variants}
@@ -27,6 +27,14 @@ const DonateSuccess = ({ user, setDonateSuccess, createLetter }) => {
         </div>
         <div onClick={() => createLetter()} className="download">
           <GetAppIcon /> Download certificate
+        </div>
+        <div>
+          <input type="email" name="email" 
+            onChange={(e) =>
+              setPdfEmail(e.target.value)
+            }
+          />
+          <button type="button" onClick={() => sendEmail()}>Send</button>
         </div>
       </div>
     </motion.div>

@@ -29,6 +29,7 @@ export default function Index({ query }) {
   const [pressOpen, setPressOpen] = useState(false);
   const [activePress, setActivePress] = useState({});
   const [loading, setLoading] = useState(true);
+  const [pdfemail, setPdfEmail] = useState('');
   const [formState, setFormState] = useState({
     from: "",
     to: "",
@@ -91,7 +92,7 @@ export default function Index({ query }) {
       const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
-      sessionStorage.removeItem("data");
+      //sessionStorage.removeItem("data");
     } catch (error) {
       console.log(error);
     }
@@ -107,6 +108,19 @@ export default function Index({ query }) {
       }
     }
   }, []);
+  //#endregion
+
+  //#region 
+  const sendEmail = async () => {
+    if(pdfemail.trim() !== ''){
+      try {
+        const pdf = await axiosClient("/testing", formState);
+        console.log(pdf);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
   //#endregion
 
   return (
@@ -145,11 +159,22 @@ export default function Index({ query }) {
         )}
       </AnimatePresence>
       <AnimatePresence>
+      <DonateSuccess
+            setDonateSuccess={setDonateSuccess}
+            user={formState.from}
+            createLetter={createLetter}
+            setPdfEmail={setPdfEmail}
+            sendEmail={sendEmail}
+            //ACAAA
+          />
         {donateSuccess && (
           <DonateSuccess
             setDonateSuccess={setDonateSuccess}
             user={formState.from}
             createLetter={createLetter}
+            setPdfEmail={setPdfEmail}
+            sendEmail={sendEmail}
+            //ACAAA
           />
         )}
       </AnimatePresence>
