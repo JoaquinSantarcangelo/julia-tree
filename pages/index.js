@@ -87,16 +87,32 @@ export default function Index({ query }) {
       .catch((error) => console.log(error));
   };
 
-  const requestLetter = async () => {
+  const requestLetter = async (automatic=false) => {
     try {
       const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
       //sessionStorage.removeItem("data");
+      if(automatic){
+        const data = window.URL.createObjectURL(downloableFile);
+
+        const link = document.createElement('a');
+        link.href = data;
+        link.download = "The-Julia-Tree.pdf";
+        link.click();
+      }
     } catch (error) {
       console.log(error);
     }
   };
+
+  const automaticDownload = async () => {
+    const response = axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState);
+    const result = response.json();
+    if (result.msg === "success") {
+      requestLetter(true);
+    }
+  }
 
   useEffect(() => {
     let formValue = JSON.parse(sessionStorage.getItem("data"));
@@ -104,13 +120,14 @@ export default function Index({ query }) {
     if (window.location.href.includes("success")) {
       if (formValue && formValue.from !== "") {
         setFormState(formValue);
+        automaticDownload();
         setDonateSuccess(true);
       }
     }
   }, []);
   //#endregion
 
-  //#region 
+  //#region SEND EMAIL
   const sendEmail = async () => {
     if(pdfemail.trim() !== ''){
       try {
