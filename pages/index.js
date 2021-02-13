@@ -70,8 +70,19 @@ export default function Index({ query }) {
   const createLetter = () => {
     //"https://api.thejuliatree.org/api/create-pdf"
     //https://the-julia-tree-api.herokuapp.com
+    try{
+      const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState);
+      console.log(response)
+      const pdf = response.data;
+      //const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
+      let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
+      saveAs(downloableFile, "The-Julia-Tree.pdf");
+
+    }catch(error){
+      console.log(error);
+    }
     console.log(formState)
-    fetch("https://the-julia-tree-api.herokuapp.com/api/create-pdf", {
+/*    fetch("https://the-julia-tree-api.herokuapp.com/api/create-pdf", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -85,7 +96,7 @@ export default function Index({ query }) {
           requestLetter();
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error));*/
   };
 
   const requestLetter = async (automatic=false) => {
