@@ -2,7 +2,7 @@
 
 .cta
     height: 100vh
-    min-height: 60em
+    min-height: 40vw
     background-color: #fff
     display: flex
     flex-direction: column
@@ -41,7 +41,6 @@
                 color: $cream
     .wrapper
         height: 10em
-
         background-color: #fff
         display: flex
         align-items: center
@@ -53,7 +52,7 @@
         .heart
             z-index: 1000
             position: absolute
-            top: -30em
+            top: -50vh
             left: 0
             width: 100%
             margin: 0 auto
@@ -195,8 +194,10 @@
             .download-content
                 display: none
     @media screen and ( max-width: 600px )
+        max-height: 80vh
         .wrapper
             .heart
+                top: -35vh
                 .wrapper
                     .text
                         font-size: 2em
