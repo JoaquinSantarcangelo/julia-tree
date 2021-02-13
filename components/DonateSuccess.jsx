@@ -28,8 +28,10 @@ const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, send
         <div onClick={() => createLetter()} className="download">
           <GetAppIcon /> Download certificate
         </div>
-        <div>
-          <input type="email" name="email" 
+        <div className="separator"></div>
+        <div className="send">
+          <p>Send certificate to your loved one</p>
+          <input type="email" name="email" placeholder="email address"
             onChange={(e) =>
               setPdfEmail(e.target.value)
             }

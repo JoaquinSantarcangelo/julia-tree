@@ -92,18 +92,13 @@ export default function Index({ query }) {
       const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
-      console.log('request')
-      //sessionStorage.removeItem("data");
+      
       if(automatic){
-        console.log('paso')
         const data = window.URL.createObjectURL(downloableFile);
-        console.log(data)
         const link = document.createElement('a');
-        console.log(link)
         link.href = data;
         link.download = "The-Julia-Tree.pdf";
         link.click();
-        console.log('automatic')
       }else{
         console.log('no automatic')
       }
@@ -116,7 +111,6 @@ export default function Index({ query }) {
     const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState);
     
     if (response.data.msg === "success") {
-      console.log('se mando la automatica')
       requestLetter(true);
     }
   }
