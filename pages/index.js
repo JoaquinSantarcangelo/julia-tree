@@ -114,8 +114,8 @@ export default function Index({ query }) {
   const sendEmail = async () => {
     if(pdfemail.trim() !== ''){
       try {
-        const pdf = await axiosClient.post("/testing", {...formState, pdfemail});
-        console.log(pdf);
+        const pdf = await axiosClient.post("/api/sendemail", {...formState, pdfemail});
+        //ENVIADO SUCCESS
       } catch (error) {
         console.log(error);
       }
@@ -159,14 +159,6 @@ export default function Index({ query }) {
         )}
       </AnimatePresence>
       <AnimatePresence>
-      <DonateSuccess
-            setDonateSuccess={setDonateSuccess}
-            user={formState.from}
-            createLetter={createLetter}
-            setPdfEmail={setPdfEmail}
-            sendEmail={sendEmail}
-            //ACAAA
-          />
         {donateSuccess && (
           <DonateSuccess
             setDonateSuccess={setDonateSuccess}
@@ -174,7 +166,6 @@ export default function Index({ query }) {
             createLetter={createLetter}
             setPdfEmail={setPdfEmail}
             sendEmail={sendEmail}
-            //ACAAA
           />
         )}
       </AnimatePresence>

@@ -5,8 +5,9 @@ import CloseIcon from "@material-ui/icons/Close";
 
 import { loadStripe } from "@stripe/stripe-js";
 //pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX
+//sk_test_51IIvlAB5HIQWMe8g5xBd1FtYF4ptxa2LJCqLSns63Tk4tzvE1DqZtuO009cDHWpBcNeXKGVk2vWjWuN4RD43Toqy00683bjHzZ
 const stripePromise = loadStripe(
-  "pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX"
+  "sk_test_51IIvlAB5HIQWMe8g5xBd1FtYF4ptxa2LJCqLSns63Tk4tzvE1DqZtuO009cDHWpBcNeXKGVk2vWjWuN4RD43Toqy00683bjHzZ"
 );
 
 const variants = {
