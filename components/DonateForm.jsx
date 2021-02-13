@@ -7,7 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 //pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX
 //pk_test_51IIvlAB5HIQWMe8gmTN2V6rC7XgwnhwnMiv8kI48BYDXtoRG20eRuRXskTLm5alzJiIZkIRrjh4rFzoIXuZljOjO00tXlqqsas
 const stripePromise = loadStripe(
-  "pk_test_51IIvlAB5HIQWMe8gmTN2V6rC7XgwnhwnMiv8kI48BYDXtoRG20eRuRXskTLm5alzJiIZkIRrjh4rFzoIXuZljOjO00tXlqqsas"
+  "pk_live_51IIvlAB5HIQWMe8gOCrg7LER7S9rQsQL7ND19VXKfYpktJotBtXPHGpW4MhdBL3qeZ55c1IFh4L6lpbGyh6Qn0dm00MDxKyfPX"
 );
 
 const variants = {
