@@ -102,6 +102,9 @@ const PressModal = ({ setPressOpen, activePress }) => {
               Together we can grow a million Julia Trees, together we can green
               the future. Archbishop Emeritus Desmond and Mrs. Leah Tutu
             </span>
+            <div>
+              <img src="/assets/img/tutu-teach.jpeg"/>
+            </div>
           </div>
         </div>
       </ClickAwayListener>
