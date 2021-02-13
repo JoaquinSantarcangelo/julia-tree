@@ -116,6 +116,7 @@ export default function Index({ query }) {
       try {
         const pdf = await axiosClient.post("/api/sendemail", {...formState, pdfemail});
         //ENVIADO SUCCESS
+        console.log(pdf)
       } catch (error) {
         console.log(error);
       }
