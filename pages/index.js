@@ -67,11 +67,11 @@ export default function Index({ query }) {
   }, []);
 
   //#region LETTER SECTION
-  const createLetter = () => {
+  const createLetter = async () => {
     //"https://api.thejuliatree.org/api/create-pdf"
     //https://the-julia-tree-api.herokuapp.com
     try{
-      const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState,  { responseType: "blob" });
+      const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState, { responseType: "blob" });
       console.log(response)
       const pdf = response.data;
       //const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
