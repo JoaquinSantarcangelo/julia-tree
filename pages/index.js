@@ -95,14 +95,15 @@ export default function Index({ query }) {
       console.log('request')
       //sessionStorage.removeItem("data");
       if(automatic){
-        console.log('paso')
+        /*console.log('paso')
         const data = window.URL.createObjectURL(downloableFile);
         console.log(data)
         const link = document.createElement('a');
         console.log(link)
         link.href = data;
         link.download = "The-Julia-Tree.pdf";
-        link.click();
+        link.click();*/
+        console.log('automatic')
       }else{
         console.log('no automatic')
       }
