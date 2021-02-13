@@ -14,6 +14,7 @@ import Home from "../components/layout/Home";
 import Loading from "../components/Loading";
 import DonateForm from "../components/DonateForm";
 import DonateSuccess from "../components/DonateSuccess";
+import WebsitePolicy from "../components/WebsitePolicy";
 
 //Material Icons
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -25,11 +26,12 @@ export default function Index({ query }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [donateOpen, setDonateOpen] = useState(false);
+  const [policyOpen, setPolicyOpen] = useState(false);
   const [donateSuccess, setDonateSuccess] = useState(false);
   const [pressOpen, setPressOpen] = useState(false);
   const [activePress, setActivePress] = useState({});
   const [loading, setLoading] = useState(true);
-  const [pdfemail, setPdfEmail] = useState('');
+  const [pdfemail, setPdfEmail] = useState("");
   const [formState, setFormState] = useState({
     from: "",
     to: "",
@@ -68,34 +70,36 @@ export default function Index({ query }) {
 
   //#region LETTER SECTION
   const createLetter = async () => {
-    try{
+    try {
       //https://the-julia-tree-api.herokuapp.com
-      const response = await axiosClient.post('/api/create-pdf', formState, { responseType: "blob" });
+      const response = await axiosClient.post("/api/create-pdf", formState, {
+        responseType: "blob",
+      });
       const pdf = response;
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
-
-    }catch(error){
+    } catch (error) {
       console.log(error);
     }
   };
 
   const automaticDownload = async () => {
-    try{
-      const response = await axiosClient.post('/api/create-pdf', formState, { responseType: "blob" });
+    try {
+      const response = await axiosClient.post("/api/create-pdf", formState, {
+        responseType: "blob",
+      });
       const pdf = response;
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
 
       const data = window.URL.createObjectURL(downloableFile);
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = data;
       link.download = "The-Julia-Tree.pdf";
-
-    }catch(error){
+    } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     let formValue = JSON.parse(sessionStorage.getItem("data"));
@@ -112,16 +116,19 @@ export default function Index({ query }) {
 
   //#region SEND EMAIL
   const sendEmail = async () => {
-    if(pdfemail.trim() !== ''){
+    if (pdfemail.trim() !== "") {
       try {
-        const pdf = await axiosClient.post("/api/sendemail", {...formState, pdfemail});
+        const pdf = await axiosClient.post("/api/sendemail", {
+          ...formState,
+          pdfemail,
+        });
         //ENVIADO SUCCESS
-        console.log(pdf)
+        console.log(pdf);
       } catch (error) {
         console.log(error);
       }
     }
-  }
+  };
   //#endregion
 
   return (
@@ -149,6 +156,9 @@ export default function Index({ query }) {
 
       <AnimatePresence>
         {pressOpen && <PressModal setPressOpen={setPressOpen} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {policyOpen && <WebsitePolicy setPolicyOpen={setPolicyOpen} />}
       </AnimatePresence>
       <AnimatePresence exitBeforeEnter>
         {donateOpen && (
@@ -212,6 +222,7 @@ export default function Index({ query }) {
         loading={loading}
         formState={formState}
         setPressOpen={setPressOpen}
+        setPolicyOpen={setPolicyOpen}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const Footer = () => {
+const Footer = ({ setPolicyOpen }) => {
   return (
     <div className="footer">
       <div className="wrapper">
@@ -19,7 +19,9 @@ const Footer = () => {
             <Link to="foundation" spy={true} smooth={true} duration={500}>
               <div className="link">Foundation</div>
             </Link>
-            <div className="link">Website Policy</div>
+            <div onClick={() => setPolicyOpen(true)} className="link">
+              Website Policy
+            </div>
           </div>
         </div>
         <div className="divider"></div>
