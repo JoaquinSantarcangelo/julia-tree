@@ -69,7 +69,8 @@ export default function Index({ query }) {
   //#region LETTER SECTION
   const createLetter = async () => {
     try{
-      const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState, { responseType: "blob" });
+      //https://the-julia-tree-api.herokuapp.com
+      const response = await axiosClient.post('/api/create-pdf', formState, { responseType: "blob" });
       const pdf = response;
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
@@ -81,7 +82,7 @@ export default function Index({ query }) {
 
   const automaticDownload = async () => {
     try{
-      const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState, { responseType: "blob" });
+      const response = await axiosClient.post('/api/create-pdf', formState, { responseType: "blob" });
       const pdf = response;
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
