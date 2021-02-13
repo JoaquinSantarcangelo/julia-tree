@@ -98,7 +98,6 @@ export default function Index({ query }) {
         const link = document.createElement('a');
         link.href = data;
         link.download = "The-Julia-Tree.pdf";
-        link.click();
       }else{
         console.log('no automatic')
       }
