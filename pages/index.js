@@ -114,7 +114,7 @@ export default function Index({ query }) {
   const sendEmail = async () => {
     if(pdfemail.trim() !== ''){
       try {
-        const pdf = await axiosClient.post("/testing", formState);
+        const pdf = await axiosClient.post("/testing", {...formState, pdfemail});
         console.log(pdf);
       } catch (error) {
         console.log(error);
