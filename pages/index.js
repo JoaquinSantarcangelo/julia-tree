@@ -73,7 +73,7 @@ export default function Index({ query }) {
     try{
       const response = await axiosClient.post('https://the-julia-tree-api.herokuapp.com/api/create-pdf', formState, { responseType: "blob" });
       console.log(response)
-      const pdf = response.data;
+      const pdf = response;
       //const pdf = await axiosClient("/api/fetch-pdf", { responseType: "blob" });
       let downloableFile = new Blob([pdf.data], { type: "application/pdf" });
       saveAs(downloableFile, "The-Julia-Tree.pdf");
