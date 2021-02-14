@@ -44,7 +44,7 @@ const Footer = ({ setPolicyOpen }) => {
             <div className="line title">Video by:</div>
             <div className="line">Alynor Diaz</div>
             <div className="line">Marcel Franco</div>
-            <div className="line">William Verga</div>
+            <div className="line">William Vesga</div>
             <div className="line">Agustin De Martino</div>
           </div>
         </div>
