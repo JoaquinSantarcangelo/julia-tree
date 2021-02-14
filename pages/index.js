@@ -32,7 +32,7 @@ export default function Index({ query }) {
   const [activePress, setActivePress] = useState({});
   const [loading, setLoading] = useState(true);
   const [pdfemail, setPdfEmail] = useState('');
-  const [loadingemail, setLoadingEmail] = useState({status: 'success', msg: 'Not sent.'});
+  const [loadingemail, setLoadingEmail] = useState({status: 'null', msg: 'Not sent.'});
   const [formState, setFormState] = useState({
     from: "",
     to: "",
