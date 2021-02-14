@@ -9,7 +9,13 @@ const variants = {
   exit: { opacity: 0, transition: { when: "afterChildren" } },
 };
 
-const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, sendEmail  }) => {
+const DonateSuccess = ({
+  user,
+  setDonateSuccess,
+  createLetter,
+  setPdfEmail,
+  sendEmail,
+}) => {
   return (
     <motion.div
       variants={variants}
@@ -31,12 +37,15 @@ const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, send
         <div className="separator"></div>
         <div className="send">
           <p>Send certificate to your loved one</p>
-          <input type="email" name="email" placeholder="email address"
-            onChange={(e) =>
-              setPdfEmail(e.target.value)
-            }
+          <input
+            type="email"
+            name="email"
+            placeholder="email address"
+            onChange={(e) => setPdfEmail(e.target.value)}
           />
-          <button type="button" onClick={() => sendEmail()}>Send</button>
+          <button type="button" onClick={() => sendEmail()}>
+            Send
+          </button>
         </div>
       </div>
     </motion.div>

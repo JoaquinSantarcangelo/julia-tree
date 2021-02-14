@@ -34,7 +34,7 @@ const variantsMenuItems = {
 
 const menuVariants = {
   visible: { y: 0 },
-  hidden: { y: "-100vh" },
+  hidden: { y: "-150vh" },
   transition: { ease: "easeInOut", when: "beforeChildren", duration: 0.6 },
 };
 
