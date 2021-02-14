@@ -14,6 +14,7 @@ const Home = ({
   setDonateOpen,
   formState,
   setPressOpen,
+  setPolicyOpen
 }) => {
   return (
     <div className="home">
@@ -22,7 +23,7 @@ const Home = ({
       <FAQ />
       <Foundation />
       <Press setPressOpen={setPressOpen} setDonateOpen={setDonateOpen} />
-      <Footer />
+      <Footer setPolicyOpen={setPolicyOpen} />
     </div>
   );
 };
