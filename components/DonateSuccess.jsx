@@ -9,7 +9,7 @@ const variants = {
   exit: { opacity: 0, transition: { when: "afterChildren" } },
 };
 
-const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, sendEmail  }) => {
+const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, sendEmail, loadingemail }) => {
   return (
     <motion.div
       variants={variants}
@@ -37,6 +37,13 @@ const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, send
             }
           />
           <button type="button" onClick={() => sendEmail()}>Send</button>
+          {loadingemail.status === 'null' ? null : 
+            (
+              <div className="status-container">
+                <p className="email-status">{loadingemail.msg}</p>
+              </div>
+            )
+          }
         </div>
       </div>
     </motion.div>

@@ -30,6 +30,7 @@ export default function Index({ query }) {
   const [activePress, setActivePress] = useState({});
   const [loading, setLoading] = useState(true);
   const [pdfemail, setPdfEmail] = useState('');
+  const [loadingemail, setLoadingEmail] = useState({status: 'success', msg: 'Not sent.'});
   const [formState, setFormState] = useState({
     from: "",
     to: "",
@@ -113,12 +114,13 @@ export default function Index({ query }) {
   //#region SEND EMAIL
   const sendEmail = async () => {
     if(pdfemail.trim() !== ''){
+      setLoadingEmail({statue: 'pending', msg: 'Sending...'});
       try {
         const pdf = await axiosClient.post("/api/sendemail", {...formState, pdfemail});
         //ENVIADO SUCCESS
-        console.log(pdf)
+        setLoadingEmail({status: 'success', msg: 'Certificate sent successfully'});
       } catch (error) {
-        console.log(error);
+        setLoadingEmail({status: 'failed', msg: "The messagge couldn't be sent. Try again."});
       }
     }
   }
@@ -164,6 +166,7 @@ export default function Index({ query }) {
           <DonateSuccess
             setDonateSuccess={setDonateSuccess}
             user={formState.from}
+            loadingemail={loadingemail}
             createLetter={createLetter}
             setPdfEmail={setPdfEmail}
             sendEmail={sendEmail}
@@ -187,10 +190,10 @@ export default function Index({ query }) {
       />
       <div className="social-icons">
         <div className="icon">
-          <FacebookIcon />
+          <FacebookIcon onClick={() => window.location.href="https://www.facebook.com/thejuliatree"} />
         </div>
         <div className="icon">
-          <InstagramIcon />
+          <InstagramIcon onClick={() => window.location.href="https://www.instagram.com/thejuliatree/"} />
         </div>
       </div>
       <div
