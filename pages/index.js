@@ -86,12 +86,7 @@ export default function Index({ query }) {
 
   const automaticDownload = async () => {
     try {
-      const response = await axiosClient.post("/api/create-pdf", {
-        from: "Guido",
-        to: "Juan",
-        message: "Va bien el pdf?",
-        quantity: 1
-      }/*formState*/, {
+      const response = await axiosClient.post("/api/create-pdf", formState, {
         responseType: "blob",
       });
       const pdf = response;
@@ -108,9 +103,6 @@ export default function Index({ query }) {
   };
 
   useEffect(() => {
-
-    automaticDownload();
-
     let formValue = JSON.parse(sessionStorage.getItem("data"));
 
     if (window.location.href.includes("success")) {
