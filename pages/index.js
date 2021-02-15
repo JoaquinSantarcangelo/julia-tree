@@ -86,14 +86,12 @@ export default function Index({ query }) {
 
   const automaticDownload = async () => {
     try {
-      setFormState({
+      const response = await axiosClient.post("/api/create-pdf", {
         from: "Guido",
         to: "Juan",
         message: "Va bien el pdf?",
-        quantity: 1,
-        subscription: false,
-      })
-      const response = await axiosClient.post("/api/create-pdf", formState, {
+        quantity: 1
+      }/*formState*/, {
         responseType: "blob",
       });
       const pdf = response;
