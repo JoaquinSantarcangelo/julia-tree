@@ -103,7 +103,7 @@ const PressModal = ({ setPressOpen, activePress }) => {
               the future. Archbishop Emeritus Desmond and Mrs. Leah Tutu
             </span>
             <div>
-              <img src="/assets/img/tutu-teach.jpeg"/>
+              <img src="/assets/img/tutu-teach.jpeg" />
             </div>
           </div>
         </div>

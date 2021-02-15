@@ -31,10 +31,11 @@ const DonateSuccess = ({ user, setDonateSuccess, createLetter, setPdfEmail, send
         <div className="separator"></div>
         <div className="send">
           <p>Send certificate to your loved one</p>
-          <input type="email" name="email" placeholder="email address"
-            onChange={(e) =>
-              setPdfEmail(e.target.value)
-            }
+          <input
+            type="email"
+            name="email"
+            placeholder="email address"
+            onChange={(e) => setPdfEmail(e.target.value)}
           />
           <button type="button" onClick={() => sendEmail()}>Send</button>
           {loadingemail.status === 'null' ? null : 

@@ -6,6 +6,7 @@ import "../sass/Loading.sass";
 import "../sass/DonateForm.sass";
 import "../sass/DonateSuccess.sass";
 import "../sass/Navbar.sass";
+import "../sass/normalize.css";
 
 function MyApp({ Component, pageProps }) {
   return (

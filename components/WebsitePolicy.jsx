@@ -30,7 +30,7 @@ const WebsitePolicy = ({ setPressOpen, activePress, setPolicyOpen }) => {
             Thank you for choosing to be part of our community at The Julia Tree
             ("Company", "we", "us", "our"). We are committed to protecting your
             personal information and your right to privacy. If you have any
-            questions or concerns about this privacy notice, or our practices
+            questions or concerns aboutF this privacy notice, or our practices
             with regards to your personal information, please contact us at
             thejuliatree@gmail.com. When you visit our website
             https://www.thejuliatree.org (the "Website"), and more generally,

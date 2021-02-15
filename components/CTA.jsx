@@ -37,7 +37,9 @@ const CTA = ({ setDonateOpen }) => {
               <span>
                 <FacebookShareButton
                   url="https://www.thejuliatree.org/"
-                  quote={"Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"}
+                  quote={
+                    "Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"
+                  }
                 >
                   <FacebookIcon />
                 </FacebookShareButton>
@@ -47,7 +49,9 @@ const CTA = ({ setDonateOpen }) => {
             <div className="button">
               <TwitterShareButton
                 url="https://www.thejuliatree.org/"
-                title={"Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"}
+                title={
+                  "Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"
+                }
               >
                 <TwitterIcon />
               </TwitterShareButton>
@@ -55,7 +59,9 @@ const CTA = ({ setDonateOpen }) => {
             <div className="button">
               <WhatsappShareButton
                 url="https://www.thejuliatree.org/"
-                title={"Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"}
+                title={
+                  "Join me growing hope, peace, and a healthy planet on Africa’s Great Green Wall"
+                }
                 separator=" "
               >
                 <WhatsAppIcon />

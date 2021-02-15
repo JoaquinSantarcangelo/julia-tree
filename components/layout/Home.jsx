@@ -14,7 +14,7 @@ const Home = ({
   setDonateOpen,
   formState,
   setPressOpen,
-  setPolicyOpen
+  setPolicyOpen,
 }) => {
   return (
     <div className="home">
