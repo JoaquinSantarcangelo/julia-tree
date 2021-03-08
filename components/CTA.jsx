@@ -23,6 +23,7 @@ const CTA = ({ setDonateOpen }) => {
             <div className="text">
               <div className="line1">Grow a</div>
               <div className="line2">Julia Tree</div>
+              <div className="line3">For International Women's Day</div>
             </div>
             <img src="/assets/img/donate-heart.png" alt="" />
           </div>

@@ -55,6 +55,11 @@ const faqsDB = [
     answer:
       "The Great Green Wall is an African led movement with the epic ambition to grow an 8,000km (5000 mile) natural wonder of the world across the entire width of Africa, with branches extending along the northern rim of the continent and extending deep into the southern drylands. A decade in and roughly 18% underway, the initiative is already bringing life back to Africa’s degraded landscapes at an unprecedented scale, providing food security, jobs and a reason to stay for the millions who live along its path. The Wall promises to be a compelling solution to the many urgent threats facing the African Continent, and the global community as a whole—notably climate change, drought, famine, conflict, radicalization and migration. Once complete, the Great Green Wall will be the largest living structure on the planet, three times the size of Australia’s Great Barrier Reef.",
   },
+  {
+    id: 8,
+    question: "International Women's Day",
+    answer: 'Julia is the forgotten lover of St. Valentine. The Julia Tree Initiative brings her into the light. And, through the work of the Tutu Teach Foundation, women in Africa and across the world are being empowered through every Julia Tree grown.'
+  }
 ];
 
 const FAQ = () => {
