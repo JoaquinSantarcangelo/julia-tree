@@ -48,9 +48,7 @@ const Hero = ({ loading, setVideoOpen }) => {
             Watch video
           </div>
         </motion.div>
-        <motion.div variants={variants2} className="women-day-sub">
-          Grow a Julia Tree for the women you love and admire on International Women's Day and during Women's History Month
-        </motion.div>
+        
       </motion.div>
       <AnimatePresence>
         <div className="background">
